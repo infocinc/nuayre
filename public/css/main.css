@@ -698,19 +698,19 @@ img {
 .pulse {
   -webkit-animation-name: 'pulse_animation';
   -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 2000ms;
+  -webkit-animation-duration: 5000ms;
   -webkit-transform-origin: 70% 70%;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-name: 'pulse_animation';
   -moz-animation-delay: 0s;
-  -moz-animation-duration: 2000ms;
+  -moz-animation-duration: 5000ms;
   -moz-transform-origin: 70% 70%;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
   animation-name: 'pulse_animation';
   animation-delay: 0s;
-  animation-duration: 2000ms;
+  animation-duration: 5000ms;
   transform-origin: 70% 70%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -735,61 +735,34 @@ img {
 #product-grid {
   margin-top: 70px;
 }
-#product-grid .product-thumbnail:last-child {
-  border-right: 1px solid #ebebeb;
-}
-#product-grid .row:last-child .product-thumbnail {
-  border-bottom: 1px solid #ebebeb;
-}
 .product-thumbnail:hover {
   border: 1px solid #656565 !important;
+  z-index: 1;
 }
 .product-thumbnail {
   cursor: pointer;
   padding: 20px;
   border: 1px solid #ebebeb;
-  border-right: 0px solid #ebebeb;
-  border-bottom: 0px solid #ebebeb;
+  margin-top: -1px;
+  margin-right: -1px;
 }
-.product-img.pulseme:hover {
+.product-img:hover {
   -webkit-animation-name: 'pulse_animation';
   -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 2000ms;
+  -webkit-animation-duration: 5000ms;
   -webkit-transform-origin: 70% 70%;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-name: 'pulse_animation';
   -moz-animation-delay: 0s;
-  -moz-animation-duration: 2000ms;
+  -moz-animation-duration: 5000ms;
   -moz-transform-origin: 70% 70%;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
   animation-name: 'pulse_animation';
   animation-delay: 0s;
-  animation-duration: 2000ms;
-  transform-origin: 70% 70%;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.product-img:hover {
-  transform: rotate(90deg) scale(1);
-  -ms-transform: rotate(90deg) scale(1);
-  /* IE 9 */
-  -webkit-transform: rotate(90deg) scale(1);
-  /* Opera, Chrome, and Safari */
-  -webkit-animation-name: 'rotate_animation';
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 5000ms;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-name: 'rotate_animation';
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 5000ms;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  animation-name: 'rotate_animation';
-  animation-delay: 0s;
   animation-duration: 5000ms;
+  transform-origin: 70% 70%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -814,6 +787,10 @@ body {
   line-height: 200px;
   width: 200px;
 }
+.product-img img {
+  width: 100%;
+  height: 100%;
+}
 .thumbnail-sm-wrapper {
   margin: 0 auto;
   padding: 5px;
@@ -833,7 +810,7 @@ body {
   width: 100%;
 }
 .thumbnail-sm.active {
-  border: 1px solid #a3a3a3;
+  border-color: #a3a3a3;
 }
 #product-grid {
   position: relative;

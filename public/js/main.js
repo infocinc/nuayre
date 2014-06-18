@@ -52,10 +52,8 @@ function registerMediaCallbacks() {
     mediaSwitch = false;
 
     enquire.register("screen and (min-width:992px)", {
-        unmatch: function() {
-        },
-        match: function() {
-        }
+        unmatch: function() {},
+        match: function() {}
     });
 
     enquire.register("screen and (min-width:768px)", {
@@ -64,26 +62,25 @@ function registerMediaCallbacks() {
             mediaSwitch = true;
         },
 
-        match: function() {
-        }
+        match: function() {}
     });
 }
 
 function queryMediaState() {
-  var size = parseInt($('#media-state').css('font-size'),10);
-  var site_shape;
-  if (size === 1) {
-  	site_shape = "MOBILE";
-  } else if (size === 2) {
-  	site_shape = "TABLET-PORTRAIT";
-  } else if (size === 3) {
-  	site_shape = "TABLET-LANDSCAPE";
-  } else if (size === 4) {
-  	site_shape = "DESKTOP-LG";
-  } else {
-  	site_shape = "DESKTOP-WIDE";
-  }
-  return site_shape;
+    var size = parseInt($('#media-state').css('font-size'), 10);
+    var site_shape;
+    if (size === 1) {
+        site_shape = "MOBILE";
+    } else if (size === 2) {
+        site_shape = "TABLET-PORTRAIT";
+    } else if (size === 3) {
+        site_shape = "TABLET-LANDSCAPE";
+    } else if (size === 4) {
+        site_shape = "DESKTOP-LG";
+    } else {
+        site_shape = "DESKTOP-WIDE";
+    }
+    return site_shape;
 }
 ////////////////////////////////////////////////////////////////////////
 // Bar Graph
@@ -255,8 +252,7 @@ function registerScrollsTo() {
 // Mouser event registering
 /////////////////////////////////////////////////////////////////////////////
 
-function resize() {
-}
+function resize() {}
 
 
 function selectButton(sectionId, buttonId) {
@@ -280,31 +276,35 @@ function resizeHandlers() {
 }
 
 
-function transition(wrapper, alter) {
-    $(wrapper).fadeOut(function() {
+function transition(wrapper, alter, kind) {
+    if (kind === 'fade') {
+        $(wrapper).fadeOut(200,function() {
+            alter();
+        });
+        $(wrapper).fadeIn(200);
+    } else {
         alter();
-    });
-    $(wrapper).fadeIn();
+    }
 }
 
 function registerClickHandlers() {
-  $('.thumbnail-sm').on('click', function() {
-      var product = $(this).closest('.product-thumbnail');
-      var thumbSelected = $(this).children('img').attr('src');
-      var img = $(product).find('.product-img img');
-      
-      var replace = thumbSelected.split('_');
+    $('.thumbnail-sm').on('mouseover', function() {
+        var product = $(this).closest('.product-thumbnail');
+        var thumbSelected = $(this).children('img').attr('src');
+        var img = $(product).find('.product-img img');
 
-      $(product).find('.thumbnail-sm.active').removeClass('active');      
-      $(this).addClass('active');
+        var replace = thumbSelected.split('_');
 
-      var alter = function() {
-        $(img).attr('src', replace[0] + '_md.png');
+        $(product).find('.thumbnail-sm.active').removeClass('active');
+        $(this).addClass('active');
+
+        var alter = function() {
+            $(img).attr('src', replace[0] + '_big.png');
         };
 
-      transition($(product).children('.product-img'), alter);  
-//      $(big_img).children().attr('src',$(this).children('img').attr('src'));
-  });
+        transition($(product).children('.product-img'), alter);
+        //      $(big_img).children().attr('src',$(this).children('img').attr('src'));
+    });
 
 }
 /////////////////////////////////////////////////////////////////////
@@ -312,8 +312,7 @@ function registerClickHandlers() {
 //////////////////////////////////////////////////////////////////////
 
 
-function initWayPoints() {
-}
+function initWayPoints() {}
 
 
 
@@ -354,7 +353,7 @@ function display() {
 // on document ready... 
 $(function() {
     var callback = function() {
-            init();
+        init();
     };
     detectIE(callback);
 });
