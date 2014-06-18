@@ -1,0 +1,265 @@
+/*! Copyright 2014 CINC (www.infocinc.com)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+*/
+
+
+@import  "utils.less";
+@import  "bs_overrides.less";
+@import "fonts.less";
+/*@import  "navbar.less";
+@import  "modals.less";
+@import  "navigation.less";
+@import  "lists.less";
+@import  "preloader.less";
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// Boileplate Stylings 
+/////////////////////////////////////////////////////////////////////////////////////////////
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #888;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio, canvas, img, video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+// Additional html stylings
+///////////////////////////////////////////////////////////////////////////////////////////
+
+a {
+  text-decoration: none !important;
+}
+a, button
+{
+  -ms-touch-action: manipulation; /* IE10  */
+  touch-action: manipulation;     /* IE11+ */
+}
+
+a:visited {
+  color: #000 !important;
+}
+
+button {
+  padding: 0;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+html, body{
+// overflow-x: hidden !important;
+ position: relative;
+ z-index: 10;
+ width: 100% !important;
+ height: 100% !important;
+ margin: 0px !important;
+ padding: 0px !important;
+}
+
+img {
+  // For firefox
+ image-rendering:optimizeQuality !important; 
+}
+
+@-webkit-keyframes pulse_animation {
+  0% { -webkit-transform: scale(1); }
+  30% { -webkit-transform: scale(1); }
+  40% { -webkit-transform: scale(1.08); }
+  50% { -webkit-transform: scale(1); }
+  60% { -webkit-transform: scale(1); }
+  70% { -webkit-transform: scale(1.05); }
+  80% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+@-webkit-keyframes rotate_animation {
+  0% { -webkit-transform: rotate(0deg); }
+  10% { -webkit-transform: rotate(36deg); }
+  20% { -webkit-transform: rotate(72deg); }
+  30% { -webkit-transform: rotate(108deg); }
+  40% { -webkit-transform: rotate(144deg); }
+  50% { -webkit-transform: rotate(180deg); }
+  60% { -webkit-transform: rotate(216deg); }
+  70% { -webkit-transform: rotate(252deg); }
+  80% { -webkit-transform: rotate(288deg); }
+  90% { -webkit-transform: rotate(324deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+.pulse {
+  -webkit-animation-name: 'pulse_animation';
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 2000ms;
+  -webkit-transform-origin:70% 70%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+.rotate {
+  -webkit-animation-name: 'rotate_animation';
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 5000ms;
+//  -webkit-transform-origin:70% 70%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+
+#product-grid {
+  margin-top: 70px;
+  .product-thumbnail:last-child {
+    border-right: 1px solid #ebebeb;
+  }
+  .row:last-child .product-thumbnail {
+    border-bottom: 1px solid #ebebeb;
+  }
+}
+
+.product-thumbnail:hover {
+  border:1px solid @darkGray !important;
+}
+
+
+.product-thumbnail {
+  cursor: pointer;
+
+  padding: 20px;
+  border: 1px solid #ebebeb;
+  border-right: 0px solid #ebebeb;
+  border-bottom: 0px solid #ebebeb;
+}
+
+
+.product-img.pulseme:hover {
+  .pulse;
+}
+.product-img:hover {
+  .rotate;
+
+}
+
+body {
+  background: url(../img/stripe.png) #fff;
+}
+
+#main {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.9);
+  height: 100%;
+//  opacity: 0.9;
+}
+.demo {
+  font-family: "Lato", sans-serif;
+  font-size: 45px;
+  margin: 0;
+}
+
+.product-img {
+ cursor: pointer;
+  margin: 0 auto;
+  height: 200px;
+  line-height: 200px;
+  width: 200px;
+}
+
+.thumbnail-sm-wrapper {
+  margin: 0 auto;
+  padding: 5px;
+  width: 240px;
+  height: 50px;
+}
+
+.thumbnail-sm {
+  background: none;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #ebebeb;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  img {
+    width: 100%;
+  }
+}
+.thumbnail-sm.active {
+  border: 1px solid #a3a3a3;
+}
+
+#product-grid {
+  position: relative;
+  z-index: 15;
+  background: @white;
+  font-family: 'Dancing Script', cursive;
+  h1 {
+    font-size: 24px;
+  }
+}

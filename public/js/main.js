@@ -53,22 +53,8 @@ function registerMediaCallbacks() {
 
     enquire.register("screen and (min-width:992px)", {
         unmatch: function() {
-            graph.orientation = 'horizontal';
-            graph.update([Math.random() * 10, Math.random() * 10,
-                Math.random() * 10, Math.random() * 10,
-                Math.random() * 10, Math.random() * 10,
-                Math.random() * 10
-            ]);
-            CANVAS_RATIO = 0.5;
         },
         match: function() {
-            graph.orientation = 'vertical';
-            graph.update([Math.random() * 10, Math.random() * 10,
-                Math.random() * 10, Math.random() * 10,
-                Math.random() * 10, Math.random() * 10,
-                Math.random() * 10
-            ]);
-            CANVAS_RATIO = 0.62;
         }
     });
 
@@ -76,64 +62,9 @@ function registerMediaCallbacks() {
 
         unmatch: function() {
             mediaSwitch = true;
-            $("#phone_anchor").prop('href', 'tel:+14384966886');
-            $("#phone_anchor").removeAttr('data-target');
-            $("#phone_anchor").removeAttr('data-toggle');
-
-            // add no pointer to buttons. 
-            $('#services button,#screen-method button').removeClass('selected-button');
-            $('#services button,#screen-method button').css('cursor', 'default');
-            // stop carousels 
-            $.each(carousels, function(key, value) {
-                value.stop();
-            });
-
-            $('#screen-method button').unbind('click');
-            $('#services button').unbind('click');
-            $('#team button').unbind('click');
-            $('.services-click,.method-click,.team-click').unbind('click');
-            clearInterval(refreshIntervalId);
-            setBarGraph();
         },
 
         match: function() {
-        	 CANVAS_RATIO = 0.5;
-            $("#phone_anchor").prop('href', '#');
-            $("#phone_anchor").attr({
-                "data-target": '#telCinc',
-                "data-toggle": 'modal'
-            });
-
-            if (mediaSwitch) {
-                $.each(carousels, function(key, value) {
-                    if (typeof value !== "undefined") {
-                        value.start();
-                    }
-                });
-                clearInterval(refreshIntervalId);
-                setBarGraph();
-            }
-
-            $('#services button,#screen-method button').css('cursor', 'pointer');
-
-            $('#screen-method button').on('click', function() {
-                selectButton('screen-method', this);
-            });
-
-            $('#services button').on('click', function() {
-                selectButton('services', this);
-            });
-
-            $('#team button').on('click', function() {
-                selectButton('team', this);
-            });
-
-            $('.services-click,.method-click,.team-click').on('click', function(event) {
-                var targetId = event.target.id;
-                var sectionId = $(this).closest('.container-fluid').prop('id');
-                //    changeBgColor(sectionId,targetId);
-                showPanel(sectionId, targetId);
-            });
         }
     });
 }
@@ -158,62 +89,6 @@ function queryMediaState() {
 // Bar Graph
 ////////////////////////////////////////////////////////////////////////
 
-var graph, refreshIntervalId, graphCanvasId;
-
-function setBarGraphCtx(canvasId) {
-    var w, h;
-    var canvas = document.getElementById(canvasId);
-    graphCanvasId = canvasId;
-    if (typeof G_vmlCanvasManager != 'undefined') {
-        canvas = G_vmlCanvasManager.initElement(canvas);
-    }
-    var selector = '#' + canvasId;
-
-    if (canvasId === 'screen-canvas') {
-        w = 0.4 * $('#screen-services').width();
-        h = CANVAS_RATIO * $('#screen-services').height();
-    } else {
-        w = 0.8 * $('#services').width();
-        h = 200;
-    }
-
-    $(selector).attr({
-        width: w,
-        height: h
-
-    });
-    barGraphCtx = canvas.getContext("2d");
-}
-
-
-function createBarGraph() {
-    var lastOrientation = 'horizontal';
-
-    if (typeof graph !== "undefined" && graphCanvasId !== 'excel-canvas') {
-        lastOrientation = graph.orientation;
-    }
-
-    graph = new BarGraph(barGraphCtx);
-    graph.margin = 5;
-    graph.orientation = lastOrientation;
-    graph.width = barGraphCtx.canvas.width;
-    graph.height = barGraphCtx.canvas.height;
-
-    graph.xAxisLabelArr = ["A", "B", "C", "D", "E", "F", "G"];
-    graph.update([Math.random() * 10, Math.random() * 10,
-        Math.random() * 10, Math.random() * 10,
-        Math.random() * 10, Math.random() * 10,
-        Math.random() * 10
-    ]);
-
-    refreshIntervalId = setInterval(function() {
-        graph.update([Math.random() * 10, Math.random() * 10,
-            Math.random() * 10, Math.random() * 10,
-            Math.random() * 10, Math.random() * 10,
-            Math.random() * 10
-        ]);
-    }, 4000);
-}
 
 /////////////////////////////////////////////////////////////////////////////
 // Screen Panel Display 
@@ -289,17 +164,6 @@ function showPanel(sectionId, buttonId) {
 // Waypoints handlers
 //////////////////////////////////////////////////////////////////////
 
-var bannerTriggers = [
-    '#margin-top', '#services-banner',
-    '#method-banner', '#project-banner',
-    '#team-banner', '#social-ads'
-];
-
-var screenTriggers = [
-    '#margin-top', '#screen-services',
-    '#screen-method', '#screen-project',
-    '#screen-team'
-];
 
 
 function carouselHandler(direction) {
@@ -309,26 +173,6 @@ function carouselHandler(direction) {
     if (panelDisplay == 'none' && direction == "down" && carousels[waypoint] === undefined) {
         initCarousel(waypoint);
     }
-}
-
-function sizeIcons(format) {
-    var imgs = $('#social-icons img');
-    var tkn;
-    var modifier;
-
-    if (format === 'mini') {
-        tkn = '_';
-        modifier = 'mini';
-    } else {
-        tkn = 'mini_';
-        modifier = '';
-    }
-
-    $.each(imgs, function(k, v) {
-        src = $('#' + v.id).attr('src').split(tkn);
-        src = src[0] + modifier + '_150dpi.png';
-        $('#' + v.id).attr('src', src);
-    });
 }
 
 function navBarResizeHandler(direction) {
@@ -412,46 +256,8 @@ function registerScrollsTo() {
 /////////////////////////////////////////////////////////////////////////////
 
 function resize() {
-    // resize bubble canvas
-    var w = CANVAS_WIDTH = $('#bubbles-wrapper').width();
-    var h = CANVAS_HEIGHT = $('#bubbles-wrapper').height();
-
-    if (context.canvas.width !== CANVAS_WIDTH || context.canvas.height !== CANVAS_HEIGHT) {
-        context.canvas.width = CANVAS_WIDTH;
-        context.canvas.height = CANVAS_HEIGHT;
-        background.src = "../img/rainlong.jpg";
-    }
-
-    // resize bargraphcanvas 
-    if ($('#excel-text').css('display') === 'none') {
-        w = 0.4 * $('#screen-services').width();
-        h = CANVAS_RATIO * $('#screen-services').height();
-    } else {
-        w = 0.8 * $('#services').width();
-        h = 200;
-    }
-
-    if (barGraphCtx.canvas.width !== w || barGraphCtx.canvas.height !== h) {
-        barGraphCtx.canvas.width = w;
-        barGraphCtx.canvas.height = h;
-        graph.width = barGraphCtx.canvas.width;
-        graph.height = barGraphCtx.canvas.height;
-    }
-    setBannerHeight();
-    setTeamTextOffset();
-    centerScreenImg('#screen-services-visual', '#screen-services-text');
 }
 
-
-function centerScreenImg(visualId, refId) {
-    var refHeight = parseInt($(refId).css('height'),10);
-    var visualHeight = parseInt($(visualId).css('height'),10);
-    var delta = refHeight - visualHeight;
-
-    if (delta > 0) {
-     $(visualId).css('margin-top', delta*0.5 + 'px');
-   }
-}
 
 function selectButton(sectionId, buttonId) {
     var c = carousels[sectionId];
@@ -473,136 +279,50 @@ function resizeHandlers() {
     window.addEventListener('resize', resize, false);
 }
 
+
+function transition(wrapper, alter) {
+    $(wrapper).fadeOut(function() {
+        alter();
+    });
+    $(wrapper).fadeIn();
+}
+
+function registerClickHandlers() {
+  $('.thumbnail-sm').on('click', function() {
+      var product = $(this).closest('.product-thumbnail');
+      var thumbSelected = $(this).children('img').attr('src');
+      var img = $(product).find('.product-img img');
+      
+      var replace = thumbSelected.split('_');
+
+      $(product).find('.thumbnail-sm.active').removeClass('active');      
+      $(this).addClass('active');
+
+      var alter = function() {
+        $(img).attr('src', replace[0] + '_md.png');
+        };
+
+      transition($(product).children('.product-img'), alter);  
+//      $(big_img).children().attr('src',$(this).children('img').attr('src'));
+  });
+
+}
 /////////////////////////////////////////////////////////////////////
 //  Initialization
 //////////////////////////////////////////////////////////////////////
 
-function setBarGraph() {
-	var site_state = queryMediaState();
-	if (site_state === 'TABLET-PORTRAIT') {
-		CANVAS_RATIO = 0.5;
-	} else {
-		CANVAS_RATIO = 0.62;
-	}
-    if ($('#excel-photo').css('display') === 'none') {
-        setBarGraphCtx('screen-canvas');
-    } else {
-        setBarGraphCtx('excel-canvas');
-    }
-    createBarGraph();
-}
 
 function initWayPoints() {
-
-    $('#services,#screen-method').waypoint(carouselHandler, {
-        offset: '50%'
-    });
-
-    $('#team').waypoint(function(direction) {
-        var length = $('#screen-team-photo').html().trim().length;
-
-        if (direction === "down" && length === 0) {
-            showPanel('team', 'nic-button');
-        }
-    }, {
-        offset: '50%'
-    });
-
-    $('#services-banner').waypoint(navBarResizeHandler, {
-        offset: '50%'
-    });
-}
-
-function initDrops() {
-    // Global variables: 
-    REFRESH_RATE = 40;
-    t = 1; // current time step
-    MAX_BUBBLES = 90;
-    // Array storing all bubble objects 
-    background = new Image();
-
-    background.src = "../img/rainlong.jpg";
-
-    // Create canvas and context objects
-    canvas = document.getElementById('bubbles');
-
-    var selector = '#bubbles';
-    var w = $('#bubbles-wrapper').width();
-    var h = $('#bubbles-wrapper').height();
-
-    $(selector).attr({
-        width: w,
-        height: h
-    });
-
-    CANVAS_WIDTH = w;
-    CANVAS_HEIGHT = h;
-    context = canvas.getContext('2d');
-    context.drawImage(background, 0, 0);
-    // Call the draw() function at the specified refresh interval
-    bubbles = new Array(MAX_BUBBLES);
-    for (var i = 0; i < MAX_BUBBLES; i++) {
-        bubbles[i] = new Bubble();
-    }
-    setInterval(drawDrops, REFRESH_RATE);
 }
 
 
-function setBannerHeight() {
-    var banners = ['#services-banner', '#method-banner',
-        '#team-banner', '#project-banner'
-    ];
-    var bannerHeight = parseInt($('.banner').css('height'), 10);
-    var textHeight;
-    var selector;
-
-    for (var i = 0; i < banners.length; i++) {
-        selector = banners[i] + ' ' + '.row:first-child';
-        textHeight = parseInt($(selector).css('height'), 10);
-        selector = banners[i] + ' ' + '.v-long-line';
-        // subtract 30px from line height because of box preceding 
-        $(selector).css({
-            'height': (bannerHeight - textHeight - 30) + 'px'
-        });
-    }
-}
-
-function setTeamTextOffset() {
-
-    /*    var photoHeight = parseInt($('#screen-team-photo').css('height'), 10);
-    $('#screen-team-text p').css({
-        'margin-top': ((photoHeight) * 0.1) + 'px'
-    });
-*/
-}
-
-function setResponsiveLine(id) {
-    var offset = $(id).offset();
-    var windowHeight = $(window).height();
-    var boxHeight = parseInt($(id + ' a').css('height'), 10);
-
-    var delta = windowHeight - (offset.top + boxHeight);
-    if (delta > 0) {
-        $(id + ' .responsive-line').css({
-            'height': delta + 'px'
-        });
-    } else {
-        $(id + ' .responsive-line').css({
-            'height': '80px'
-        });
-    }
-}
 
 function init() {
-    setResponsiveLine('#main-nav-1');
-    setBannerHeight();
-    initSlider();
     initWayPoints();
     registerScrollsTo();
     resizeHandlers();
-    setBarGraph();
+    registerClickHandlers();
     registerMediaCallbacks();
-    initDrops();
     $('body').imagesLoaded(function() {
         display();
     });
@@ -634,9 +354,7 @@ function display() {
 // on document ready... 
 $(function() {
     var callback = function() {
-        $('#screen-canvas-wrapper').fadeOut(function() {
             init();
-        });
-    }
+    };
     detectIE(callback);
 });

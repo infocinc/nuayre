@@ -72,7 +72,7 @@
 
 
 /////////////////////////////////////////////////
-// TRANSFORMS
+// TRANSFORMS & TRANSITIONS
 /////////////////////////////////////////////////
 
 .rotate(@theta: 90deg, @zoom: 1)
@@ -94,9 +94,25 @@
   .rotate(225deg);
 }
 
+
+.transition(@target, @delay:500ms, @easing:ease, @duration:0s) {
+  -webkit-transition: @target @delay @easing @delay;
+  -moz-transition: @target @delay @easing @delay;
+  -o-transition: @target @delay @easing @delay;
+  transition: @target @delay @easing @delay;  
+}
+
 ////////////////////////////////////////////////
 // FOMRAT DISPLAY & ALIGNMENT
 ////////////////////////////////////////////////
+
+.topleft-shift(@top:0, @left:0%) {
+  position:relative;
+  top: @top;
+  left: @left;
+}
+
+
 .float-left {
     float: left;
 }
@@ -154,6 +170,13 @@
 @purple: #8e44ad;
 @midnight: #141c26;
 
+.darkGray {
+  color: @darkGray !important;
+}
+
+.lightGray {
+  color: @lightGray !important;
+}
 .white {
   color: @white !important;
 }
@@ -286,5 +309,88 @@
 }
 .h-js-line {
   .line(@length:0px, @lineType:top);
+}
+
+////////////////////////////////////////////////////////////////
+// FRAMES
+////////////////////////////////////////////////////////////////
+
+.thumbnail(@radius, @width, @height) {
+  position: relative;
+  margin: 0 auto;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  width: @width;
+  height: @height;
+}
+
+.paperbox(@width:95%, @max-width:1807px, @bgcolor:@white) {
+  position: relative;
+  width: @width;
+  max-width: @max-width;
+  background-color: @bgcolor;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+//////////////////////////////////////////////////////////////////
+// SLIDER 
+//////////////////////////////////////////////////////////////////
+
+.slide {
+  position:absolute;
+  padding: 2px;
+  width: 100%;
+}
+
+//////////////////////////////////////////////////////////////////
+// CENTERING 
+//////////////////////////////////////////////////////////////////
+
+.text-center {
+  text-align: center;
+}
+.vmiddle-before {
+  content:'';
+  height: 100%;
+  margin-left: -0.5em;
+  display: inline-block;
+  vertical-align: middle; 
+}
+
+.vmiddle-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  width:100%;
+  margin: 0 auto !important;
+  position:relative;
+}
+
+///////////////////////////////////////////////////////////////////
+// CANVAS WRAPPERS
+///////////////////////////////////////////////////////////////////
+
+.canvas-wrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+///////////////////////////////////////////////////////////////////
+// old ie 
+///////////////////////////////////////////////////////////////////
+
+ .oldie(@img:'..img/oldcomputer.jpg') {
+    margin: 0.2em 0;
+    background: url(@img) no-repeat center center;
+    height: 100%;
+    color: #000;
+    padding: 0.2em 0;
+    font-size:16px;
 }
 

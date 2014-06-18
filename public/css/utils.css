@@ -124,6 +124,12 @@
   border: 1px solid;
   border-radius: 5px;
 }
+.darkGray {
+  color: #656565 !important;
+}
+.lightGray {
+  color: #f2f4f7 !important;
+}
 .white {
   color: #ffffff !important;
 }
@@ -225,4 +231,33 @@
   margin-right: 0px;
   margin-left: 0px;
   border: 1px solid;
+}
+.slide {
+  position: absolute;
+  padding: 2px;
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.vmiddle-before {
+  content: '';
+  height: 100%;
+  margin-left: -0.5em;
+  display: inline-block;
+  vertical-align: middle;
+}
+.vmiddle-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  margin: 0 auto !important;
+  position: relative;
+}
+.canvas-wrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
 }
