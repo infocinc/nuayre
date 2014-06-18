@@ -3,7 +3,7 @@ var express = require('express'),
 
 app.use(express.logger());
 
-var title = '';
+var title = 'ITI Product Demo';
 
 app.set('title', title);
 
