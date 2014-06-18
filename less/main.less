@@ -139,6 +139,27 @@ img {
   100% { -webkit-transform: scale(1); }
 }
 
+@-moz-keyframes pulse_animation {
+  0% { -moz-transform: scale(1); }
+  30% { -moz-transform: scale(1); }
+  40% { -moz-transform: scale(1.08); }
+  50% { -moz-transform: scale(1); }
+  60% { -moz-transform: scale(1); }
+  70% { -moz-transform: scale(1.05); }
+  80% { -moz-transform: scale(1); }
+  100% { -moz-transform: scale(1); }
+}
+@keyframes pulse_animation {
+  0% { -transform: scale(1); }
+  30% { -transform: scale(1); }
+  40% { -transform: scale(1.08); }
+  50% { -transform: scale(1); }
+  60% { -transform: scale(1); }
+  70% { -transform: scale(1.05); }
+  80% { -transform: scale(1); }
+  100% { -transform: scale(1); }
+}
+
 @-webkit-keyframes rotate_animation {
   0% { -webkit-transform: rotate(0deg); }
   10% { -webkit-transform: rotate(36deg); }
@@ -152,6 +173,32 @@ img {
   90% { -webkit-transform: rotate(324deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
+@-moz-keyframes rotate_animation {
+  0% { -moz-transform: rotate(0deg); }
+  10% { -moz-transform: rotate(36deg); }
+  20% { -moz-transform: rotate(72deg); }
+  30% { -moz-transform: rotate(108deg); }
+  40% { -moz-transform: rotate(144deg); }
+  50% { -moz-transform: rotate(180deg); }
+  60% { -moz-transform: rotate(216deg); }
+  70% { -moz-transform: rotate(252deg); }
+  80% { -moz-transform: rotate(288deg); }
+  90% { -moz-transform: rotate(324deg); }
+  100% { -moz-transform: rotate(360deg); }
+}
+@keyframes rotate_animation {
+  0% { -transform: rotate(0deg); }
+  10% { -transform: rotate(36deg); }
+  20% { -transform: rotate(72deg); }
+  30% { -transform: rotate(108deg); }
+  40% { -transform: rotate(144deg); }
+  50% { -transform: rotate(180deg); }
+  60% { -transform: rotate(216deg); }
+  70% { -transform: rotate(252deg); }
+  80% { -transform: rotate(288deg); }
+  90% { -transform: rotate(324deg); }
+  100% { -transform: rotate(360deg); }
+}
 
 .pulse {
   -webkit-animation-name: 'pulse_animation';
@@ -160,15 +207,37 @@ img {
   -webkit-transform-origin:70% 70%;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
+  -moz-animation-name: 'pulse_animation';
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 2000ms;
+  -moz-transform-origin:70% 70%;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  animation-name: 'pulse_animation';
+  animation-delay: 0s;
+  animation-duration: 2000ms;
+  transform-origin:70% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+   
 }
 
 .rotate {
   -webkit-animation-name: 'rotate_animation';
   -webkit-animation-delay: 0s;
   -webkit-animation-duration: 5000ms;
-//  -webkit-transform-origin:70% 70%;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
+  -moz-animation-name: 'rotate_animation';
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 5000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  animation-name: 'rotate_animation';
+  animation-delay: 0s;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 
@@ -214,7 +283,6 @@ body {
   position: relative;
   z-index: 1;
   background: rgba(255,255,255,0.9);
-  height: 100%;
 //  opacity: 0.9;
 }
 .demo {
