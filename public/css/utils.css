@@ -1,0 +1,228 @@
+/*! Copyright 2014 CINC (www.infocinc.com)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+*/
+/*/////////////////////////////////////////
+// MEDIA UTILS
+//////////////////////////////////////////*/
+.media-state {
+  color: #000;
+  font-size: 1px;
+}
+@media screen and (min-width: 768px) {
+  .media-state {
+    font-size: 2px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .media-state {
+    font-size: 3px;
+  }
+}
+@media screen and (min-width: 1200px) and (min-height: 900px) {
+  .media-state {
+    font-size: 4px;
+  }
+}
+@media screen and (min-width: 1600px) and (min-height: 900px) {
+  .media-state {
+    font-size: 5px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .desktop-hide {
+    display: none;
+  }
+}
+.mobile-hide {
+  display: none ;
+}
+@media screen and (min-width: 768px) {
+  .mobile-hide {
+    display: block;
+  }
+}
+.portrait-hide {
+  display: none ;
+}
+@media screen and (min-width: 992px) {
+  .portrait-hide {
+    display: block;
+  }
+}
+@media screen and (min-width: 992px) {
+  .landscape-hide {
+    display: none;
+  }
+}
+.tablet-hide {
+  display: none ;
+}
+@media screen and (min-width: 1200px) {
+  .tablet-hide {
+    display: block;
+  }
+}
+.rotate-45 {
+  transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg) scale(1);
+  /* Opera, Chrome, and Safari */
+}
+.rotate-90 {
+  transform: rotate(90deg) scale(1);
+  -ms-transform: rotate(90deg) scale(1);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg) scale(1);
+  /* Opera, Chrome, and Safari */
+}
+.rotate-225 {
+  transform: rotate(225deg) scale(1);
+  -ms-transform: rotate(225deg) scale(1);
+  /* IE 9 */
+  -webkit-transform: rotate(225deg) scale(1);
+  /* Opera, Chrome, and Safari */
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.hide {
+  display: none;
+}
+.invisible {
+  opacity: 0;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.nostyle {
+  list-style: none;
+}
+.center {
+  margin: 0 auto;
+}
+.border {
+  border: 1px solid;
+  border-radius: 5px;
+}
+.white {
+  color: #ffffff !important;
+}
+.midnight {
+  color: #141c26 !important;
+}
+.blue {
+  color: #2980b9 !important;
+}
+.darkblue {
+  color: #354774 !important;
+}
+.red {
+  color: #c0392b !important;
+}
+.green {
+  color: #27ae60 !important;
+}
+.purple {
+  color: #8e44ad !important;
+}
+.orange {
+  color: #f39c12 !important;
+}
+.background-lightGray {
+  background: #f2f4f7 !important;
+}
+.background-lightGray-2 {
+  background: #f8f9fb !important;
+}
+.background-black {
+  background: #000 !important;
+}
+.background-dark {
+  background: #262626 !important;
+}
+.background-red {
+  background: #c0392b !important;
+}
+.background-blue {
+  background: #2980b9 !important;
+}
+.background-orange {
+  background: #f39c12 !important;
+}
+.background-purple {
+  background: #8e44ad !important;
+}
+.background-green {
+  background: #27ae60 !important;
+}
+.background-midnight {
+  background: #141c26 !important;
+}
+.h-line {
+  display: inline-block;
+  vertical-align: top;
+  height: 1px;
+  width: 30px;
+  margin-right: 0px;
+  margin-left: 0px;
+  border: 1px solid;
+}
+.v-sm-line {
+  display: inline-block;
+  vertical-align: top;
+  width: 1px;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-right: 1px solid;
+  height: 50px;
+}
+.v-md-line {
+  display: inline-block;
+  vertical-align: top;
+  width: 1px;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-right: 1px solid;
+  height: 80px;
+}
+.v-js-line {
+  display: inline-block;
+  vertical-align: top;
+  width: 1px;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-right: 1px solid;
+  height: 0px;
+}
+.h-js-line {
+  display: inline-block;
+  vertical-align: top;
+  height: 1px;
+  width: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  border: 1px solid;
+}

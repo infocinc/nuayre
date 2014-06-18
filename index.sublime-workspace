@@ -1,0 +1,983 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"CAN",
+				"CANVAS_RATIO"
+			],
+			[
+				"query",
+				"queryMediaState"
+			],
+			[
+				"CANVAS",
+				"CANVAS_RATIO"
+			],
+			[
+				"ref",
+				"refHeight"
+			],
+			[
+				"screen-servic",
+				"screen-services-visual"
+			],
+			[
+				"screen",
+				"screen-services-text"
+			],
+			[
+				"screen-ser",
+				"screen-services-visual"
+			],
+			[
+				"set",
+				"setTeamTextOffset"
+			],
+			[
+				"iti",
+				"itilogo_100dpi"
+			],
+			[
+				"back",
+				"background-size"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"nav",
+				"nav-item"
+			],
+			[
+				"so",
+				"social-icons"
+			],
+			[
+				"graph",
+				"graphCanvasId"
+			],
+			[
+				"setBar",
+				"setBarGraph"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"ovr",
+				"overflow-x"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"viewport",
+				"viewportHeight"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"viewpor",
+				"viewportHeight"
+			],
+			[
+				"bar",
+				"barGraphCtx"
+			],
+			[
+				"CANV",
+				"CANVAS_HEIGHT"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"project-",
+				"project-screen"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"col-xs-offs",
+				"col-xs-offset-4	BootstrapClass"
+			],
+			[
+				"CANVAs",
+				"CANVAS_HEIGHT"
+			],
+			[
+				"CANVAS_",
+				"CANVAS_HEIGHT"
+			],
+			[
+				"large",
+				"largestValue"
+			],
+			[
+				"Bertrand",
+				"Bertrand@infocinc"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"sel",
+				"selector	jQueryDeprecated"
+			],
+			[
+				"scree",
+				"screenSelector"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"col-sm-off",
+				"col-sm-offset-2	BootstrapClass"
+			],
+			[
+				"border-",
+				"border-radius"
+			],
+			[
+				"col-lg-",
+				"col-lg-pull-2	BootstrapClass"
+			],
+			[
+				"col-lg-5",
+				"col-lg-pull-5	BootstrapClass"
+			],
+			[
+				"eve",
+				"preventDefault	jQueryEvent"
+			],
+			[
+				"pre",
+				"preventDefault	jQueryEvent"
+			],
+			[
+				"col-md-off",
+				"col-md-offset-4	BootstrapClass"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"col-md-of",
+				"col-md-offset-1	BootstrapClass"
+			],
+			[
+				"col-md-",
+				"col-md-5	BootstrapClass"
+			],
+			[
+				"col-md",
+				"col-md-5	BootstrapClass"
+			],
+			[
+				"list-group",
+				"list-group-item	BootstrapClass"
+			],
+			[
+				"icon-ali",
+				"icon-align-right	BootstrapClass"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"way",
+				"waypointTriggers"
+			],
+			[
+				"col-xs-of",
+				"col-xs-offset-5	BootstrapClass"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"remo",
+				"removeClass	jQuery"
+			],
+			[
+				"bo",
+				"box-shadow"
+			],
+			[
+				"remove",
+				"removeAttr	jQuery"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"floa",
+				"float:left"
+			],
+			[
+				"Skye",
+				"SkypeButton_Call_popodov_1"
+			],
+			[
+				"Skype",
+				"SkypeButton_Call_popodov_1"
+			],
+			[
+				"padding-",
+				"padding-left"
+			],
+			[
+				"list",
+				"list-group-item	BootstrapClass"
+			],
+			[
+				"panel",
+				"panel-heading	BootstrapClass"
+			],
+			[
+				"list-goru",
+				"list-group-item	BootstrapClass"
+			],
+			[
+				"list-",
+				"list-group-item	BootstrapClass"
+			],
+			[
+				"col-xs-off",
+				"col-xs-offset-5	BootstrapClass"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"ssati",
+				"satisfaction"
+			],
+			[
+				"effectu",
+				"effectuees"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"an",
+				"subpixel-antialiased"
+			],
+			[
+				"navbar",
+				"navbar-toggle	BootstrapClass"
+			],
+			[
+				"b",
+				"button"
+			],
+			[
+				"screen-l",
+				"screen-lg-min"
+			],
+			[
+				"screen-md",
+				"screen-md-min"
+			],
+			[
+				"screen-s",
+				"screen-sm-min"
+			],
+			[
+				"screen-xs",
+				"screen-xs-min"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"paddnig",
+				"padding-bottom"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"p",
+				"padding-bottom"
+			],
+			[
+				"background",
+				"background-image"
+			],
+			[
+				"get",
+				"getDate  (function)"
+			],
+			[
+				"getMi",
+				"getMinutes  (function)"
+			],
+			[
+				"moz",
+				"moz-box-sizing"
+			],
+			[
+				"r",
+				"no-repeat"
+			],
+			[
+				"rep",
+				"repeat-x"
+			],
+			[
+				"backgroun",
+				"background-repeat"
+			],
+			[
+				"moz-bo",
+				"-moz-box-align:   (property)"
+			],
+			[
+				"tabl",
+				"table-row"
+			],
+			[
+				"uk-p",
+				"uk-panel-box 	UIkit class"
+			],
+			[
+				"uk-panel",
+				"uk-panel-title 	UIkit class"
+			],
+			[
+				"uk-navbar-",
+				"uk-navbar-flip 	UIkit class"
+			],
+			[
+				"uk-na",
+				"uk-navbar 	UIkit class"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 6020,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: git",
+				"Package Control: Upgrade/Overwrite All Packages"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 478.0,
+		"history":
+		[
+			"git",
+			"npm",
+			"javac",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/Sandbox/DocteurQuantum/public/css/main.css",
+		"/E/Sandbox/DocteurQuantum/less/lists.less",
+		"/E/Sandbox/DocteurQuantum/less/preloader.less",
+		"/E/Sandbox/DocteurQuantum/less/bs_overrides.less",
+		"/E/Sandbox/DocteurQuantum/public/js/main.js",
+		"/E/Sandbox/DocteurQuantum/public/js/plugins.js",
+		"/E/Sandbox/DocteurQuantum/less/variables.less",
+		"/E/Sandbox/DocteurQuantum/less/navbar.less",
+		"/E/Sandbox/DocteurQuantum/less/utils.less",
+		"/E/Sandbox/DocteurQuantum/less/main.less",
+		"/E/Sandbox/DocteurQuantum/less/modals.less",
+		"/E/Sandbox/DocteurQuantum/index.html",
+		"/E/Sandbox/DocteurQuantum/server.js",
+		"/E/Sandbox/DocteurQuantum/scratchjs",
+		"/E/Sandbox/DocteurQuantum/scratchpad.html",
+		"/E/Sandbox/DocteurQuantum/humans.txt",
+		"/E/Sandbox/DocteurQuantum/package.json",
+		"/E/Sandbox/DocteurQuantum/503.html",
+		"/E/Sandbox/DocteurQuantum/server-local.js",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/User/less2css.sublime-settings",
+		"/E/Sandbox/DocteurQuantum/public/js/vendor/scrollTo.js",
+		"/E/Sandbox/DocteurQuantum/less/navigation.less",
+		"/E/Sandbox/DocteurQuantum/public/css/preloader.css",
+		"/E/Sandbox/DocteurQuantum/public/js/vendor/barGraph.js",
+		"/C/Users/nic/Desktop/HD Tune.lnk",
+		"/E/Sandbox/DocteurQuantum/public/js/vendor/excanvas.js",
+		"/E/Sandbox/DocteurQuantum/public/js/bootstrap.js",
+		"/E/Sandbox/DocteurQuantum/less/responsive.less",
+		"/E/Sandbox/DocteurQuantum/less/scratchpad.less",
+		"/E/Sandbox/DocteurQuantum/less/fonts.less",
+		"/E/Sandbox/DocteurQuantum/less/_main.less",
+		"/E/Sandbox/DocteurQuantum/less/videos.less",
+		"/E/plugins/bubbles/index.php",
+		"/E/Sandbox/DocteurQuantum/less/scratchpad.css",
+		"/E/Sandbox/DocteurQuantum/less/video.less",
+		"/E/Sandbox/DocteurQuantum/less/main.old.less",
+		"/E/Sandbox/homepage/less/utils.less",
+		"/E/Sandbox/homepage/less/modals.less",
+		"/E/Sandbox/homepage/css/main.css",
+		"/E/Sandbox/homepage/less/variables.less",
+		"/E/Sandbox/homepage/less/navigation.less",
+		"/E/Sandbox/homepage/less/fonts.less",
+		"/E/Sandbox/homepage/less/lists.less",
+		"/E/Sandbox/homepage/js/plugins.js",
+		"/E/Sandbox/homepage/less/bs_overrides.less",
+		"/E/Sandbox/homepage/less/main.less",
+		"/E/Sandbox/homepage/js/vendor/scrollTo.js",
+		"/C/Users/nic/Documents/GitHub/homepage/server.js",
+		"/E/Sandbox/homepage/index.html",
+		"/E/Sandbox/homepage/less/videos.less",
+		"/E/Sandbox/homepage/less/gmap.less",
+		"/E/Sandbox/homepage/css/main_v2.css",
+		"/E/Sandbox/homepage/less/scratchpad.less",
+		"/E/Sandbox/homepage/less/main_v2.less",
+		"/E/Sandbox/homepage/less/ticker.less",
+		"/E/Sandbox/homepage/less/boilerplate.css",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/E/Sandbox/homepage/less/less/variables.less",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/Default (Windows).sublime-keymap",
+		"/E/Sandbox/homepage/less/less/grid.less",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/User/sublime-API-Completions-Package.sublime-settings",
+		"/E/Sandbox/homepage/css/main.min.css",
+		"/E/Sandbox/homepage/js/plugins.min.js",
+		"/E/Sandbox/homepage/css/normalize.css",
+		"/E/Sandbox/homepage/js/vendor/plugin.min.js",
+		"/E/Sandbox/homepage/js/plugin.min.js",
+		"/E/Sandbox/homepage/bootstrap/css/bootstrap.css",
+		"/E/Sandbox/homepage/css/uikit.css",
+		"/E/Sandbox/homepage/css/quant.css",
+		"/E/Sandbox/homepage/css/_main.css",
+		"/E/Sandbox/homepage/less/test.less",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/Less2Css/README.md",
+		"/E/Sandbox/homepage/css/test.css",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/LESS/README.md",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/User/LESS.sublime-settings",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/LESS/LESS.sublime-settings",
+		"/E/Sandbox/homepage/503.html",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Installed Packages/Less2Css.sublime-package",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/View In Browser/View In Browser.sublime-settings",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/E/Sandbox/homepage/img/treecircuit.svgz",
+		"/E/Sandbox/homepage/css/foundation.css",
+		"/E/Sandbox/homepage/css/semantic.css",
+		"/E/Sandbox/homepage/LICENSE.md",
+		"/E/Sandbox/homepage/README.md",
+		"/E/Sandbox/homepage/humans.txt",
+		"/E/uikit-2.6.0/css/uikit.min.css",
+		"/C/Users/nic/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/E/Sandbox/HelloWorld/HelloWorld.java",
+		"/C/Users/nic/Downloads/nacl_sdk/nacl_sdk/pepper_33/getting_started/part1/index.html",
+		"/C/Users/nic/Downloads/nacl_sdk/nacl_sdk/pepper_33/getting_started/part1/hello_tutorial.cc",
+		"/E/Downloads/type-safe-activator/activator-1.0.13/home-play/conf/application.conf",
+		"/E/Nuance/OmniPage Cloud Service SDK/JAVA/JiBX REST API/src/com/nuance/dcs/schemas/conversionservice/ArrayOfFileDescription.java"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"E:\\Sandbox\\homepage\\less\\less"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"#screen-project .project",
+			"screen-project .project",
+			"screen-project project",
+			"rainlong",
+			"box",
+			"rain",
+			"@media screen and (min-width:@screen-lg-min)",
+			"@media screen and (min-width:@screen-wide-min)",
+			"@media screen and (min-width:@screen-lg-min)",
+			"@media screen and (min-width:@screen-wide-min)",
+			"@media screen and (min-width:@screen-lg-min)",
+			"social-text",
+			"min",
+			"facebook-logo",
+			"responsive-line",
+			"email-icon",
+			";\n",
+			"col-xs-2",
+			"loader",
+			"Open Sans",
+			"button",
+			"footer-nav-anchor",
+			"png",
+			"prefix",
+			"hashTag",
+			"0",
+			"bubbles-wrapper",
+			"h6",
+			"h5",
+			"#top",
+			"thumbnail",
+			".slide-box span",
+			"slide",
+			"each",
+			"button",
+			"http",
+			"url",
+			"canvas",
+			"screen-method canvas",
+			"screen-method",
+			"button",
+			"main-nav-1",
+			"contact-type",
+			"screen-services",
+			"panel",
+			"separator",
+			"screen-team",
+			"scream-team",
+			"bubbles",
+			"method",
+			"box",
+			"service-hide",
+			"service-display",
+			"service-icons",
+			";\n",
+			".modal-header",
+			"G_vmlCanvasManager",
+			"separator",
+			"box-shad",
+			"photo-img",
+			"slide",
+			"glass",
+			"banner",
+			"main-nav-1",
+			"#main-nav-1",
+			"main-nav-1",
+			"execute.png",
+			"// ",
+			"services",
+			"section-headings",
+			".banner",
+			"service-desc",
+			"section-heading",
+			"video",
+			"banner",
+			"video",
+			"banner",
+			"}\n",
+			"center",
+			"table",
+			"tabe",
+			"img-profile",
+			"top",
+			"5px",
+			"%;",
+			"sidebar",
+			"footer_top",
+			"service-click",
+			"apropos",
+			"apropos_top",
+			"apropos",
+			";\n",
+			"method",
+			"box-shadow",
+			"</span>",
+			"-webkit-transition",
+			"panel-collapse",
+			"collapse",
+			"col-sm-6",
+			"col-md-offset-1",
+			"col-md-5",
+			"col-md-offset-5",
+			"@{prop}",
+			"%",
+			"video-anchor",
+			"collapse",
+			"services_box",
+			"service_box",
+			"video_iframe",
+			"video_page",
+			"p ",
+			"p",
+			"h5",
+			"h6",
+			"h5",
+			"h4",
+			"h3",
+			"h2",
+			"h1",
+			"@red",
+			"modal",
+			"panel-heading",
+			"panel_heading",
+			"service_icons",
+			"services_desc",
+			"class=\" \"",
+			"service_box",
+			"service_click"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"@media screen and (min-width:@screen-wide-min) and (min-height:@screen-height-wide)",
+			"@media screen and (min-width:@screen-lg-min) and (min-height:@screen-height-wide)",
+			"jpg",
+			"services-click",
+			"team",
+			" </span>",
+			"col-sm-5",
+			"col-sm-offset-1",
+			"col-sm-5",
+			"font-size",
+			"",
+			"video-iframe",
+			"video-page",
+			"",
+			"#video-anchor",
+			" </span>",
+			",",
+			" </span>",
+			"24",
+			"30",
+			"a data-toggle=\"collpase\" data-parent=\"#performance\" href=\"collapseThree\" class=\"service_box service_click\"",
+			"",
+			"service_box",
+			"",
+			" </span> ",
+			" <\\span> ",
+			"<\\span> ",
+			"</span> ",
+			"col-xs",
+			"min-width: 213px",
+			"min-width: 248px",
+			"Archivo Narro",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6020,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								787,
+								787
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 206.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

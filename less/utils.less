@@ -1,0 +1,290 @@
+/*! Copyright 2014 CINC (www.infocinc.com)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+*/
+
+@import (reference) "variables.less";
+
+/*/////////////////////////////////////////
+// MEDIA UTILS
+//////////////////////////////////////////*/
+
+// to use with js 
+.media-state {
+  color: #000;
+  font-size: 1px;
+  @media screen and (min-width:@screen-sm-min) {
+    font-size: 2px;
+  }
+ @media screen and (min-width:@screen-md-min) {
+   font-size: 3px;
+  }
+  @media screen and (min-width:@screen-lg-min) and (min-height:@screen-height-wide) {
+    font-size: 4px;
+  }
+  @media screen and (min-width:@screen-wide-min) and (min-height:@screen-height-wide) {
+    font-size: 5px;
+  }
+}
+
+.desktop-hide {
+ @media screen and (min-width: @screen-sm-min) {
+   display: none;
+ }
+}
+
+.mobile-hide {
+  display: none ;
+  @media screen and (min-width: @screen-sm-min) {
+    display:block;
+  }
+}
+
+.portrait-hide {
+  display: none ;
+  @media screen and (min-width: @screen-md-min) {
+    display: block;
+  }  
+}
+
+.landscape-hide {
+  @media screen and (min-width: @screen-md-min) {
+    display: none;
+  } 
+}
+
+.tablet-hide {
+  display: none ;
+  @media screen and (min-width: @screen-lg-min) {
+    display: block;
+  }
+}
+
+
+/////////////////////////////////////////////////
+// TRANSFORMS
+/////////////////////////////////////////////////
+
+.rotate(@theta: 90deg, @zoom: 1)
+{
+  transform:rotate(@theta) scale(@zoom);
+ -ms-transform:rotate(@theta) scale(@zoom); /* IE 9 */
+ -webkit-transform:rotate(@theta) scale(@zoom); /* Opera, Chrome, and Safari */
+}
+
+.rotate-45 {
+  .rotate(45deg);
+}
+
+.rotate-90 {
+  .rotate;
+}
+
+.rotate-225 {
+  .rotate(225deg);
+}
+
+////////////////////////////////////////////////
+// FOMRAT DISPLAY & ALIGNMENT
+////////////////////////////////////////////////
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+
+.hide {
+  display:none
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.clearfix {
+    &:before, &:after {
+        content:" ";
+        display: table;
+    }
+    &:after {
+        clear:both
+    }
+}
+
+.nostyle {
+    list-style: none;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.border {
+    border:1px solid;
+    border-radius: 5px;
+}
+
+//////////////////////////////////////////////////////////////
+// COLORS
+//////////////////////////////////////////////////////////////
+@white: #fff;
+@black: #000;
+@lightGray: #f2f4f7;
+@lightGray-2: #F8F9FB;
+@dark: #262626;
+@darkGray: #656565;
+@blue: #2980B9;
+@darkBlue: #354774;
+@green: #27AE60;
+@red: #c0392b;
+@orange: #f39c12;
+@yellow: #E5C454;
+@white-2: #f2f4f7;
+@purple: #8e44ad;
+@midnight: #141c26;
+
+.white {
+  color: @white !important;
+}
+
+.midnight {
+  color: @midnight !important;
+}
+
+.blue {
+    color:@blue !important;
+}
+.darkblue {
+  color: @darkBlue !important;
+}
+.red {
+    color:@red !important;
+}
+
+.green {
+    color:@green !important;
+}
+
+.purple {
+    color:@purple !important;
+}
+
+.orange {
+    color:@orange !important;
+}
+
+///////////////////////////////////////////////////////////////
+// BG COLORS & GRADIENT
+///////////////////////////////////////////////////////////////
+
+.background {
+    &-lightGray {
+      background: @lightGray !important
+    }
+  &-lightGray-2 {
+      background: @lightGray-2 !important
+    }
+    &-black {
+      background: #000 !important;
+    }
+    &-dark {
+        background: @dark !important;
+    }
+
+    &-red {
+        background: @red !important;
+    }
+    &-blue {
+        background: @blue !important;
+    }
+
+    &-orange {
+        background: @orange !important;
+    }
+
+    &-purple {
+        background: @purple !important;
+    }
+
+    &-green {
+        background: @green !important;
+    }
+
+    &-midnight {
+        background: @midnight !important;
+    }
+}
+
+.gradient(@stop1, @color1, @stop2, @color2) {
+      background: @color1; // fallback 
+
+      @stop1-pct:  convert(@stop1, "pc"); 
+      @stop2-pct : convert(@stop2, "pc");
+
+      background-image: -o-linear-gradient(right bottom, @color1 @stop1-pct, @color2 @stop2-pct);
+      background-image: -moz-linear-gradient(right bottom, @color1 @stop1-pct, @color2 @stop2-pct);
+      background-image: -webkit-linear-gradient(right bottom, @color1 @stop1-pct, @color2 @stop2-pct);
+      background-image: -ms-linear-gradient(right bottom, @color1 @stop1-pct, @color2 @stop2-pct);
+      background-image: linear-gradient(to right bottom, @color1 @stop1-pct, @color2 @stop2-pct);
+}
+
+//////////////////////////////////////////////////////////////
+// DRAWING
+//////////////////////////////////////////////////////////////
+
+
+.line(@length: 50px, @margin-x :20px, @margin-y: 0px, @lineType) {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.line(@length: 50px, @margin-x : 0px, @margin-y: 0px, @lineType) 
+  when (@lineType = right) {
+  width:1px;
+  margin: 0 auto;
+  margin-top: @margin-x;
+  margin-bottom: @margin-y;
+  border-@{lineType}: 1px solid;
+  height: @length;
+}
+
+.line(@length: 50px, @margin-x: 0px, @margin-y: 0px, @lineType) 
+ when (@lineType = top) {
+  height:1px;
+  width: @length;
+  margin-right: @margin-x;
+  margin-left: @margin-y;
+  border: 1px solid;
+}
+
+
+.h-line {
+   .line(30px,0px,0px,top);
+}
+
+.v-sm-line {
+  .line(@length:50px,@lineType:right)
+}
+
+.v-md-line {
+  .line(@length:80px,@lineType:right)
+}
+
+.v-js-line {
+  .line(@length:0px, @lineType:right);
+}
+.h-js-line {
+  .line(@length:0px, @lineType:top);
+}
+
