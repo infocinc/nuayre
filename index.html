@@ -25,10 +25,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title></title>
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="" />
-    <!--     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans+Condensed:300|Lato:900|Dancing+Script|Marck+Script" />
- -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Playfair+Display" />
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -64,7 +63,7 @@
 
     <!-- Loader icon !-->
 
-    <div id='main'>
+    <div id='main' class='invisible'>
         <div id="fb-root"></div>
         <script>
         (function(d, s, id) {
@@ -77,17 +76,88 @@
         }(document, 'script', 'facebook-jssdk'));
         </script>
 
-        <h1 class="text-center demo"> ITI BIOTECH PRODUCT DEMO </h1>
 
+
+
+
+
+        <div id="navbar">
+
+            <div id="logos"  >
+                <img id='itilogo' src="img/itilogo.png" >
+                <img id='ecolog' src="img/ecologo.png" >
+            </div>
+
+            <div id='store-bar' class="nav-item clearfix container-fluid">
+                <h2 class="float-left"><a id="method-hero-anchor" href="#method-banner">PRODUITS</a>
+                </h2>
+                <h2 class="float-right desktop-hide"><a id="method-hero-anchor" href="#method-banner">MAGASIN</a>
+                </h2>
+
+                <h2 class="float-right mobile-hide"><a id="method-hero-anchor" href="#method-banner">TROUVER UN MAGASIN</a>
+                </h2>
+                <div id="iti-logo" style="text-align: right;" class='mobile-hide'>
+                    <img src="img/itilogo.png">
+                </div>
+            </div>
+            <div id='contact-bar' class="nav-item clearfix container-fluid">
+                <h2 class="float-left"><a id="method-hero-anchor" href="#method-banner">A PROPOS</a>
+                </h2>
+                <h2 class="float-right"><a id="method-hero-anchor" href="#method-banner">CONTACT</a>
+                </h2>
+            </div>
+            <div id='zen-wrapper' class="mobile-hide">
+                <img src='img/zen1.jpg'></img>
+            </div>
+
+        </div>
+
+        <!--         <div id='navbar'>
+            <div id="eco-logo">
+                <img src="img/ecologo1.png"></img>
+            </div>
+
+            <h2 class="nav-item"><a id="method-hero-anchor" href="#method-banner">trouver un magasin </a>
+            </h2>
+            <h2 class="nav-item"><a id="services-hero-anchor" href="#services-banner">a propos</a>
+            </h2>
+            <h2 class="nav-item"><a id="team-hero-anchor" href="#team-banner">contact</a>
+            </h2>
+        </div>
+
+ -->
+        <!--             <div id="navbar" class='clearfix'>
+                <div id="nuayre-logo" class="float-left">
+                    <img src="img/mascott.png"></img>
+                </div>
+
+                <div id="main-title" class='float-left nav-item'>
+                    <h1>NUAYRE.COM</h1>
+                </div>
+
+            </div>
+        </div>
+ -->
+        <div id='hero-section' class="container">
+            <div class="row text-center">
+                <div class='col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0'>
+                    <h1>SLOGAN</h1>
+                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare.</h2>
+                </div>
+                <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2  ">
+                    <img src='img/family2.png'></img>
+                </div>
+            </div>
+        </div>
         <div id='product-grid' class='container text-center'>
             <div class='row'>
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
                             <img src="img/bleu2_xs.png"></img>
                         </button>
                         <button type="button" class='thumbnail-sm noglow'>
-                            <img src="img/bleu2_xs.png"></img>
+                            <img src="img/bleu2side_xs.png"></img>
                         </button>
                     </div>
                     <div class="product-img">
@@ -96,13 +166,13 @@
                     <h1>Air Fresh Scent</h1>
                 </div>
 
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
                             <img src="img/orange1_xs.png"></img>
                         </button>
                         <button type="button" class='thumbnail-sm noglow'>
-                            <img src="img/orange1_xs.png"></img>
+                            <img src="img/orangeside1_xs.png"></img>
                         </button>
                     </div>
                     <div class="product-img">
@@ -111,7 +181,7 @@
                     <h1>Orange Scent</h1>
                 </div>
 
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
                             <img src="img/vert1_xs.png"></img>
@@ -126,14 +196,17 @@
                     <h1>Blend Scent</h1>
 
                 </div>
-                
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+
+
+            </div>
+            <div class='row'>
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
                             <img src="img/jaune_xs.png"></img>
                         </button>
                         <button type="button" class='thumbnail-sm noglow'>
-                            <img src="img/jaune_xs.png"></img>
+                            <img src="img/jauneside_xs.png"></img>
                         </button>
                     </div>
                     <div class="product-img">
@@ -142,16 +215,13 @@
                     <h1>Lemon Scent</h1>
                 </div>
 
-            </div>
-             <div class='row'>
-
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
                             <img src="img/blanc1_xs.png"></img>
                         </button>
                         <button type="button" class='thumbnail-sm noglow'>
-                            <img src="img/blanc1_xs.png"></img>
+                            <img src="img/blancside1_xs.png"></img>
                         </button>
                     </div>
                     <div class="product-img">
@@ -160,13 +230,13 @@
                     <h1>No Scent</h1>
                 </div>
 
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
                             <img src="img/puck2_xs.png"></img>
                         </button>
                         <button type="button" class='thumbnail-sm noglow'>
-                            <img src="img/puck2_xs.png"></img>
+                            <img src="img/puckside2_xs.png"></img>
                         </button>
                     </div>
                     <div class="product-img">
@@ -174,34 +244,35 @@
                     </div>
                     <h1>Sports Fresh</h1>
                 </div>
-
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
-                            <img src="img/box1_xs.png"></img>
+                            <img src="img/box2_xs.png"></img>
                         </button>
                         <button type="button" class='thumbnail-sm noglow'>
                             <img src="img/baking_xs.png"></img>
                         </button>
                     </div>
                     <div class="product-img">
-                        <img src="img/box1_big.png" class="thumbnail-md"></img>
+                        <img src="img/box2_big.png" class="thumbnail-md"></img>
                     </div>
-                    <h1>Baking Soda </h1>
+                    <h1>Baking Soda</h1>
 
                 </div>
 
-                <div class="col-xs-12 col-md-6 col-lg-3 product-thumbnail ">
+                <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
                         <button type="button" class='thumbnail-sm active noglow'>
-                            <img src="img/box1_xs.png"></img>
+                            <img src="img/box3_xs.png"></img>
                         </button>
                         <button type="button" class='thumbnail-sm noglow'>
                             <img src="img/baking_xs.png"></img>
                         </button>
                     </div>
                     <div class="product-img">
-                        <img src="img/box1_big.png" class="thumbnail-md"></img>
+                        <img src="img/box3_big.png" class="thumbnail-md"></img>
                     </div>
                     <h1>Baking Soda</h1>
 

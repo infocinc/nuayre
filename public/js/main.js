@@ -314,7 +314,14 @@ function registerClickHandlers() {
 
 function initWayPoints() {}
 
+function setPendulumPosition() {
+  var contactBarPos = $('#contact-bar').offset();
 
+  $('#zen-wrapper').css({
+    'top': contactBarPos.top + $('#contact-bar').height() + 'px'
+  });
+  $('#zen-wrapper').removeClass('hide');
+}
 
 function init() {
     initWayPoints();
@@ -323,6 +330,7 @@ function init() {
     registerClickHandlers();
     registerMediaCallbacks();
     $('body').imagesLoaded(function() {
+      //  setPendulumPosition();
         display();
     });
 }
@@ -343,9 +351,7 @@ function detectIE(callback) {
 
 function display() {
     var callback = function() {
-        $('#loader').css('display', 'none');
-        $('#gif-spinner').css('display', 'none');
-        $('#main').removeClass('invisible');
+        $('#main').removeClass('invisible')
     };
     detectIE(callback);
 }

@@ -17,9 +17,9 @@
 @import  "utils.less";
 @import  "bs_overrides.less";
 @import "fonts.less";
-/*@import  "navbar.less";
-@import  "modals.less";
-@import  "navigation.less";
+@import  "navbar.less";
+
+/*@import  "modals.less";
 @import  "lists.less";
 @import  "preloader.less";
 */
@@ -161,17 +161,17 @@ img {
 }
 
 @-webkit-keyframes rotate_animation {
-  0% { -webkit-transform: rotate(0deg); }
-  10% { -webkit-transform: rotate(36deg); }
-  20% { -webkit-transform: rotate(72deg); }
-  30% { -webkit-transform: rotate(108deg); }
-  40% { -webkit-transform: rotate(144deg); }
-  50% { -webkit-transform: rotate(180deg); }
-  60% { -webkit-transform: rotate(216deg); }
-  70% { -webkit-transform: rotate(252deg); }
-  80% { -webkit-transform: rotate(288deg); }
-  90% { -webkit-transform: rotate(324deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% { -webkit-transform: rotate(-5deg); }
+  10% { -webkit-transform: rotate(-3deg); }
+  20% { -webkit-transform: rotate(-1deg); }
+  30% { -webkit-transform: rotate(1deg); }
+  40% { -webkit-transform: rotate(3deg); }
+  50% { -webkit-transform: rotate(5deg); }
+  60% { -webkit-transform: rotate(3deg); }
+  70% { -webkit-transform: rotate(1deg); }
+  80% { -webkit-transform: rotate(-1deg); }
+  90% { -webkit-transform: rotate(-3deg); }
+  100% { -webkit-transform: rotate(-5deg); }
 }
 @-moz-keyframes rotate_animation {
   0% { -moz-transform: rotate(0deg); }
@@ -228,6 +228,7 @@ img {
   -webkit-animation-duration: 5000ms;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
+  -webkit-transform-origin: top center;
   -moz-animation-name: 'rotate_animation';
   -moz-animation-delay: 0s;
   -moz-animation-duration: 5000ms;
@@ -240,6 +241,27 @@ img {
   animation-timing-function: linear;
 }
 
+#top {
+ width: 85%;
+ margin-left: auto;
+ margin-right: 0;
+}
+
+#zen-wrapper {
+  display: none;
+/*  position: absolute;
+  left: 50px;
+  text-align: left;
+*/  .rotate;
+  img {
+    height: 200px;
+  }
+  @media screen and (min-width:@screen-sm-min) {
+    display: inline-block;
+    margin-top: -10px;
+    margin-left: 50px;
+  }
+}
 
 #product-grid {
   margin-top: 70px;
@@ -247,7 +269,7 @@ img {
 
 
 .product-thumbnail:hover {
-  border: 1px solid @darkGray !important;
+ // border: 1px solid @darkGray!important;
   z-index: 1;
 }
 
@@ -255,7 +277,7 @@ img {
 .product-thumbnail {
   cursor: pointer;
   padding: 20px;
-  border: 1px solid #ebebeb;
+//  border: 1px solid rgba(30,130,76,0.3);
   margin-top: -1px;
   margin-right: -1px;
 }
@@ -266,15 +288,56 @@ img {
 }
 
 body {
-  background: url(../img/stripe.png) #fff;
+//  background: url(../img/IMG_5259.jpg) center center fixed;
+  background-size: cover;
 }
 
+
+
+
+#hero-section {
+ background: @white;
+ opacity: 1;
+
+ @media screen and (min-width:@screen-sm-min) {
+   margin-top: -100px;
+}
+// display: table;
+ height: 450px;
+// border: 1px solid @lightGray;
+ border-radius: 10px;
+
+ .row {
+ // display: table-cell;
+ // vertical-align: middle;
+ }
+
+ h1,h2 {
+  font-family: 'Lato', sans-serif;
+ }
+ h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 38px;
+ }
+ h2 {
+  margin: 10px 0;
+  margin-bottom: 50px;
+//  color:@midnight;
+  font-size: 20px;
+ }
+
+  img {
+    width: 100%;
+  }
+}
 #main {
+
   margin: 0;
+//  margin-top: 100px;
   position: relative;
   z-index: 1;
-  background: rgba(255,255,255,0.9);
-//  opacity: 0.9;
+  background: rgba(255,255,255,0.1);
 }
 .demo {
   font-family: "Lato", sans-serif;
@@ -289,8 +352,12 @@ body {
   line-height: 200px;
   width: 200px;
   img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+    @media screen and (min-width:@screen-lg-min) {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -316,7 +383,7 @@ body {
 
 
 .thumbnail-sm.active {
-  border-color: #a3a3a3;
+  border-color: #ababab;
 }
 
 #product-grid {
