@@ -342,6 +342,9 @@ function detectIE(callback) {
     if ($('html').is('.lt-ie9')) {
         oldIE = true;
     }
+    else if ($('html').is('.lt-ie10')) {
+        $('#bells-wrapper').css('opacity','0');
+    }
     if (oldIE) {
         // do nothing which will prevent content from being shown 
     } else {
