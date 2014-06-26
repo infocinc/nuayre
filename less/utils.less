@@ -95,11 +95,176 @@
 }
 
 
+.all-transition {
+ -webkit-transition: all 500ms cubic-bezier(0.000, 1, 0.560, 0.920); /* older webkit */
+ -webkit-transition: all 500ms cubic-bezier(0.000, 1.220, 0.560, 0.920);  
+ -moz-transition: all 500ms cubic-bezier(0.000, 1.220, 0.560, 0.920); 
+ -o-transition: all 500ms cubic-bezier(0.000, 1.220, 0.560, 0.920); 
+  transition: all 500ms cubic-bezier(0.000, 1.220, 0.560, 0.920); /* custom */
+
+  -webkit-transition-timing-function: cubic-bezier(0.000, 1, 0.560, 0.920); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.000, 1.220, 0.560, 0.920); 
+  -moz-transition-timing-function: cubic-bezier(0.000, 1.220, 0.560, 0.920); 
+  -o-transition-timing-function: cubic-bezier(0.000, 1.220, 0.560, 0.920); 
+  transition-timing-function: cubic-bezier(0.000, 1.220, 0.560, 0.920); /* custom */
+}
+
 .transition(@target, @delay:500ms, @easing:ease, @duration:0s) {
   -webkit-transition: @target @delay @easing @delay;
   -moz-transition: @target @delay @easing @delay;
   -o-transition: @target @delay @easing @delay;
   transition: @target @delay @easing @delay;  
+}
+
+
+@-webkit-keyframes pulse_animation {
+  0% { -webkit-transform: scale(1); }
+  30% { -webkit-transform: scale(1); }
+  40% { -webkit-transform: scale(1.08); }
+  50% { -webkit-transform: scale(1); }
+  60% { -webkit-transform: scale(1); }
+  70% { -webkit-transform: scale(1.05); }
+  80% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+@-moz-keyframes pulse_animation {
+  0% { -moz-transform: scale(1); }
+  30% { -moz-transform: scale(1); }
+  40% { -moz-transform: scale(1.08); }
+  50% { -moz-transform: scale(1); }
+  60% { -moz-transform: scale(1); }
+  70% { -moz-transform: scale(1.05); }
+  80% { -moz-transform: scale(1); }
+  100% { -moz-transform: scale(1); }
+}
+@keyframes pulse_animation {
+  0% { -transform: scale(1); }
+  30% { -transform: scale(1); }
+  40% { -transform: scale(1.08); }
+  50% { -transform: scale(1); }
+  60% { -transform: scale(1); }
+  70% { -transform: scale(1.05); }
+  80% { -transform: scale(1); }
+  100% { -transform: scale(1); }
+}
+
+@-webkit-keyframes rotateanime {
+  0% { -webkit-transform: rotate(-5deg); }
+  10% { -webkit-transform: rotate(-3deg); }
+  20% { -webkit-transform: rotate(-1deg); }
+  30% { -webkit-transform: rotate(1deg); }
+  40% { -webkit-transform: rotate(3deg); }
+  50% { -webkit-transform: rotate(5deg); }
+  60% { -webkit-transform: rotate(3deg); }
+  70% { -webkit-transform: rotate(1deg); }
+  80% { -webkit-transform: rotate(-1deg); }
+  90% { -webkit-transform: rotate(-3deg); }
+  100% { -webkit-transform: rotate(-5deg); }
+}
+@-moz-keyframes rotateanime {
+  0% { -moz-transform: rotate(-5deg); }
+  10% { -moz-transform: rotate(-3deg); }
+  20% { -moz-transform: rotate(-1deg); }
+  30% { -moz-transform: rotate(1deg); }
+  40% { -moz-transform: rotate(3deg); }
+  50% { -moz-transform: rotate(5deg); }
+  60% { -moz-transform: rotate(3deg); }
+  70% { -moz-transform: rotate(1deg); }
+  80% { -moz-transform: rotate(-1deg); }
+  90% { -moz-transform: rotate(-3deg); }
+  100% { -moz-transform: rotate(-5deg); }
+}
+
+@keyframes rotateanime {
+  0% { transform: rotate(-5deg); }
+  10% { transform: rotate(-3deg); }
+  20% { transform: rotate(-1deg); }
+  30% { transform: rotate(1deg); }
+  40% { transform: rotate(3deg); }
+  50% { transform: rotate(5deg); }
+  60% { transform: rotate(3deg); }
+  70% { transform: rotate(1deg); }
+  80% { transform: rotate(-1deg); }
+  90% { transform: rotate(-3deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+@-webkit-keyframes shakeanime {
+  0% { -webkit-transform: translate(0px,0px);}
+  2%{ -webkit-transform: translate(0px,10px);}
+  4% { -webkit-transform: translate(0px,0px);}
+  
+ // 50%{ -webkit-transform: translate(0px,0px);}
+ // 60%{ -webkit-transform: translate(0px,10px);}
+}
+
+
+.pulse {
+  -webkit-animation-name: pulse_animation;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 5000ms;
+  -webkit-transform-origin:70% 70%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-animation-name: pulse_animation;
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 5000ms;
+  -moz-transform-origin:70% 70%;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+
+  animation-name: pulse_animation;
+  animation-delay: 0s;
+  animation-duration: 5000ms;
+  transform-origin:70% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+   
+}
+
+.shake {
+  -webkit-animation-name: shakeanime;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 2000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-animation-name: shakeanime;
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 500ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+
+  animation-name: shakeanime;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+}
+
+.rotate {
+  -webkit-animation-name: 'rotateanime';
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 5000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-transform-origin: top center;
+
+  -moz-animation-name: rotateanime;
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 5000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -moz-transform-origin: top center;
+
+  animation-name: rotateanime;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  transform-origin: top center;
 }
 
 ////////////////////////////////////////////////
@@ -146,6 +311,9 @@
     margin: 0 auto;
 }
 
+.square-border {
+  border: 1px solid;
+}
 .border {
     border:1px solid;
     border-radius: 5px;
@@ -170,6 +338,7 @@
 @purple: #8e44ad;
 @midnight: #141c26;
 @darkGreen: #1E824C;
+@green-2: rgba(56,187,73,1);
 
 .darkGray {
   color: @darkGray !important;
@@ -202,6 +371,9 @@
 .green {
     color:@green !important;
 }
+.green-2 {
+  color: @green-2 !important;
+}
 
 .purple {
     color:@purple !important;
@@ -216,6 +388,9 @@
 ///////////////////////////////////////////////////////////////
 
 .background {
+  &-none {
+    background: none !important;
+  }
     &-lightGray {
       background: @lightGray !important
     }

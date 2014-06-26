@@ -199,10 +199,10 @@ function navBarResizeHandler(direction) {
 ///////////////////////////////////////////////////////////////////////////
 
 
-var hero_anchors = [
-    '#top-hero-anchor', '#services-hero-anchor', '#method-hero-anchor', '#project-hero-anchor',
-    '#team-hero-anchor', '#footer-hero-anchor'
-];
+var bar_anchors = [
+    '#home-bar-anchor', '#product-bar-anchor', '#apropos-bar-anchor', 
+    '#store-bar-anchor', '#contact-bar-anchor'
+    ];
 
 var footer_anchors = [
     '#hero-footer-anchor', '#services-footer-anchor',
@@ -223,13 +223,13 @@ var main_nav_slide_anchors = [
 
 function registerScrollsTo() {
 
-    $(main_nav_slide_anchors.join()).scrollTo({
+    $(bar_anchors.join()).scrollTo({
         speed: 800,
-        offset: 77,
+        offset: -90,
         easing: 'easeInOutCubic'
     });
 
-    $(main_nav_anchors.join()).scrollTo({
+/*    $(main_nav_anchors.join()).scrollTo({
         speed: 800,
         offset: 0,
         easing: 'easeInOutCubic'
@@ -246,7 +246,7 @@ function registerScrollsTo() {
         offset: 0,
         easing: 'easeInOutCubic'
     });
-}
+*/}
 
 /////////////////////////////////////////////////////////////////////////////
 // Mouser event registering

@@ -123,232 +123,239 @@ html, body{
  padding: 0px !important;
 }
 
+body {
+  background: url('../img/polka-1-4.png');
+}
+
 img {
   // For firefox
  image-rendering:optimizeQuality !important; 
+ -ms-interpolation-mode: bicubic;
 }
 
-@-webkit-keyframes pulse_animation {
-  0% { -webkit-transform: scale(1); }
-  30% { -webkit-transform: scale(1); }
-  40% { -webkit-transform: scale(1.08); }
-  50% { -webkit-transform: scale(1); }
-  60% { -webkit-transform: scale(1); }
-  70% { -webkit-transform: scale(1.05); }
-  80% { -webkit-transform: scale(1); }
-  100% { -webkit-transform: scale(1); }
-}
+///////////////////////////////////////////////////////////////////////
+// main wrapper
+///////////////////////////////////////////////////////////////////////
 
-@-moz-keyframes pulse_animation {
-  0% { -moz-transform: scale(1); }
-  30% { -moz-transform: scale(1); }
-  40% { -moz-transform: scale(1.08); }
-  50% { -moz-transform: scale(1); }
-  60% { -moz-transform: scale(1); }
-  70% { -moz-transform: scale(1.05); }
-  80% { -moz-transform: scale(1); }
-  100% { -moz-transform: scale(1); }
-}
-@keyframes pulse_animation {
-  0% { -transform: scale(1); }
-  30% { -transform: scale(1); }
-  40% { -transform: scale(1.08); }
-  50% { -transform: scale(1); }
-  60% { -transform: scale(1); }
-  70% { -transform: scale(1.05); }
-  80% { -transform: scale(1); }
-  100% { -transform: scale(1); }
-}
-
-@-webkit-keyframes rotateanime {
-  0% { -webkit-transform: rotate(-5deg); }
-  10% { -webkit-transform: rotate(-3deg); }
-  20% { -webkit-transform: rotate(-1deg); }
-  30% { -webkit-transform: rotate(1deg); }
-  40% { -webkit-transform: rotate(3deg); }
-  50% { -webkit-transform: rotate(5deg); }
-  60% { -webkit-transform: rotate(3deg); }
-  70% { -webkit-transform: rotate(1deg); }
-  80% { -webkit-transform: rotate(-1deg); }
-  90% { -webkit-transform: rotate(-3deg); }
-  100% { -webkit-transform: rotate(-5deg); }
-}
-@-moz-keyframes rotateanime {
-  0% { -moz-transform: rotate(-5deg); }
-  10% { -moz-transform: rotate(-3deg); }
-  20% { -moz-transform: rotate(-1deg); }
-  30% { -moz-transform: rotate(1deg); }
-  40% { -moz-transform: rotate(3deg); }
-  50% { -moz-transform: rotate(5deg); }
-  60% { -moz-transform: rotate(3deg); }
-  70% { -moz-transform: rotate(1deg); }
-  80% { -moz-transform: rotate(-1deg); }
-  90% { -moz-transform: rotate(-3deg); }
-  100% { -moz-transform: rotate(-5deg); }
-}
-
-@keyframes rotateanime {
-  0% { transform: rotate(-5deg); }
-  10% { transform: rotate(-3deg); }
-  20% { transform: rotate(-1deg); }
-  30% { transform: rotate(1deg); }
-  40% { transform: rotate(3deg); }
-  50% { transform: rotate(5deg); }
-  60% { transform: rotate(3deg); }
-  70% { transform: rotate(1deg); }
-  80% { transform: rotate(-1deg); }
-  90% { transform: rotate(-3deg); }
-  100% { transform: rotate(-5deg); }
-}
-
-
-.pulse {
-  -webkit-animation-name: 'pulse_animation';
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 5000ms;
-  -webkit-transform-origin:70% 70%;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-name: 'pulse_animation';
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 5000ms;
-  -moz-transform-origin:70% 70%;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  animation-name: 'pulse_animation';
-  animation-delay: 0s;
-  animation-duration: 5000ms;
-  transform-origin:70% 70%;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-   
-}
-
-.rotate {
-  -webkit-animation-name: 'rotateanime';
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 5000ms;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -webkit-transform-origin: top center;
-
-  -moz-animation-name: rotateanime;
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 5000ms;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  -moz-transform-origin: top center;
-
-  animation-name: rotateanime;
-  animation-duration: 5000ms;
-  animation-iteration-count: infinite;
-  animation-delay: 0s;
-  animation-timing-function: linear;
-  transform-origin: top center;
-}
-
-#top {
- width: 85%;
- margin-left: auto;
- margin-right: 0;
-}
-
-#bells-wrapper {
-  display: none;
-  img {
-    height: 200px;
-  }
-  @media screen and (min-width:@screen-sm-min) {
-    display: inline-block;
-    margin-top: -10px;
-    margin-left: 50px;
-  }
-}
-
-#bells-wrapper {
-  .rotate;
-}
-
-#product-grid {
-  margin-top: 70px;
-}
-
-
-.product-thumbnail:hover {
- // border: 1px solid @darkGray!important;
+#main {
+  margin: 0;
+  position: relative;
   z-index: 1;
+  background: rgba(255,255,255,0.1);
+  height:100%;
 }
 
 
-.product-thumbnail {
-  cursor: pointer;
-  padding: 20px;
-//  border: 1px solid rgba(30,130,76,0.3);
-  margin-top: -1px;
-  margin-right: -1px;
+///////////////////////////////////////////////////////////////////////
+// Header 
+///////////////////////////////////////////////////////////////////////
+
+#header {
+//  padding: 0.5em 0.5em;
+  background: 1px solid #000;
+  width: 100%;
+  position:relative;
+  z-index: 30;
+  height: 100%;
+  min-height: 500px;
+  .all-transition;
 }
 
-
-.product-img:hover {
-  .pulse;
+#motif-slogan {
+  h1 {
+    padding-top: 20px;
+    margin-left: -10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 2em;
+    font-weight: bold;
+    color: @midnight;
+  }
 }
 
-body {
-//  background: url(../img/IMG_5259.jpg) center center fixed;
-  background-size: cover;
+#fixed-bar {
+  position:fixed;
+  top: 0px;
+  width: 100%;
+  background: rgba(39, 174, 96, 0.5);
+  z-index: 50;
+  //line-height: 50px;
+  //height: 50px; 
+
+  a {
+    color: @white !important;
+  }
+  .gly
+  h1,ul {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  h1,ul,h6 {
+    margin: 0;
+  }
+
+  h1,h6 {
+    vertical-align: middle;
+  }
+
+  .navbar-brand {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .btn {
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+  }
+
+  h1 {
+    font-size: 2.4em;
+  }
+  h1 {
+    padding: 0 20px;
+    border-right: 1px solid @white;
+  }
+
+  .glyphicon {
+    line-height: 50px;
+  }
+
+  h6 {
+    padding: 0 20px;
+    color: rgba(255,255,255,1);
+    border-left: 1px solid @white;
+    font-size: 2em;
+  }
+
+  .bar-items {
+    background: @green;
+    text-align: center;
+    li {
+      display: inline-block;
+       a{
+      color: #fff !important;
+    }
+      vertical-align: middle;
+      padding: 20px 5px;
+      font-size: 2em;
+    }
+  }
+
+  @media screen and (min-width: @screen-sm-min) {
+    .navbar-brand {
+      height: 70px;
+     line-height: 70px;
+    }
+
+//    color: #00 !important;
+    .bar-items {
+      background: none;
+      text-align: left;
+     display: inline-block;
+     li {
+      line-height: 70px;
+      border-right: 1px solid @white;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 20px;
+      font-size: 1.3em;
+    }
+  }
+
+
+  }
+
 }
 
+//////////////////////////////////////////////////////////////////////
+// HERO SECTION
+//////////////////////////////////////////////////////////////////////
 
-
-
+#hero-section-wrapper {
+  height: 100%;
+}
 #hero-section {
- background: @white;
- opacity: 1;
+  background: @white;
+  opacity: 1;
+  border: 1px solid @green;
+  @media screen and (min-width:@screen-sm-min) {
+//    margin-top: -150px;
+  }
+  
+  height: 450px;
+  border-radius: 10px;
 
- @media screen and (min-width:@screen-sm-min) {
-   margin-top: -100px;
-}
-// display: table;
- height: 450px;
-// border: 1px solid @lightGray;
- border-radius: 10px;
+  h1,h2 {
+   font-family: 'Lato', sans-serif;
+  }
 
- .row {
- // display: table-cell;
- // vertical-align: middle;
- }
-
- h1,h2 {
-  font-family: 'Lato', sans-serif;
- }
- h1 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 38px;
- }
- h2 {
-  margin: 10px 0;
-  margin-bottom: 50px;
-//  color:@midnight;
-  font-size: 20px;
- }
+  h1 {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   font-size: 38px;
+  }
+  h2 {
+   margin: 10px 0;
+   margin-bottom: 50px;
+   font-size: 20px;
+  }
 
   img {
     width: 100%;
   }
 }
-#main {
 
-  margin: 0;
-//  margin-top: 100px;
-  position: relative;
-  z-index: 1;
-  background: rgba(255,255,255,0.1);
+///////////////////////////////////////////////////////////////////
+// Slide Navs
+///////////////////////////////////////////////////////////////////
+
+.slide-nav {
+ display: none;
+
+ @media screen and (min-height:500px) {
+    display: block;
+    position: absolute;
+    z-index: 3000;
+    bottom: 30px; 
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    text-align: center;
+     .shake;
+    img {
+     opacity: 0.8;
+     width: 50px;
+    }
+  } 
 }
-.demo {
-  font-family: "Lato", sans-serif;
-  font-size: 45px;
-  margin: 0;
+///////////////////////////////////////////////////////////////////
+// PRODUCTS
+///////////////////////////////////////////////////////////////////
+
+
+#product-grid {
+  position: relative;
+  margin-top: 70px;
+  z-index: 15;
+  background: @white;
+  font-family: 'Dancing Script', cursive;
+  h1 {
+    font-size: 24px;
+  }
+}
+
+.product-thumbnail:hover {
+  border: 1px solid @darkGray!important;
+  z-index: 1;
+}
+
+.product-thumbnail {
+  cursor: pointer;
+  padding: 20px;
+  border: 1px solid rgba(30,130,76,0.3);
+  margin-top: -1px;
+  margin-right: -1px;
 }
 
 .product-img {
@@ -387,17 +394,6 @@ body {
   }
 }
 
-
 .thumbnail-sm.active {
   border-color: #ababab;
-}
-
-#product-grid {
-  position: relative;
-  z-index: 15;
-  background: @white;
-  font-family: 'Dancing Script', cursive;
-  h1 {
-    font-size: 24px;
-  }
 }
