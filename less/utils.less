@@ -199,6 +199,23 @@
  // 60%{ -webkit-transform: translate(0px,10px);}
 }
 
+@-moz-keyframes shakeanime {
+  0% { -moz-transform: translate(0px,0px);}
+  2%{ -moz-transform: translate(0px,10px);}
+  4% { -moz-transform: translate(0px,0px);}
+  
+ // 50%{ -webkit-transform: translate(0px,0px);}
+ // 60%{ -webkit-transform: translate(0px,10px);}
+}
+@keyframes shakeanime {
+  0% { transform: translate(0px,0px);}
+  2%{ transform: translate(0px,10px);}
+  4% { transform: translate(0px,0px);}
+  
+ // 50%{ -webkit-transform: translate(0px,0px);}
+ // 60%{ -webkit-transform: translate(0px,10px);}
+}
+
 
 .pulse {
   -webkit-animation-name: pulse_animation;
@@ -233,12 +250,12 @@
 
   -moz-animation-name: shakeanime;
   -moz-animation-delay: 0s;
-  -moz-animation-duration: 500ms;
+  -moz-animation-duration: 2000ms;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
 
   animation-name: shakeanime;
-  animation-duration: 500ms;
+  animation-duration: 2000ms;
   animation-iteration-count: infinite;
   animation-delay: 0s;
   animation-timing-function: linear;
