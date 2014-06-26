@@ -212,8 +212,7 @@ var footer_anchors = [
 ];
 
 var main_nav_anchors = [
-    '#service-nav-anchor', '#method-nav-anchor',
-    '#team-nav-anchor', '#footer-nav-anchor'
+    '#apropos-nav-anchor'
 ];
 
 var main_nav_slide_anchors = [
@@ -229,13 +228,13 @@ function registerScrollsTo() {
         easing: 'easeInOutCubic'
     });
 
-/*    $(main_nav_anchors.join()).scrollTo({
+    $(main_nav_anchors.join()).scrollTo({
         speed: 800,
-        offset: 0,
+        offset: -90,
         easing: 'easeInOutCubic'
     });
 
-    $(hero_anchors.join()).scrollTo({
+/*    $(hero_anchors.join()).scrollTo({
         speed: 800,
         offset: 0,
         easing: 'easeInOutCubic'
