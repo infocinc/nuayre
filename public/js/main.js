@@ -224,13 +224,13 @@ function registerScrollsTo() {
 
     $(bar_anchors.join()).scrollTo({
         speed: 800,
-        offset: -90,
+        offset: 0,
         easing: 'easeInOutCubic'
     });
 
     $(main_nav_anchors.join()).scrollTo({
         speed: 800,
-        offset: -90,
+        offset: 0,
         easing: 'easeInOutCubic'
     });
 
@@ -345,6 +345,7 @@ function detectIE(callback) {
         $('#bells-wrapper').css('opacity','0');
     }
     if (oldIE) {
+        callback();
         // do nothing which will prevent content from being shown 
     } else {
         callback();

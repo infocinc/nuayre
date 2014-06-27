@@ -40,9 +40,11 @@
 </head>
 
 <body>
+
     <!--[if lt IE 9]>
-            <p class="chromeframe" >You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> </p>
-        <![endif]-->
+            <p class="ielt8" >You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> </p>
+    <![endif]-->
+
 
     <!--[if IE 9]>
       <div id='gif-spinner'></div>
@@ -84,26 +86,31 @@
             <nav id='fixed-bar' class='clearfix'>
 
                 <div class='navbar-header'>
-                 <button type='button' data-toggle="collapse" data-target="#navbar-collapse-1" class='navbar-toggle btn noglow background-none'>
-                   <h6 class='glyphicon glyphicon-list'></h6>
-                  </button>
-                    <h1 class='navbar-brand'> <a id='home-bar-anchor' href='#header'> NUAYRE.COM </a> </h1>
+                    <button type='button' data-toggle="collapse" data-target="#navbar-collapse-1" class='navbar-toggle btn noglow background-none'>
+                        <h6 class='glyphicon glyphicon-list'></h6>
+                    </button>
+                    <h1 class='navbar-brand'> <a id='home-bar-anchor' href='#header'> NUAYRE.COM </a> 
+                    </h1>
                 </div>
 
                 <div id='navbar-collapse-1' class='bar-items collapse navbar-collapse'>
-                    <ul  >
+                    <ul>
                         <li><a id='product-bar-anchor' href='#product-grid'>
-                        PRODUITS</a></li>
-                        <li><a id='apropos-bar-anchor' href='#apropos'>A PROPOS</a></li>
-                        <li><a id='store-bar-anchor' href='#store'>TROUVER UN MAGASIN</a></li>
-                        <li><a id='contact-bar-anchor' href='#footer'>CONTACT</a></li>
+                        PRODUITS</a>
+                        </li>
+                        <li><a id='apropos-bar-anchor' href='#apropos'>A PROPOS</a>
+                        </li>
+                        <li><a id='store-bar-anchor' href='#store'>TROUVER UN MAGASIN</a>
+                        </li>
+                        <li><a id='contact-bar-anchor' href='#footer'>CONTACT</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
 
 
             <div id="logos">
-                <img id='ecologo' src="img/ecologo.png" >
+                <img id='ecologo' src="img/ecologo.png">
             </div>
 
             <div id='store-bar' class="nav-bar container-fluid ">
@@ -141,7 +148,7 @@
                     </div>
                 </div>
                 <div id='slogan' class='col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-2 text-center'>
-                    <h1>&EacuteLIMINE LES ODEURS </h1>
+                    <h1>&EacuteLIMINE LES ODEURS</h1>
                 </div>
             </div>
         </section>
@@ -168,7 +175,7 @@
             </div>
         </section>
 
-        <div id='product-grid' class='container text-center'>
+        <section id='product-grid' class='container text-center'>
             <div class='row'>
                 <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
                     <div class='thumbnail-sm-wrapper'>
@@ -213,10 +220,7 @@
                         <img src="img/vert1_big.png" class="thumbnail-md"></img>
                     </div>
                     <h1>Blend Scent</h1>
-
                 </div>
-
-
             </div>
             <div class='row'>
                 <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
@@ -278,7 +282,6 @@
                         <img src="img/box2_big.png" class="thumbnail-md"></img>
                     </div>
                     <h1>Baking Soda</h1>
-
                 </div>
 
                 <div class="col-xs-12 col-sm-4 col-lg-4 product-thumbnail ">
@@ -294,26 +297,47 @@
                         <img src="img/box3_big.png" class="thumbnail-md"></img>
                     </div>
                     <h1>Baking Soda</h1>
-
                 </div>
             </div>
+        </section>
+
+        <section id='store' class='container text-center'>
+            <h1>Nos produits sont disponibles dans les magasins suivants</h1>
+            <div id='avril-row' class='row'>
+                <div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
+                    <a target="_blank" href='https://www.avril.ca'>
+                        <img src='img/avril_banner.png'></img>
+                    </a>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
+                    <a target="_blank" href='http://www.iga.net'>
+                        <img src='img/iga_banner.png'></img>
+                    </a>
+                </div>
+            </div>
+            <div class='row'>
+                <div id='bmr_banner' class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
+                    <a target="_blank" href="http://bmr.co">
+                        <img src='img/bmr_banner.png'></img>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<!--         <div id='footer'>
         </div>
-
-        <div id="product-panel">
-
-        </div>
-
-
+ -->
     </div>
-    <div id='store'>
-    </div>
-    <div id='footer'>
-    </div>
+
     <!-- media state -->
     <div id='media-state' class='hide media-state'>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></script>
+
+
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-2.1.0.min.js"><\/script>')
     </script>
