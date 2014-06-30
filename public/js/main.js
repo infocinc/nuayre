@@ -212,7 +212,7 @@ var footer_anchors = [
 ];
 
 var main_nav_anchors = [
-    '#apropos-nav-anchor'
+    '#apropos-nav-anchor','#product-nav-anchor','#store-nav-anchor'
 ];
 
 var main_nav_slide_anchors = [
