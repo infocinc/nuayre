@@ -54,7 +54,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #888;
+  border-top: 1px solid rgba(39,174,96,0.5);
   margin: 1em 0;
   padding: 0;
 }
@@ -126,9 +126,6 @@ html, body{
  padding: 0px !important;
 }
 
-body {
-  background: url('../img/polka-1-4.png');
-}
 
 img {
   // For firefox
@@ -148,19 +145,25 @@ img {
 #main {
   margin: 0;
   position: relative;
-  z-index: 1;
-  background: rgba(255,255,255,0.1);
-  height:100%;
+  z-index: -1;
+  height: 100%;
 }
 
+body {
+    background: url('../img/polka-1-4.png');
+}
 ///////////////////////////////////////////////////////////////////////
 // Section Stylings
 ///////////////////////////////////////////////////////////////////////
 
-#header, #apropos, #products, #store, #footer {
+#header, #apropos, #products, #store {
 //  height: 100%;
   position: relative;
   min-height: 100%;
+}
+
+#apropos, #products, #store {
+  z-index: 30;
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -169,16 +172,12 @@ img {
 
 #header {
 //  padding: 0.5em 0.5em;
-  background: 1px solid #000;
   width: 100%;
-  position:relative;
-  z-index: 30;
   .all-transition;
 }
 
-#motif-slogan {
+#slogan {
   h1 {
-    padding-top: 20px;
     margin-left: -10px;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.2em;
@@ -186,60 +185,72 @@ img {
     font-weight: bold;
     color: @midnight;
   }
+  h1:first-child{
+    padding-top: 20px; 
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+  h1:last-child {
+    margin: 0;
+    padding-top: 10px;
+  }
 }
 
 #fixed-bar {
-  position:fixed;
-  top: 0px;
+//  position:fixed;
   width: 100%;
-  background: rgba(39, 174, 96, 0.5);
+  background: rgba(39, 174, 96, 0.7);
   z-index: 50;
-  //line-height: 50px;
-  //height: 50px; 
 
   a {
     color: @white !important;
   }
-  .gly
-  h1,ul {
+
+  h1,h2,ul {
     font-family: 'Source Sans Pro', sans-serif;
   }
 
-  h1,ul,h6 {
+  h1,ul,h2,h6 {
     margin: 0;
   }
 
-  h1,h6 {
+  h1,h2,h6 {
     vertical-align: middle;
   }
 
-  .navbar-brand {
-    height: 50px;
-    line-height: 50px;
-  }
 
   .btn {
+    border: none;
     padding: 0;
     margin: 0;
     line-height: inherit;
   }
 
-  h1 {
-    font-size: 2.4em;
-  }
-  h1 {
-    padding: 0 20px;
+  .navbar-brand {
     border-right: 1px solid @white;
+    padding: 5px 5px;
+    height: 50px;
+    line-height: 50px;
+    h1 {
+      padding: 1px 20px;
+      font-size: 1.5em;
+      line-height: 0.9em;
+    }
+    h2 {
+      color: @white;
+      font-size: 0.6em;
+    } 
   }
 
   .glyphicon {
+    top: 0px;
     line-height: 50px;
   }
 
   h6 {
     padding: 0 20px;
-    color: rgba(255,255,255,1);
     border-left: 1px solid @white;
+    color: rgba(255,255,255,1);
     font-size: 2em;
   }
 
@@ -248,39 +259,43 @@ img {
     text-align: center;
     li {
       display: inline-block;
-       a{
-      color: #fff !important;
-    }
+      a{
+        color: #fff !important;
+      }
       vertical-align: middle;
       padding: 20px 5px;
       font-size: 2em;
     }
+    #lang-item {
+      border: none;
+      float:right;
+    }
   }
 
   @media screen and (min-width: @screen-sm-min) {
+    position:fixed;
+    top: 0px;
+    z-index: 70;
     .navbar-brand {
-      height: 70px;
+     height: 70px;
      line-height: 70px;
+     padding: 15px 15px;
     }
 
-//    color: #00 !important;
     .bar-items {
       background: none;
       text-align: left;
-     display: inline-block;
-     li {
-      line-height: 70px;
-      border-right: 1px solid @white;
       display: inline-block;
-      vertical-align: middle;
-      padding: 0 20px;
-      font-size: 1.3em;
+      li {
+       line-height: 70px;
+       border-right: 1px solid @white;
+       display: inline-block;
+       vertical-align: middle;
+       padding: 0 20px;
+       font-size: 1.3em;
+      }
     }
   }
-
-
-  }
-
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -289,10 +304,6 @@ img {
 
 
 #apropos {
-
-  @media screen and (min-width:@screen-sm-min) {
-//    margin-top: -150px;
-  }
   
 
   h1,h2 {
@@ -305,6 +316,7 @@ img {
    margin-bottom: 10px;
    font-size: 3.8em;
   }
+
   h2 {
    margin: 10px 0;
    margin-bottom: 50px;
@@ -317,10 +329,12 @@ img {
 
 
   #carousel-nuayre {
+    position: relative;
+    z-index: 30;
     background: @white;
     opacity: 1;
     border: 1px solid @green;
-    height: 300px;
+    height: 400px;
     img {
       width: 90%;
     }
@@ -335,6 +349,7 @@ img {
       background: @black;
     }
   }
+
   .carousel-control {
     background: none;
     width: 5%;
@@ -346,6 +361,7 @@ img {
       opacity: 0.8;
     }
   }
+
   a:active span {
     color: @green;
   }
@@ -390,7 +406,6 @@ img {
  @media screen and (min-height:500px) {
     display: block;
     position: absolute;
-    z-index: 3000;
     bottom: 30px; 
     left: 50%;
     margin-left: -25px;
@@ -407,12 +422,59 @@ img {
 // PRODUCTS
 ///////////////////////////////////////////////////////////////////
 
-.section-caption {
+.section-caption, .thumbnail-caption {
   font-family: 'Lato', sans-serif;
-  font-family: 'Lato', sans-serif;
-  font-size: 3.5em;
   padding: 20px;
   margin: 0;
+}
+
+.section-caption {
+  font-size: 3.5em;
+}
+
+.thumbnail-caption {
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 0.1em;
+  padding: 0 20px;
+  line-height: 342px;
+  color: #000;
+  h3 {
+    font-size: 2.5em;
+    margin: 0;
+    line-height: 1.2;
+  }
+}
+
+.product-panel {
+  text-align: center;
+}
+
+.product-title {
+  font-family: 'Dancing Script', cursive;
+  h1 {
+    font-size: 2.4em;
+  }
+  h3 {
+    font-family: 'Open Sans Condensed', sans-serif;    
+    font-size: 1.8em;
+  color: @darkGreen;
+
+  }
+}
+
+.product-description {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5em;
+  color: @darkGreen;
+  p {
+    margin: 0;
+  }
+  ul {
+    padding-top: 10px;
+  }
+  button {
+
+  }
 }
 
 #products {
@@ -423,23 +485,29 @@ img {
 #product-grid {
   margin-top: 30px;
   background: @white;
-  font-family: 'Dancing Script', cursive;
-  h1 {
-    font-size: 24px;
-  }
 }
+
 
 .product-thumbnail:hover {
   border: 1px solid @darkGray!important;
   z-index: 1;
 }
 
-.product-thumbnail {
+.text-thumbnail {
+//  background: rgba(39, 174, 96, 0.7);  opacity: 0.7;
+//  background: url('../img/polka-1-4.png');
+}
+
+.product-thumbnail, .text-thumbnail {
   cursor: pointer;
   padding: 20px;
   border: 1px solid rgba(30,130,76,0.3);
   margin-top: -1px;
   margin-right: -1px;
+  height: 371px;
+  @media screen and (min-width:@screen-wide-min) and (min-height:@screen-height-wide) {
+    height: 400px;
+  }
 }
 
 .product-img {
@@ -488,7 +556,8 @@ img {
 
 #store {
   padding: 70px 0;
-//  border: 1px solid @green;
+  background: @white;
+  border: 1px solid @green;
 //  border-radius:10px;
   margin: 100px auto;
   .row > div {
@@ -507,5 +576,147 @@ img {
     border: 1px solid @green;
     background: url('../img/tile.png') #fff;
   }
+
+  ul {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2em;
+    line-height: 0.4;
+    margin: 0;
+    li {
+      display: inline-block;
+      padding: 20px 20px;
+    }
+  }
 }
+
+////////////////////////////////////////////////////////////
+// FOOTER
+////////////////////////////////////////////////////////////
+
+li.list-group-item {
+   border: none;
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 3em;
+   padding: 0.3em 0.5em;
+}
+
+
+ul.contact-type > li {
+  padding-left: 0px;
+}
+
+
+#footer-bar:before {
+  content:'';
+  display: table;
+  height:62px;
+}
+#footer-bar {
+   background: rgba(56,187,73,1); /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 15%, rgba(56,187,73,1) 40%, rgba(56,187,73,1) 40%, rgba(56,187,73,1) 60%, rgba(255,255,255,1) 85%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(15%,rgba(255,255,255,1)), color-stop(40%,rgba(56,187,73,1)), color-stop(40%,rgba(56,187,73,1)), color-stop(60%,rgba(56,187,73,1)), color-stop(85%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 15%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 60%,rgba(255,255,255,1) 85%);  
+  background: -o-linear-gradient(-45deg, rgba(255,255,255,1) 15%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 60%,rgba(255,255,255,1) 85%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, rgba(255,255,255,1) 15%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 60%,rgba(255,255,255,1) 85%); /* IE10+ */
+  background: linear-gradient(135deg, rgba(255,255,255,1) 15%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 60%,rgba(255,255,255,1) 85%); /* W3C */
+  border: 1px solid @green;
+//  border-top: 40px solid @green;
+//  margin-bottom: 50px;
+}
+
+
+
+#footer {
+  position: relative;
+  z-index: -1;
+  padding-top: 0px;
+  max-width:1920px;
+  width: 100%;
+  margin: 0 auto;
+  background: url('../img/3.jpg') no-repeat center center;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  
+
+  #footer-wrapper {
+    background: @white;
+    opacity: 0.95;
+    > div > ul > li {
+      background: none; // fix for Dolphin browser
+    }
+
+    .contact-type {
+     display: block;
+    }
+  
+    .logo {
+      display: inline-block;
+      vertical-align: middle;
+      image-rendering:optimizeQuality;
+      width: 52px;
+      padding: 0 0.5em;
+    }
+  
+    #small-prints {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans Condensed', sans-serif;
+      letter-spacing: 0.1em;
+      font-size: 0.5em;
+      height: 80px;
+      img {
+       width: 30px;
+      }
+      span {
+       padding: 1em 1.5em;
+      }
+    }
+  }
+  
+  @media screen and (min-width:@screen-xs-min) {
+    #footer-wrapper {
+      #small-prints {
+        font-size: 2em;
+        img {
+         width: 50px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width:@screen-sm-min) {
+    min-height: 200px;
+    padding: 50px 0;
+    li.list-group-item {
+      font-size: 2em;
+    }
+    #footer-wrapper {
+      #footer-contact {
+        height: 180px;
+      }
+      #small-prints {
+        height: 60px;
+      }
+    }
+  }
+
+  @media screen and (min-width:@screen-lg-min) and (min-height:@screen-height-wide) {
+    min-height: 450px;
+    padding: 150px 0;
+    #footer-wrapper {
+      >div:not(#small-prints) {
+        height: auto;
+      }
+      #small-prints {
+        span {
+          padding-right: 50px;
+        }
+        font-size: 1em;
+      }
+    }
+  }
+}
+
 

@@ -322,12 +322,21 @@ function setPendulumPosition() {
   $('#zen-wrapper').removeClass('hide');
 }
 
+function setFooterBackGround() {
+    var state = queryMediaState();
+
+    if (state === "MOBILE") {
+        $('#footer').css('background','none');
+    }
+}
+
 function init() {
     initWayPoints();
     registerScrollsTo();
     resizeHandlers();
     registerClickHandlers();
     registerMediaCallbacks();
+    setFooterBackGround();
     $('body').imagesLoaded(function() {
       //  setPendulumPosition();
         display();
