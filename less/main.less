@@ -118,8 +118,6 @@ p,li,h1,h2,h3,h4,h5,h6 {
 
 html, body{
 // overflow-x: hidden !important;
- position: relative;
- z-index: 10;
  width: 100% !important;
  height: 100% !important;
  margin: 0px !important;
@@ -145,7 +143,6 @@ img {
 #main {
   margin: 0;
   position: relative;
-  z-index: -1;
   height: 100%;
 }
 
@@ -418,64 +415,21 @@ body {
     }
   } 
 }
+
+///////////////////////////////////////////////////////////////////
+// PRODUCT MODAL
+///////////////////////////////////////////////////////////////////
+
+.modal-header button {
+  float: right;
+  font-size: 3em;
+  background: none;
+}
+
+
 ///////////////////////////////////////////////////////////////////
 // PRODUCTS
 ///////////////////////////////////////////////////////////////////
-
-.section-caption, .thumbnail-caption {
-  font-family: 'Lato', sans-serif;
-  padding: 20px;
-  margin: 0;
-}
-
-.section-caption {
-  font-size: 3.5em;
-}
-
-.thumbnail-caption {
-  font-family: 'Open Sans Condensed', sans-serif;
-  letter-spacing: 0.1em;
-  padding: 0 20px;
-  line-height: 342px;
-  color: #000;
-  h3 {
-    font-size: 2.5em;
-    margin: 0;
-    line-height: 1.2;
-  }
-}
-
-.product-panel {
-  text-align: center;
-}
-
-.product-title {
-  font-family: 'Dancing Script', cursive;
-  h1 {
-    font-size: 2.4em;
-  }
-  h3 {
-    font-family: 'Open Sans Condensed', sans-serif;    
-    font-size: 1.8em;
-  color: @darkGreen;
-
-  }
-}
-
-.product-description {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 1.5em;
-  color: @darkGreen;
-  p {
-    margin: 0;
-  }
-  ul {
-    padding-top: 10px;
-  }
-  button {
-
-  }
-}
 
 #products {
   padding: 70px 0;
@@ -487,43 +441,199 @@ body {
   background: @white;
 }
 
+.product-panel {
 
-.product-thumbnail:hover {
+  .product-header {
+    text-align: center;
+    padding: 15px 0px;
+    h3 {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+    }
+    h4 {
+      margin: 0;
+      padding-top: 5px;
+      color: @darkGreen;
+      font-family: 'Open Sans Condensed', sans-serif;    
+    }
+  }
+
+  .title {
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  .product-description {
+    font-family: 'arial', sans-serif;
+    color: #000;
+    padding-bottom: 15px;
+    p {
+      margin: 0;
+    }
+  }
+
+  .product-features {
+    ul {
+      line-height: 1.5;
+    }
+  }
+
+  .product-prices {
+    text-align: center;
+  }
+}
+
+.product-visual {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.grid-element:hover {
   border: 1px solid @darkGray!important;
   z-index: 1;
 }
 
-.text-thumbnail {
-//  background: rgba(39, 174, 96, 0.7);  opacity: 0.7;
-//  background: url('../img/polka-1-4.png');
-}
-
-.product-thumbnail, .text-thumbnail {
-  cursor: pointer;
-  padding: 20px;
-  border: 1px solid rgba(30,130,76,0.3);
+.grid-element {
   margin-top: -1px;
   margin-right: -1px;
-  height: 371px;
+  border: 1px solid rgba(30,130,76,0.3);
+  padding: 20px;
+  cursor: pointer;
+
+
+  .product-panel {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2.3em;
+  }
+
+  .product-header {
+    h3 {
+      font-size: 2.6em;
+    }
+    h4 {
+      font-size: 2.3em;
+    }
+    @media screen and (min-width:@screen-sm-min) {
+      h3 {
+        font-size: 1.8em;
+      }
+      h4 {
+        font-size: 1.5em;
+      }
+    }
+  }
+  .product-description p, .product-features ul {
+    font-size: 1.8em;
+  }
+
+  .product-photo {
+    margin: 0 auto;
+    height: 200px;
+    line-height: 200px;
+    width: 200px;
+    img {
+      width: 80%;
+      height: 80%;
+      @media screen and (min-width:@screen-lg-min) {
+        width: 85%;
+        height: 85%;
+      }
+    }
+  }
+ 
+  @media screen and (min-width:@screen-sm-min) {
+    height: 371px;
+  }
   @media screen and (min-width:@screen-wide-min) and (min-height:@screen-height-wide) {
     height: 400px;
   }
 }
 
-.product-img {
- cursor: pointer;
-  margin: 0 auto;
-  height: 200px;
-  line-height: 200px;
-  width: 200px;
-  img {
-    width: 80%;
-    height: 80%;
-    @media screen and (min-width:@screen-lg-min) {
-      width: 100%;
-      height: 100%;
+
+.expand-box {
+  position: relative;
+  margin: 15px -15px;
+  padding: 20px;
+  border: 1px solid #bebebe;
+  text-align: left;
+
+  .arrow-indicator {
+    position: relative;
+    top: -33px;
+    width: 21px; 
+  }
+
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    background: none;
+    span:first-child {
+      font-size: 60px;
     }
   }
+
+  .product-visual {
+    padding: 40px;
+    text-align: center;
+    font-family: 'arial', sans-serif;
+
+    .product-photo {
+      display: inline-block;
+      width: 220px;
+      height: 220px;
+      line-height: 200px;
+      padding: 10px;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    
+    .product-format span {
+      display: inline-block;
+      padding: 15px;
+      font-size: 1.4em;
+    }
+  }
+
+  .title {
+    font-size: 1.8em;
+  }
+
+  .product-description p, .product-features ul {
+    font-size: 1.3em;
+  }
+
+  .product-panel {
+    display: inline-block;
+    text-align: left;
+
+    .product-prices {
+      button {
+       border: none;
+      }
+      a {
+       color: #fff !important;
+      }
+    }
+  }
+
+}
+
+
+
+
+.section-caption {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 3.5em;
+  padding: 20px;
+  margin: 0;
 }
 
 .thumbnail-sm-wrapper {
@@ -531,24 +641,26 @@ body {
   padding: 5px;
   width: 240px;
   height: 50px;
-}
 
-.thumbnail-sm {
-  background: none;
-  display: inline-block;
-  vertical-align: top;
-  border: 1px solid #ebebeb;
-  width: 40px;
-  height: 40px;
-  margin: 0 10px;
-  img {
-    width: 100%;
+ .thumbnail-sm {
+    display: inline-block;
+    margin: 0 10px;
+    border: 1px solid #ebebeb;
+    width: 40px;
+    height: 40px;
+    background: none;
+    vertical-align: top;
+    img {
+     width: 100%;
+    }
+  }
+
+  .thumbnail-sm.active {
+   border-color: #ababab;
   }
 }
 
-.thumbnail-sm.active {
-  border-color: #ababab;
-}
+
 
 //////////////////////////////////////////////////////////
 // FIND A STORE 
