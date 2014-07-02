@@ -311,16 +311,18 @@ function registerClickHandlers() {
 
     $('.thumbnail-sm').on('mouseover', thumbnailHandler);
 
-    $('#product-grid > .row').on('click', function() {
+    $('#product-grid  .row').on('click', function(e) {
+        if( !e ) e = window.event;
         var mediaState = queryMediaState();
-        var e = $(event.target).closest('.grid-element');
-        var productImg = $(e).find('.product-photo').html();
-        var thumbnails = $(e).find('.thumbnail-sm-wrapper').html();
-        var productBody = $(e).find('.product-body').html();
 
-        var boxWidth = parseInt($(e).css('width'), 10);
+        var ge = $(e.target).closest('.grid-element');
+
+        var productImg = $(ge).find('.product-photo').html();
+        var thumbnails = $(ge).find('.thumbnail-sm-wrapper').html();
+        var productBody = $(ge).find('.product-body').html();
+        var boxWidth = parseInt($(ge).css('width'), 10);
         if (mediaState === "MOBILE") {
-            var o = $(e).find('.product-panel .product-body');
+            var o = $(ge).find('.product-panel .product-body');
 
             $(o).collapse('toggle');
 
