@@ -563,7 +563,11 @@ body {
 
   .arrow-indicator {
     position: relative;
-    top: -33px;
+    top: -31px;
+    @media screen and (min-height:@screen-height-wide) {
+      top: -33px;
+    }
+
     width: 21px; 
   }
 
@@ -593,7 +597,7 @@ body {
         height: 200px;
       }
     }
-    
+
     .product-format span {
       display: inline-block;
       padding: 15px;
