@@ -1,7 +1,7 @@
 {
   "name": "826094",
   "version": "0.0.0",
-  "description": "ITI Biotech Demo",
+  "description": "NuAyre WebPage",
   "main": "server.js",
   "dependencies": {
     "express": "~3.5.1"

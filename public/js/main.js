@@ -316,6 +316,10 @@ function registerClickHandlers() {
     $('#product-grid  .row').on('click', function(e) {
         if (!e) e = window.event;
         var mediaState = queryMediaState();
+        
+        if ($(this).hasClass('expand-box')) {
+            return;
+        }        
 
         var ge = $(e.target).closest('.grid-element');
 
