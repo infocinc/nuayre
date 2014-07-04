@@ -137,6 +137,25 @@ img {
 
 
 ///////////////////////////////////////////////////////////////////////
+// MODALS
+///////////////////////////////////////////////////////////////////////
+
+.modal-header button {
+  font-size: 60px !important;
+  line-height: 40px;
+}
+.modal-body {
+  background: url('../img/tile.png');
+  img {
+    display: block;
+    margin: 0 auto;
+    padding:  15px;
+    width: 140px;
+  }
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 20px;
+}
+///////////////////////////////////////////////////////////////////////
 // main wrapper
 ///////////////////////////////////////////////////////////////////////
 
@@ -174,7 +193,7 @@ body {
 }
 
 #slogan {
-  h1 {
+  h2 {
     margin-left: -10px;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.2em;
@@ -182,14 +201,22 @@ body {
     font-weight: bold;
     color: @midnight;
   }
-  h1:first-child{
-    padding-top: 20px; 
+  h2:first-child{
+    padding-top: 0px; 
     padding-bottom: 0px;
     margin-bottom: 0px;
   }
-  h1:last-child {
+  h2:last-child {
     margin: 0;
-    padding-top: 10px;
+    padding-top: 5px;
+  }
+  @media screen and (min-width:@screen-sm-min) {
+    h2:first-child {
+      padding-top: 10px;
+    }
+    h2:last-child {
+      padding-top: 10px;
+    }
   }
 }
 
@@ -207,11 +234,11 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
   }
 
-  h1,ul,h2,h6 {
+  h1,ul,h2,#toggle-glyph {
     margin: 0;
   }
 
-  h1,h2,h6 {
+  h1,h2,#toggle-glyph {
     vertical-align: middle;
   }
 
@@ -244,7 +271,7 @@ body {
     line-height: 50px;
   }
 
-  h6 {
+  #toggle-glyph {
     padding: 0 20px;
     border-left: 1px solid @white;
     color: rgba(255,255,255,1);
@@ -252,20 +279,24 @@ body {
   }
 
   .bar-items {
-    background: @green;
+    background: @white;
     text-align: center;
+    padding: 0px;
+    a{
+      display: block;
+      color: @black !important;
+      border:1px solid #bebebe;
+      margin-top: -1px;
+    }
     li {
-      display: inline-block;
-      a{
-        color: #fff !important;
-      }
-      vertical-align: middle;
-      padding: 20px 5px;
+      padding: 15px 0px;
       font-size: 2em;
     }
-    #lang-item {
-      border: none;
-      float:right;
+    li:active {
+      background: @darkGray;
+    }
+    a:first-child {
+      margin-top: 0px;
     }
   }
 
@@ -283,13 +314,27 @@ body {
       background: none;
       text-align: left;
       display: inline-block;
+      a {
+        border: none;
+        margin-top: 0px;
+        display: inline;
+        color: @white !important;
+      }
       li {
-       line-height: 70px;
-       border-right: 1px solid @white;
-       display: inline-block;
-       vertical-align: middle;
-       padding: 0 20px;
-       font-size: 1.3em;
+        border: none;
+        display: inline-block;
+        vertical-align: middle;
+        border-right: 1px solid @white;
+        padding: 0px 20px;
+        line-height: 70px;
+        font-size: 1.3em;
+      }
+      li:active {
+       background: @darkGreen;
+      }
+      #lang-item {
+        border: none;
+        float:right;
       }
     }
   }
@@ -303,18 +348,18 @@ body {
 #apropos {
   
 
-  h1,h2 {
+  h2,h2 {
    font-family: 'Lato', sans-serif;
 
   }
 
-  h1 {
+  h2 {
    margin-top: 30px;
    margin-bottom: 10px;
    font-size: 3.8em;
   }
 
-  h2 {
+  h3 {
    margin: 10px 0;
    margin-bottom: 50px;
    font-size: 2em;
@@ -332,6 +377,7 @@ body {
     opacity: 1;
     border: 1px solid @green;
     height: 400px;
+    padding: 0;
     img {
       width: 90%;
     }
@@ -368,6 +414,8 @@ body {
   @media screen and (min-width:@screen-sm-min) {
     padding: 200px 0;
     #carousel-nuayre {
+      padding-left: 15px;
+      padding-right: 15px;
       border-radius: 10px;
       height: 450px;
     }
@@ -400,10 +448,10 @@ body {
 .slide-nav {
  display: none;
 
- @media screen and (min-height:500px) {
+ @media screen and (min-height:560px) {
     display: block;
     position: absolute;
-    bottom: 30px; 
+    bottom: 10px; 
     left: 50%;
     margin-left: -25px;
     width: 50px;
@@ -414,6 +462,9 @@ body {
      width: 50px;
     }
   } 
+ @media screen and (min-width:@screen-md-min) and (min-height:560px) {
+   bottom: 30px;
+ }
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -446,11 +497,11 @@ body {
   .product-header {
     text-align: center;
     padding: 15px 0px;
-    h3 {
+    h2 {
       margin: 0;
       font-family: 'Lato', sans-serif;
     }
-    h4 {
+    h3 {
       margin: 0;
       padding-top: 5px;
       color: @darkGreen;
@@ -511,17 +562,17 @@ body {
   }
 
   .product-header {
-    h3 {
+    h2 {
       font-size: 2.6em;
     }
-    h4 {
+    h3 {
       font-size: 2.3em;
     }
     @media screen and (min-width:@screen-sm-min) {
-      h3 {
+      h2 {
         font-size: 1.8em;
       }
-      h4 {
+      h3 {
         font-size: 1.5em;
       }
     }
@@ -537,10 +588,8 @@ body {
     width: 200px;
     img {
       width: 80%;
-      height: 80%;
       @media screen and (min-width:@screen-lg-min) {
-        width: 85%;
-        height: 85%;
+        width: 95%;
       }
     }
   }
@@ -552,23 +601,30 @@ body {
     height: 400px;
   }
 }
+.grid-element:active {
+  background: @darkGray;
+
+  @media screen and (min-width:@screen-lg-min) {
+   background: none;
+  } 
+}
 
 
 .expand-box {
   position: relative;
-  margin: 15px -15px;
-  padding: 20px;
-  border: 1px solid #bebebe;
   text-align: left;
-
+  margin: 15px -15px;
+  border: 1px solid #bebebe;
+  padding: 20px;
+   
   .arrow-indicator {
     position: relative;
     top: -31px;
-    @media screen and (min-height:@screen-height-wide) {
-      top: -33px;
-    }
     @media screen and (min-width:@screen-sm-min) {
-      top: -32px;
+      top: -31px;
+    }
+    @media screen and (min-width:@screen-lg-min) and (min-height:@screen-height-wide) {
+      top: -33px;
     }
 
     width: 21px; 
@@ -597,7 +653,6 @@ body {
       padding: 10px;
       img {
         width: 200px;
-        height: 200px;
       }
     }
 
@@ -629,7 +684,6 @@ body {
       }
     }
   }
-
 }
 
 
@@ -703,7 +757,9 @@ body {
     margin: 0;
     li {
       display: inline-block;
-      padding: 20px 20px;
+      padding-top: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 }
@@ -766,43 +822,64 @@ ul.contact-type > li {
       background: none; // fix for Dolphin browser
     }
 
+    .fb-like span {
+      vertical-align: top !important;
+    }
     .contact-type {
      display: block;
     }
   
-    .logo {
-      display: inline-block;
-      vertical-align: middle;
-      image-rendering:optimizeQuality;
-      width: 52px;
-      padding: 0 0.5em;
+    .logos {
+      padding-top: 15px;
+//      image-rendering:optimizeQuality;
     }
   
     #small-prints {
       margin: 0;
       padding: 0;
+      border-top: 1px solid rgba(39,174,96,0.5);
       font-family: 'Open Sans Condensed', sans-serif;
       letter-spacing: 0.1em;
-      font-size: 0.5em;
-      height: 80px;
+      font-size: 2.5em;
+      div:last-child {
+        margin-bottom: 25px;
+        a {
+          display: inline-block;
+          padding: 15px;
+          width: 180px;
+          background: @green;
+        }
+        span {
+          color: @white;
+        }
+        a:hover {
+          color: @blue;
+        }
+      }
       img {
-       width: 30px;
-      }
-      span {
-       padding: 1em 1.5em;
-      }
+        padding: 20px;
+        width: 140px;
+      }      
+    }
+
+    .social-logo {
+        width: 40px;
+    }
+    .social-button-wrapper {
+      position:relative;
+      left: 18px;
+
+    }
+
+    #footer-community li {
+      padding: 10px 0;
+    }
+    #footer-community li:first-child {
+      padding: 0.3em 0.5em;
     }
   }
   
   @media screen and (min-width:@screen-xs-min) {
-    #footer-wrapper {
-      #small-prints {
-        font-size: 2em;
-        img {
-         width: 50px;
-        }
-      }
-    }
   }
 
   @media screen and (min-width:@screen-sm-min) {
@@ -816,7 +893,22 @@ ul.contact-type > li {
         height: 180px;
       }
       #small-prints {
-        height: 60px;
+        font-size: 1em;
+        height: 50px;
+        line-height: 51px;
+        img {
+          padding: 0px;
+          width: 45px;
+        }      
+        #cinc-anchor {
+          height: 30px;
+          line-height: 30px;
+          width: 120px;
+          padding: 0px;
+        }
+        div:last-child {
+          margin-bottom: 0px;
+        }
       }
     }
   }
@@ -827,12 +919,6 @@ ul.contact-type > li {
     #footer-wrapper {
       >div:not(#small-prints) {
         height: auto;
-      }
-      #small-prints {
-        span {
-          padding-right: 50px;
-        }
-        font-size: 1em;
       }
     }
   }

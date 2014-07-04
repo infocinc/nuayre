@@ -20,20 +20,22 @@
   background: linear-gradient(135deg, rgba(255,255,255,1) 15%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 40%,rgba(56,187,73,1) 60%,rgba(255,255,255,1) 85%); /* W3C */
 //  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-  h2 {
+ > div {
     margin: 0;
-    padding: 20px 10px;
-    font-family: 'Source Sans Pro', sans-serif;
-    &:extend(#navbar h1);
-    font-size: 4em;
-    font-weight: 300;
-    @media screen and (min-width:@screen-sm-min) {
-      font-size: 2.5em;
-      padding: 30px 10px;
+    height: 40px;
+    img {
+      width: 50px;
+      padding: 0px 10px;
     }
-    text-align: center;
+
+    @media screen and (min-width:@screen-sm-min) {
+      height: 60px;
+    
+    }
+
   }
   
+
   margin: 20px 0;
 }
 
@@ -61,31 +63,32 @@
 
 
 #logos {
+  position: relative;
   background: url('../img/bg-eco2.jpg') center center;
   background-size: cover;
   height:230px;
-  line-height: 230px;
-  text-align: right;
-  padding-right: 20px;
-  
-  img {
+  line-height: 180px;
+  text-align: right;  
+
+  #ecologo {
     display: inline-block;
     width: 100px;
+    margin-top: 50px;
+    margin-right: 15px;
     vertical-align: middle;
   }
-    
+
+
   @media screen and (min-width:@screen-sm-min)  {
     height: 300px;
     line-height: 300px;
     background: url('../img/bg-eco2.jpg') center center;
     background-size: cover;
-    #itilogo {
-      display: none;
-    }
-    img {
+
+    #ecologo {
+      margin-top: 70px;
       width: 200px;
     }
-
   }
 
   @media screen and (min-width:@screen-lg-min) and (min-height:@screen-height-wide) {
@@ -113,7 +116,7 @@
 }
 
 
-#iti-logo {
+#nuayre-logo {
   z-index: 30;
   position: absolute;
   left: 50%;

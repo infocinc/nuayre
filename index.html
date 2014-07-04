@@ -28,14 +28,12 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Playfair+Display" />
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900' rel='stylesheet' type='text/css'>
-
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
@@ -46,12 +44,19 @@
     <![endif]-->
 
 
-    <!--[if IE 9]>
-      <div id='gif-spinner'></div>
-    <![endif]-->
-
-
-
+    <div class="modal fade" id="english-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header clearfix">
+                    <button type="button" class="close noglow" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src='img/nuayre.png'></img>
+                    ENGLISH VERSION OF THE SITE COMING SOON !!!
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Modals -->
 
 
@@ -77,7 +82,7 @@
 
                 <div class='navbar-header'>
                     <button type='button' data-toggle="collapse" data-target="#navbar-collapse-1" class='navbar-toggle btn noglow background-none'>
-                        <h6 class='glyphicon glyphicon-list'></h6>
+                        <div id='toggle-glyph' class='glyphicon glyphicon-list'></div>
                     </button>
                     <div class='navbar-brand text-center'>
                         <h1><a id='home-bar-anchor' href='#header'> NUAYRE </a> 
@@ -89,17 +94,23 @@
 
                 <div id='navbar-collapse-1' class='bar-items collapse navbar-collapse'>
                     <ul>
-                        <li><a id='product-bar-anchor' href='#products'>
-                        PRODUITS</a>
-                        </li>
-                        <li><a id='apropos-bar-anchor' href='#apropos'>A PROPOS</a>
-                        </li>
-                        <li><a id='store-bar-anchor' href='#store'>TROUVER UN MAGASIN</a>
-                        </li>
-                        <li><a id='contact-bar-anchor' href='#footer'>CONTACT</a>
-                        </li>
-                        <li id='lang-item'><a href='#' id='lang-anchor'> ENGLISH </a> 
-                        </li>
+                        <a id='product-bar-anchor' href="#products">
+                            <li>
+                                PRODUITS
+                            </li>
+                        </a>
+                        <a id='apropos-bar-anchor' href='#apropos'>
+                            <li>A PROPOS</li>
+                        </a>
+                        <a id='store-bar-anchor' href='#store'>
+                            <li>TROUVER UN MAGASIN</li>
+                        </a>
+                        <a id='contact-bar-anchor' href='#footer'>
+                            <li>CONTACT</li>
+                        </a>
+                        <a href='#' data-target="#english-modal" data-toggle="modal" id='lang-anchor'>
+                            <li id='lang-item'>ENGLISH</li>
+                        </a>
                     </ul>
 
                 </div>
@@ -107,32 +118,24 @@
 
 
             <div id="logos">
-                <img id='ecologo' src="img/ecologo.png">
+                <img id='ecologo' src="img/ecologo.png" alt='ecologo certifie ul 2796'>
             </div>
 
             <div id='store-bar' class="nav-bar container-fluid ">
                 <div class='col-xs-6 square-border green clearfix'>
-                    <h2 class='float-left'>
-                    </h2>
                 </div>
                 <div class='col-xs-6 square-border green clearfix'>
-                    <h2 class='float-right'>
-                    </h2>
                 </div>
 
-                <div id="iti-logo" style="text-align: right;">
-                    <img src="img/itilogo.png">
+                <div id="nuayre-logo" style="text-align: right;">
+                    <img src="img/nuayre.png" alt='logo Nuayre'>
                 </div>
             </div>
 
             <div id='contact-bar' class="nav-bar clearfix container-fluid">
                 <div class="col-xs-6 square-border green clearfix">
-                    <h2 class='float-left'>
-                    </h2>
                 </div>
                 <div class="col-xs-6 square-border green clearfix">
-                    <h2 class='float-right'>
-                    </h2>
                 </div>
             </div>
 
@@ -141,17 +144,17 @@
 
                 <div class='col-sm-2'>
                     <div id='bells-wrapper' class="mobile-hide">
-                        <img src='img/zen1.png'></img>
+                        <img src='img/zen.png' alt='un carillon de porte qui oscille'></img>
                     </div>
                 </div>
                 <div id='slogan' class='col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-2 text-center'>
-                    <h1>&EacuteLIMINATEURS D'ODEURS</h1>
-                    <h1>RAFRAICHISSEURS</h1>
+                    <h2>&EacuteLIMINATEURS D'ODEURS</h2>
+                    <h2>RAFRAICHISSEURS</h2>
                 </div>
             </div>
             <div class='slide-nav'>
                 <a id='apropos-nav-anchor' href='#apropos'>
-                    <img src='img/arrow.png'></img>
+                    <img src='img/arrow.png' alt='une fleche qui pointe vers le bas'></img>
                 </a>
             </div>
         </section>
@@ -168,40 +171,40 @@
                 <div class="carousel-inner">
                     <div class="item text-center active">
                         <div class='col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0 '>
-                            <h1>INTERDUM ET MALESUADA FAMES AC</h1>
-                            <h2>Nunc sit amet nisl eget</h2>
+                            <h2>INTERDUM ET MALESUADA FAMES AC</h2>
+                            <h3>Nunc sit amet nisl eget</h3>
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
-                            <img src='img/ecobanner.png'></img>
+                            <img src='img/ecobanner.jpg' alt='une banniere ecologo'></img>
                         </div>
                     </div>
 
                     <div class="item text-center">
                         <div class='col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0 '>
-                            <h1>ALIQUAM IACULIS FAUCIBUS VIVERRA</h1>
-                            <h2>Vivamus imperdiet at elit at</h2>
+                            <h2>ALIQUAM IACULIS FAUCIBUS VIVERRA</h2>
+                            <h3>Vivamus imperdiet at elit at</h3>
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
-                            <img src='img/anibanner.png'></img>
+                            <img src='img/nontestebanner.jpg' alt='une banniere non teste sur animaux'></img>
                         </div>
                     </div>
 
                     <div class="item text-center">
                         <div class='col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0 '>
-                            <h1>NULLAM NIBH METUS MOLESTIE QUIS</h1>
-                            <h2></h2>
+                            <h2>NULLAM NIBH METUS MOLESTIE QUIS</h2>
+                            <h3>Vivamus imperdiet at elit at</h3>
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
-                            <img src='img/family2.png'></img>
+                            <img src='img/pots.jpg' alt="les eliminateurs d'odeurs NuAyre"></img>
                         </div>
                     </div>
                     <div class="item text-center">
                         <div class='col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 '>
-                            <h1>15X PLUS EFFICACE QUE LE BICARBONATE DE SOUDRE</h1>
-                            <h2>Prouv&eacute en laboratoire, nos produits r&eacutefrig&eacuterateurs et cong&eacutelateurs prolongent la conservation de la nourriture et pr&eacuteservent la flore des aliments</h2>
+                            <h2>15X PLUS EFFICACE QUE LE BICARBONATE DE SOUDRE</h2>
+                            <h3>Prouv&eacute en laboratoire, nos produits r&eacutefrig&eacuterateurs et cong&eacutelateurs prolongent la conservation de la nourriture et pr&eacuteservent la flore des aliments</h3>
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
-                            <img src='img/freezer.png'></img>
+                            <img src='img/freezer.jpg' alt="les produits refrigerateurs et congelateurs NuAyre"></img>
                         </div>
                     </div>
                 </div>
@@ -215,7 +218,7 @@
             </div>
             <div class='slide-nav'>
                 <a id='product-nav-anchor' href='#products'>
-                    <img src='img/arrow.png'></img>
+                    <img src='img/arrow.png' alt="une fleche qui pointe vers le bas"></img>
                 </a>
             </div>
         </section>
@@ -229,20 +232,20 @@
                         <div class="product-visual">
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/bleu2_xs.png"></img>
+                                    <img src="img/bleu2_xs.jpg" alt="thumbnail produit eliminateur d'odeur Air Frais NuAyre"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/bleu2side_xs.png"></img>
+                                    <img src="img/bleu2side_xs.jpg" alt="thumbnail produit eliminateur d'odeur Air Frais Nuayre vue cote"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/bleu2_big.png" class="thumbnail-md"></img>
+                                <img src="img/bleu2_big.jpg" alt="gros plan eliminateur d'odeurs Air Frais Nuayre" class="thumbnail-md" alt="gros plan produit eliminateur d'odeur Air Frais NuAyre"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Air Frais</h3>
-                                <h4>senteur la plus populaire</h4>
+                                <h2>Air Frais</h2>
+                                <h3>senteur la plus populaire</h3>
                             </div>
                             <div class='product-body collapse desktop-hide'>
                                 <div class="product-description">
@@ -276,22 +279,22 @@
                         <div class="product-visual">
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/blanc1_xs.png"></img>
+                                    <img src="img/blanc1_xs.jpg" alt="thumbnail eliminateur d'odeurs Sans Senteur Nuayre"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/blancside1_xs.png"></img>
+                                    <img src="img/blancside1_xs.jpg" alt="thumbnail eliminateur d'odeurs Sans Senteur Nuayre"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/blanc1_big.png" class="thumbnail-md"></img>
+                                <img src="img/blanc1_big.jpg" alt="gros plan eliminateur d'odeurs Sans Senteur NuAyre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Sans Senteur</h3>
-                                <h4>allergies ou sensibles aux produits chimiques</h4>
+                                <h2>Sans Senteur</h2>
+                                <h3>allergies ou sensibles aux produits chimiques</h3>
                             </div>
-                             <div class='product-body collapse desktop-hide'>
+                            <div class='product-body collapse desktop-hide'>
                                 <div class="product-description">
                                     <span class='title'>Description:</span>
                                     <p>Practical odor eliminator offers a powerful way to eliminate malodors while delivering a consistent, natural, fresh fragrance of Cool &amp; Clean. Super Odor Eliminator Air Freshener can be placed in both large and small places in or around the office including closets, storage areas, kitchens, breakrooms, garages, basements, cars, trash cans, and more. Clear Visual Use Indicator shrinks uniformly in size to help show when it's time to replace. Super Odor Eliminator is infused with natural oils and lasts up to 60 days, effectively eliminates odors in large spaces up to 450 cubic feet.</p>
@@ -324,20 +327,20 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/blanc1_xs.png"></img>
+                                    <img src="img/linfrais_xs.jpg" alt="thumbnail eliminateur d'odeurs Lin Frais Nuayre "></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/blancside1_xs.png"></img>
+                                    <img src="img/linfraisside_xs.jpg" alt="thumbnail eliminateur d'odeurs Lin Frais Nuayre vue cote"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/blanc1_big.png" class="thumbnail-md"></img>
+                                <img src="img/linfrais_big.jpg" alt="gros plan eliminateur d'odeurs Lin Frais Nuayre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Lin Frais</h3>
-                                <h4>nouveaut&eacute</h4>
+                                <h2>Lin Frais</h2>
+                                <h3>nouveaut&eacute</h3>
                             </div>
                             <div class='product-body collapse'>
                             </div>
@@ -346,29 +349,29 @@
                     </div>
                 </div>
 
-                <div id="line-one-expand" class="expand-box row hide">
-                    <div class="arrow-indicator">
-                        <img src="img/arrow2.png">
-                    </div>
-                    <button type="button" class="close noglow">
-                        <span aria-hidden="true" style="font-size: 60px;">×</span>
-                        <span class="sr-only">Close</span>
-                    </button>
+                <div id="line-one-expand" class="expand-box hide row">
+                        <div class="arrow-indicator">
+                            <img src="img/arrow2.png">
+                        </div>
+                        <button type="button" class="close noglow">
+                            <span aria-hidden="true" style="font-size: 60px;">×</span>
+                            <span class="sr-only">Close</span>
+                        </button>
 
-                    <div class="product-visual col-sm-4">
-                        <div class="product-photo">
+                        <div class="product-visual col-sm-4">
+                            <div class="product-photo">
+                            </div>
+                            <div class="thumbnail-sm-wrapper">
+                            </div>
+                            <div class="product-format">
+                                <span>Format: 227g - 8oz</span>
+                            </div>
                         </div>
-                        <div class="thumbnail-sm-wrapper">
-                        </div>
-                        <div class="product-format">
-                            <span>Format: 227g - 8oz</span>
-                        </div>
-                    </div>
 
-                    <div class="product-panel col-sm-6 col-sm-offset-1">
-                        <div class="product-body">
+                        <div class="product-panel col-sm-6 col-sm-offset-1">
+                            <div class="product-body">
+                            </div>
                         </div>
-                    </div>
                 </div>
 
 
@@ -378,21 +381,20 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/orange1_xs.png"></img>
+                                    <img src="img/orange1_xs.jpg" alt="thumbnail eliminateur d'odeurs Orange Nuayre"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/orangeside1_xs.png"></img>
+                                    <img src="img/orangeside1_xs.jpg" alt="thumbnail eliminateur d'odeurs Orange vue cote"></img>
                                 </button>
                             </div>
 
                             <div class="product-photo">
-                                <img src="img/orange1_big.png" class="thumbnail-md"></img>
+                                <img src="img/orange1_big.jpg" alt="gros plan eliminateur d'odeurs Orange Nuayre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Orange</h3>
-                                <h4>alet im sircui</h4>
+                                <h2>Orange</h2>
                             </div>
                             <div class='product-body collapse'>
                             </div>
@@ -403,20 +405,19 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/vert1_xs.png"></img>
+                                    <img src="img/vert1_xs.jpg" alt="thumbnail eliminateur d'odeurs Agrumes NuAyre"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow '>
-                                    <img src="img/vertside1_xs.png"></img>
+                                    <img src="img/vertside1_xs.jpg" alt="thumbnail eliminateur d'odeurs Agrumes Nuayre vue cote"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/vert1_big.png" class="thumbnail-md"></img>
+                                <img src="img/vert1_big.jpg" alt="gros plan eliminateur d'odeurs Agrumes Nuayre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Agrumes</h3>
-                                <h4>alet im sircui</h4>
+                                <h2>Agrumes</h2>
                             </div>
                             <div class='product-body collapse'>
                             </div>
@@ -427,20 +428,19 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/jaune_xs.png"></img>
+                                    <img src="img/jaune_xs.jpg" alt="thumbnail eliminateur d'odeur citron Nuayre"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/jauneside_xs.png"></img>
+                                    <img src="img/jauneside_xs.jpg" alt="thumbnail vue cote eliminateur d'odeur citron Nuayre"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/jaune_big.png" class="thumbnail-md"></img>
+                                <img src="img/jaune_big.jpg" alt="gros plan eliminateur d'odeur Citron Nuayre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Citron</h3>
-                                <h4>alert im sircui</h4>
+                                <h2>Citron</h2>
                             </div>
                             <div class='product-body collapse'>
                             </div>
@@ -478,20 +478,20 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/puck2_xs.png"></img>
+                                    <img src="img/puck2_xs.jpg" alt="thumbnail produit sports frais NuAyre"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/puckside2_xs.png"></img>
+                                    <img src="img/puckside2_xs.jpg" alt="thumbnail produit sports frais NuAyre vue cote"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/puck2_big.png" class="thumbnail-md"></img>
+                                <img src="img/puck2_big.jpg" alt="gros plan produit Sports Frais NuAyre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Sports Frais</h3>
-                                <h4>alert im sircui</h4>
+                                <h2>Sports Frais</h2>
+                                <h3>alert im sircui</h3>
                             </div>
                             <div class='product-body collapse'>
                             </div>
@@ -502,20 +502,20 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/box2_xs.png"></img>
+                                    <img src="img/frigobox_xs.jpg" alt="thumbnail produit refrigerateur NuAyre - boite"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/bakingjaune_xs.png"></img>
+                                    <img src="img/frigo_xs.jpg" alt="thumbnail produit refrigerateur NuAyre"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/box2_big.png" class="thumbnail-md"></img>
+                                <img src="img/frigobox_big.jpg" alt="gros plan produit refrigerateur Nuayre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>R&eacutefrigerateur</h3>
-                                <h4>efficacit&eacute de 3 mois</h4>
+                                <h2>R&eacutefrigerateur</h2>
+                                <h3>efficacit&eacute de 3 mois</h3>
                             </div>
                             <div class='product-body collapse'>
                             </div>
@@ -527,20 +527,20 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/box3_xs.png"></img>
+                                    <img src="img/congelbox_xs.jpg" alt="thumbnail produit congelateur NuAyre - boite"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/baking_xs.png"></img>
+                                    <img src="img/congel_xs.jpg" alt="thumbnail produit congelateur NuAyre"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/box3_big.png" class="thumbnail-md"></img>
+                                <img src="img/congelbox_big.jpg" alt="gros plan produit congelateur NuAyre" class="thumbnail-md"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Cong&eacutelateur</h3>
-                                <h4>efficacit&eacute de 1 mois</h4>
+                                <h2>Cong&eacutelateur</h2>
+                                <h3>efficacit&eacute de 1 mois</h3>
                             </div>
                             <div class='product-body collapse'>
                             </div>
@@ -576,20 +576,20 @@
                         <div class='product-visual'>
                             <div class='thumbnail-sm-wrapper'>
                                 <button type="button" class='thumbnail-sm active noglow'>
-                                    <img src="img/puck2_xs.png"></img>
+                                    <img src="img/repelside_xs.jpg" alt="thumbnail produit Repel vue cote"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
-                                    <img src="img/puckside2_xs.png"></img>
+                                    <img src="img/repel_xs.jpg" alt="thumbnail produit Repel Nuayre"></img>
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/puck2_big.png" class="thumbnail-md"></img>
+                                <img src="img/repel_big.jpg" class="thumbnail-md" alt="gros plan produit repel NuAyre"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h3>Repel</h3>
-                                <h4>alet im sircui</h4>
+                                <h2>Repel</h2>
+                                <h3>alet im sircui</h3>
                             </div>
                             <div class='product-description'>
                             </div>
@@ -597,10 +597,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 grid-element ">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 grid-element mobile-hide noclick">
 
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 grid-element ">
+                    <div class="col-xs-12 col-sm-4 col-lg-4 grid-element mobile-hide noclick">
 
                     </div>
 
@@ -633,7 +633,7 @@
 
             <div class='slide-nav' style='bottom: -30px;'>
                 <a id='store-nav-anchor' href='#store'>
-                    <img src='img/arrow.png'></img>
+                    <img src='img/arrow.png' alt="une fleche qui pointe vers le bas"></img>
                 </a>
             </div>
         </section>
@@ -642,7 +642,7 @@
             <div id='avril-row' class='row'>
                 <div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
                     <a target="_blank" href='https://www.avril.ca'>
-                        <img src='img/avril_banner.png'></img>
+                        <img src='img/avril_banner.jpg' alt="Avril - supermarche Sante"></img>
                     </a>
                     <ul>
                         <li>LONGEUIL</li>
@@ -654,10 +654,10 @@
             <div class='row'>
                 <div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
                     <a target="_blank" href='http://www.iga.net'>
-                        <img src='img/iga_banner.png'></img>
+                        <img src='img/iga_banner.jpg' alt="banniere magasins supermarche IGA"></img>
                     </a>
                     <ul>
-                        <li>PLUS DE 250 MAGASINS AU QU&EacuteBEC</li>
+                        <li>PLUS DE 250 MAGASINS IGA AU QU&EacuteBEC</li>
                     </ul>
                 </div>
             </div>
@@ -665,7 +665,7 @@
 
                 <div id='bmr_banner' class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
                     <a target="_blank" href="http://www.bmr.co/fr/boule-a-mite/deodorant/voir-tous-les-produits.html">
-                        <img src='img/bmr_banner.png'></img>
+                        <img src='img/bmr_banner.png' alt="banniere groupe BMR"></img>
                     </a>
                 </div>
                 <div class='col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1'>
@@ -674,7 +674,6 @@
                         <li>ONTARIO</li>
                         <li>MARITIMES</li>
                         <li>SAINT-PIERRE ET MIQUELON</li>
-
                     </ul>
                 </div>
             </div>
@@ -686,65 +685,93 @@
 
         <section id='footer' class='container-fluid text-center'>
             <div id="footer-wrapper" class="clearfix">
-                <div id='footer-contact' class="col-sm-4 col-lg-4">
+
+                <div id='footer-contact' class="col-sm-4 ">
                     <ul class="list-group text-center">
                         <li class="list-group-item">
                             <strong>CONTACT</strong>
                         </li>
                         <li class="list-group-item">
-                            <span class="contact-type red">email</span>
-                            <a href="mailto:paul.sylvestre@itibiotech.com">paul.sylvestre@itibiotech.com</a>
+                            <span class="contact-type green">courriel</span>
+                            <a href="mailto:paul.sylvestre@itibiotech.com">info@nuayre.com</a>
                         </li>
                         <li class="list-group-item">
-                            <span class="contact-type orange">mobile</span>
-                            <span>1+999 999 9999</span>
+                            <span class="contact-type green">mobile</span>
+                            <span>1-888-903-3333</span>
                         </li>
+                        <li class="list-group-item">
+                            <span class="contact-type green">fax</span>
+                            <span>1-450-663-1692</span>
+                        </li>
+
+
+
                     </ul>
                 </div>
 
-                <div id="footer-nav" class="col-sm-4 col-lg-4">
-                    <ul class="list-group text-center">
-                        <li class="list-group-item ">
-                            <strong>NAVIGATION</strong>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#header" id="top-footer-anchor">accueil</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#products" id="services-footer-anchor">produits</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#apropos" id="method-footer-anchor"> &agrave propos</a>
-                        </li>
-
-                        <li class="list-group-item">
-                            <a href="#store" id="team-footer-anchor"> magasins</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="footer-community" class="col-sm-4 col-lg-4">
+                <div id="footer-community" class="col-sm-4 ">
                     <ul class="list-group text-center">
                         <li class="list-group-item ">
                             <strong>COMMUNAUT&Eacute</strong>
                         </li>
                         <li class="list-group-item">
-                            <a href="https://www.facebook.com/nuayre" target="_blank">
-                                facebook</a>
+                            <img id='facebook' src="img/flogo.png" alt='facebook icon' class='social-logo '>
                         </li>
-                        <li class="list-group-item"><a href="#"> google+</a>
+                        <li class="list-group-item">
+                            <div class="fb-like" data-href="http://nuayre.com" data-width="20" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                        </li>
+                        <li class="list-group-item">
+                            <img id='googleplus' src="img/gplus.png" alt='google plus icon' class='social-logo'>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="social-button-wrapper iframe-offset">
+                                <div class="g-plusone" data-annotation="bubble" data-width="300"></div>
+                            </div>
+
                         </li>
                     </ul>
                 </div>
-                <div id='small-prints' class="col-sm-12 text-right">
-                    <hr></hr>
-                    <!--                     <img src="img/cinc-logo.png"></img>
- -->
-                    <span>Conception web <a href='http://infocinc.com'> CINC</a> 2014</span>
+
+                <div id="footer-nav" class="col-sm-4 ">
+                    <ul class="list-group text-center">
+                        <li class="list-group-item ">
+                            <strong>LIENS EXTERNE</strong>
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="http://ecologo.org" target="_blank"> ecologo</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="http://www.respect-animal.ca">
+                            respect-animal 
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="http://peta.org"> 
+                            peta 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div id='small-prints' class="col-sm-12 clearfix">
+                    <div class="col-sm-4">
+                        <a target="_blank" href="htp://ecologo.org">
+                            <img src='img/ecologo_xs.png' alt="ecologo certifie ul 2796"></img>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-sm-push-4">
+                        <img src='img/nonteste.png' alt="logo non teste sur animaux"></img>
+                    </div>
+
+                    <div class="col-sm-4 col-sm-pull-4">
+                        <a id='cinc-anchor' href='http://infocinc.com'>
+                            <span>CONCEPTION CINC 2014</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <!--         <div id='footer'>
-        </div>
- -->
+        </section>
     </div>
 
     <!-- media state -->
@@ -779,20 +806,6 @@
         "js/main.js"
     ];
     Modernizr.load(load);
-    </script>
-
-    <!-- twitter button -->
-    <script>
-    ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + '://platform.twitter.com/widgets.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, 'script', 'twitter-wjs');
     </script>
 
     <!------------- Google+1 Button Script ---->
