@@ -395,7 +395,7 @@ function setFaceBookPageLink() {
 
      if (site_state === 'MOBILE') {
         $('#footer-fbook-anchor').attr('href',"https://m.facebook.com/pages/NuAyre/893345784014314");
-          
+        
      }
 }
 
@@ -410,6 +410,7 @@ function init() {
     }); // hack to get collapse working properly
     registerMediaCallbacks();
     setFooterBackGround();
+    setFaceBookPageLink();
     $('body').imagesLoaded(function() {
         //  setPendulumPosition();
         display();
