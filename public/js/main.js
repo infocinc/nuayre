@@ -313,23 +313,36 @@ function registerClickHandlers() {
         thumbnailHandler(this)
     });
 
+
     $('#product-grid  .row').on('click', function(e) {
         if (!e) e = window.event;
         var mediaState = queryMediaState();
         
         if ($(this).hasClass('expand-box')) {
             return;
-        }        
-
+        };
         var ge = $(e.target).closest('.grid-element');
-
+        if ($(ge).hasClass('mobile-hide')) {
+            return;
+        }
+        
         var productImg = $(ge).find('.product-photo').html();
         var thumbnails = $(ge).find('.thumbnail-sm-wrapper').html();
         var productBody = $(ge).find('.product-body').html();
         var boxWidth = parseInt($(ge).css('width'), 10);
         if (mediaState === "MOBILE") {
+    
             var o = $(ge).find('.product-panel .product-body');
 
+           if ($(e.target).parent().hasClass("thumbnail-sm")) {
+             return;
+           };
+            $(ge).addClass('active');
+            setTimeout(function() {
+                $(ge).removeClass('active')
+            }, 100);
+
+            
             $(o).collapse('toggle');
 
         } else {
@@ -351,9 +364,6 @@ function registerClickHandlers() {
         $(this).closest('.row').addClass('hide');
     });
 
-    $('.buy').on('click', function() {
-        event.stopPropagation();
-    })
 
 }
 /////////////////////////////////////////////////////////////////////

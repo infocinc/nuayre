@@ -501,11 +501,17 @@ body {
       margin: 0;
       font-family: 'Lato', sans-serif;
     }
-    h3 {
+    ul {
       margin: 0;
       padding-top: 5px;
-      color: @darkGreen;
-      font-family: 'Open Sans Condensed', sans-serif;    
+      font-family: 'Open Sans Condensed', sans-serif;   
+      font-size: 2.5em;
+      li:first-child {
+        color: @darkGreen;
+      } 
+      @media screen and (min-width:@screen-sm-min) {
+        font-size: 1.8em;
+      }
     }
   }
 
@@ -536,7 +542,6 @@ body {
 
 .product-visual {
   text-align: center;
-  margin-top: 15px;
 }
 
 .grid-element:hover {
@@ -548,7 +553,7 @@ body {
   margin-top: -1px;
   margin-right: -1px;
   border: 1px solid rgba(30,130,76,0.3);
-  padding: 20px;
+  padding: 15px;
   cursor: pointer;
 
 
@@ -593,22 +598,26 @@ body {
       }
     }
   }
- 
   @media screen and (min-width:@screen-sm-min) {
-    height: 371px;
+    min-height: 371px;
   }
   @media screen and (min-width:@screen-wide-min) and (min-height:@screen-height-wide) {
-    height: 400px;
+    min-height: 400px;
   }
 }
-.grid-element:active {
-  background: @darkGray;
+
+.grid-element.active {
+  background: #bebebe;
 
   @media screen and (min-width:@screen-lg-min) {
    background: none;
   } 
 }
 
+.price-button {
+       border: none;
+       margin-top: 10px;
+}
 
 .expand-box {
   position: relative;
@@ -617,7 +626,7 @@ body {
   border: 1px solid #bebebe;
   padding: 20px;
   cursor: default;
-  
+
   .arrow-indicator {
     position: relative;
     top: -31px;
@@ -629,6 +638,10 @@ body {
     }
 
     width: 21px; 
+  }
+
+  .product-prices {
+    text-align: left;
   }
 
   .close {
@@ -675,15 +688,6 @@ body {
   .product-panel {
     display: inline-block;
     text-align: left;
-
-    .product-prices {
-      button {
-       border: none;
-      }
-      a {
-       color: #fff !important;
-      }
-    }
   }
 }
 
