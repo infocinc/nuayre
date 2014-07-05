@@ -325,7 +325,7 @@ function registerClickHandlers() {
         if ($(ge).hasClass('mobile-hide')) {
             return;
         }
-        
+
         var productImg = $(ge).find('.product-photo').html();
         var thumbnails = $(ge).find('.thumbnail-sm-wrapper').html();
         var productBody = $(ge).find('.product-body').html();
@@ -388,6 +388,15 @@ function setFooterBackGround() {
     if (state === "MOBILE") {
         $('#footer').css('background', 'none');
     }
+}
+
+function setFaceBookPageLink() {
+     var site_state = queryMediaState();
+
+     if (site_state === 'MOBILE') {
+        $('#footer-fbook-anchor').attr('href',"https://m.facebook.com/pages/NuAyre/893345784014314");
+          
+     }
 }
 
 
