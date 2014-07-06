@@ -17,6 +17,7 @@
 // Globals
 ///////////////////////////////////////////////////////////////////////
 var CANVAS_RATIO;
+var GridRowActive;
 
 ///////////////////////////////////////////////////////////////////////
 // Utilities
@@ -315,9 +316,10 @@ function registerClickHandlers() {
 
 
     $('#product-grid  .row').on('click', function(e) {
+
         if (!e) e = window.event;
         var mediaState = queryMediaState();
-        
+
         if ($(this).hasClass('expand-box')) {
             return;
         };
@@ -331,28 +333,39 @@ function registerClickHandlers() {
         var productBody = $(ge).find('.product-body').html();
         var boxWidth = parseInt($(ge).css('width'), 10);
         if (mediaState === "MOBILE") {
-    
+
             var o = $(ge).find('.product-panel .product-body');
 
-           if ($(e.target).parent().hasClass("thumbnail-sm")) {
-             return;
-           };
+            if ($(e.target).parent().hasClass("thumbnail-sm")) {
+                return;
+            };
             $(ge).addClass('active');
             setTimeout(function() {
                 $(ge).removeClass('active')
             }, 100);
 
-            
+
             $(o).collapse('toggle');
 
         } else {
             var expandBox = $(this).next();
             var offset = -36 + boxWidth / 2 + boxWidth * ($(ge).index());
+            var retracted = 'none' === $(expandBox).css('display') ? true : false;
+
             $(expandBox).find('.product-photo').html(productImg);
             $(expandBox).find('.thumbnail-sm-wrapper').html(thumbnails);
             $(expandBox).find('.product-body').html(productBody);
-            $(expandBox).removeClass('hide');
+            var height = parseInt($(expandBox).css("height"), 10);
+
+            if (retracted) {
+                $(expandBox).removeClass('hide');
+                height = parseInt($(expandBox).css("height"), 10);
+            }
             $('.arrow-indicator').css('left', offset + 'px');
+            $('html,body').stop().animate({
+                scrollTop: $(expandBox).offset().top - ($(window).height() - height) / 2
+            }, 500, "easeOutCubic");
+
         }
 
         $('.thumbnail-sm').on('mouseover', function() {
@@ -361,7 +374,15 @@ function registerClickHandlers() {
     });
 
     $('#product-grid .close').on('click', function() {
-        $(this).closest('.row').addClass('hide');
+        var row = $(this).closest('.row');
+        var prev = $(row).prev();
+        $(row).addClass('hide');
+
+        var height = parseInt($(prev).css('height'),10);
+        
+        $('html,body').stop().animate({
+            scrollTop: $(row).prev().offset().top - ($(window).height() - height) / 2
+        }, 500, "easeOutCubic");
     });
 
 
@@ -391,12 +412,12 @@ function setFooterBackGround() {
 }
 
 function setFaceBookPageLink() {
-     var site_state = queryMediaState();
+    var site_state = queryMediaState();
 
-     if (site_state === 'MOBILE') {
-        $('#footer-fbook-anchor').attr('href',"https://m.facebook.com/pages/NuAyre/893345784014314");
-        
-     }
+    if (site_state === 'MOBILE') {
+        $('#footer-fbook-anchor').attr('href', "https://m.facebook.com/pages/NuAyre/893345784014314");
+
+    }
 }
 
 

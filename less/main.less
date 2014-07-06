@@ -629,6 +629,8 @@ body {
 
   .arrow-indicator {
     position: relative;
+    width: 21px;
+    .transition(left,@delay:200ms);
     top: -31px;
     @media screen and (min-width:@screen-sm-min) {
       top: -32px;
@@ -662,12 +664,14 @@ body {
 
     .product-photo {
       display: inline-block;
-      width: 220px;
-      height: 220px;
+      max-width: 220px;
+      width: 100%;
+      max-height: 220px;
       line-height: 200px;
       padding: 10px;
       img {
-        width: 200px;
+        width: 100%;
+        max-width: 200px;
       }
     }
 
@@ -706,7 +710,7 @@ body {
 .thumbnail-sm-wrapper {
   margin: 0 auto;
   padding: 5px;
-  width: 240px;
+  max-width: 240px;
   height: 50px;
 
  .thumbnail-sm {
