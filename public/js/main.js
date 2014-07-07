@@ -61,6 +61,7 @@ function registerMediaCallbacks() {
 
         unmatch: function() {
             mediaSwitch = true;
+            $('.expand-box').addClass('hide');
         },
 
         match: function() {
@@ -308,6 +309,7 @@ function thumbnailHandler(that) {
     transition($(product).children('.product-photo'), alter);
 }
 
+
 function registerClickHandlers() {
 
     $('.thumbnail-sm').on('mouseover', function() {
@@ -343,9 +345,9 @@ function registerClickHandlers() {
             setTimeout(function() {
                 $(ge).removeClass('active')
             }, 100);
-
-
+            
             $(o).collapse('toggle');
+        
 
         } else {
             var expandBox = $(this).next();
@@ -358,6 +360,7 @@ function registerClickHandlers() {
             var height = parseInt($(expandBox).css("height"), 10);
 
             if (retracted) {
+                $('.expand-box').addClass('hide'); // retract all other ones if it applies
                 $(expandBox).removeClass('hide');
                 height = parseInt($(expandBox).css("height"), 10);
             }
@@ -373,13 +376,22 @@ function registerClickHandlers() {
         });
     });
 
+    $('.product-panel .product-body').on('shown.bs.collapse', function() {
+        var height = parseInt($(this).css("height"), 10);
+
+        $('html,body').stop().animate({
+            scrollTop: $(this).offset().top - 0.75*$(window).height()
+        }, 500, "easeOutCubic");
+    })
+
+
     $('#product-grid .close').on('click', function() {
         var row = $(this).closest('.row');
         var prev = $(row).prev();
         $(row).addClass('hide');
 
-        var height = parseInt($(prev).css('height'),10);
-        
+        var height = parseInt($(prev).css('height'), 10);
+
         $('html,body').stop().animate({
             scrollTop: $(row).prev().offset().top - ($(window).height() - height) / 2
         }, 500, "easeOutCubic");
