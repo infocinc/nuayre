@@ -448,7 +448,7 @@ body {
 .slide-nav {
  display: none;
 
- @media screen and (min-height:560px) {
+ @media screen and (min-width:@screen-sm-min) and (min-height:560px) {
     display: block;
     position: absolute;
     bottom: 10px; 
@@ -538,6 +538,14 @@ body {
   .product-prices {
     text-align: center;
   }
+}
+
+.arrow-down {
+  position: absolute;
+  bottom: 10px;
+  right: 5%;
+  font-size: 14px;
+  color: #bebebe;
 }
 
 .product-visual {
@@ -851,14 +859,50 @@ ul.contact-type > li {
       font-family: 'Open Sans Condensed', sans-serif;
       letter-spacing: 0.1em;
       font-size: 2.5em;
-      div:last-child {
-        margin-bottom: 25px;
-        a {
-          display: inline-block;
-          padding: 15px;
-          width: 180px;
-          background: @green;
+      > div:last-child {
+        padding: 20px;
+
+        p {
+          font-size: 13px;
+          margin: 0;
         }
+        a{
+          display: inline-block;
+          margin-top: 10px;
+        }
+        a:active {
+          #cinc-home-logo span {
+            color: @green;
+          }
+          #cinc-text h2 {
+            color: @green;
+          }
+        }
+        #cinc-home-logo {
+          background: #464646;
+          font-size: 15px;
+          height:30px;
+          width: 30px;
+          line-height: 30px;
+          float:left;
+          span {
+            color: @white;
+          }
+        }
+        #cinc-text {
+          background: @black;
+          height:30px;
+          width:80px;
+          float:left;
+          text-align: center;
+          h2 {
+            font-family: 'Lato', sans-serif;
+            font-size: 25px;
+            color: @white;
+            margin: 0;
+          }
+        }
+
         span {
           color: @white;
         }
@@ -904,20 +948,27 @@ ul.contact-type > li {
       }
       #small-prints {
         font-size: 1em;
-        height: 50px;
-        line-height: 51px;
+        height: 80px;
+        line-height: 80px;
+
+        #cinc-ad-wrapper {
+          line-height: 30px;
+        }
+
+        #cinc-anchor {
+          margin: 0;
+        }
+
         img {
           padding: 0px;
           width: 45px;
         }      
-        #cinc-anchor {
-          height: 30px;
-          line-height: 30px;
-          width: 120px;
-          padding: 0px;
-        }
         div:last-child {
+          padding: 0;
           margin-bottom: 0px;
+          p{
+           padding:0.5em;
+          }
         }
       }
     }

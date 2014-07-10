@@ -347,7 +347,15 @@ function registerClickHandlers() {
             }, 100);
             
             $(o).collapse('toggle');
-        
+            
+            // toggle arrow 
+            var arrow = $(ge).find('.arrow-down span');
+            if ($(arrow).hasClass('glyphicon-chevron-down')) {
+                $(arrow).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+            } else {
+                $(arrow).removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');          
+            }
+
 
         } else {
             var expandBox = $(this).next();
