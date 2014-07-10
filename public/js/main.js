@@ -16,31 +16,9 @@
 ///////////////////////////////////////////////////////////////////////
 // Globals
 ///////////////////////////////////////////////////////////////////////
-var CANVAS_RATIO;
 var GridRowActive;
 
-///////////////////////////////////////////////////////////////////////
-// Utilities
-///////////////////////////////////////////////////////////////////////
 
-$.fn.isOnScreen = function() {
-
-    var win = $(window);
-
-    var viewport = {
-        top: win.scrollTop(),
-        left: win.scrollLeft()
-    };
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
-
-    var bounds = this.offset();
-    bounds.right = bounds.left + this.outerWidth();
-    bounds.bottom = bounds.top + this.outerHeight();
-
-    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
-};
 
 //////////////////////////////////////////////////////////////////////////////////
 // Enquire registering
@@ -87,117 +65,7 @@ function queryMediaState() {
     }
     return site_shape;
 }
-////////////////////////////////////////////////////////////////////////
-// Bar Graph
-////////////////////////////////////////////////////////////////////////
 
-
-/////////////////////////////////////////////////////////////////////////////
-// Screen Panel Display 
-/////////////////////////////////////////////////////////////////////////////
-
-function prefix(id) {
-    return id.split('-')[0].trim()
-};
-
-function fadeHtml(obj, direction, complete) {
-    if (direction === 'in') {
-        $(obj['selector']).fadeIn('linear', function() {
-            if (complete) {
-                complete();
-            }
-        });
-    } else {
-        $(obj.selector).fadeOut('linear', function() {
-            complete(obj);
-        });
-    }
-}
-
-function parse(sectionId, buttonId, suffix) {
-    var pre = prefix(buttonId);
-    var o = {};
-
-    o['id'] = '#' + pre + '-' + suffix;
-    o['html'] = $(o['id']).html().trim();
-    o['selector'] = '#' + sectionId + '-' + suffix;
-
-    if (prefix(sectionId) === sectionId) {
-        o['selector'] = '#screen-' + sectionId + '-' + suffix;
-    }
-    return o;
-}
-
-function showPanel(sectionId, buttonId) {
-    var o = parse(sectionId, buttonId, 'text');
-    var p = parse(sectionId, buttonId, 'photo');
-    var buttonPrefix = prefix(buttonId);
-
-    var htmlCallback = function(ob) {
-        $(ob['selector']).html(ob['html']);
-    }
-
-    var excelCallBack = function(ob) {
-        if (buttonPrefix === 'excel') {
-            $(ob['selector']).html(ob['html']);
-            $('#screen-canvas-wrapper').fadeIn();
-        } else {
-            $(ob['selector']).html(ob['html']);
-        }
-    }
-
-    fadeHtml(o, 'out', htmlCallback);
-    canvasHide = 'none' !== $('#screen-canvas-wrapper').css('display');
-
-    if (canvasHide && sectionId === 'services') {
-        $('#screen-canvas-wrapper').fadeOut(function() {
-            fadeHtml(p, 'out', htmlCallback);
-            fadeHtml(p, 'in');
-        });
-    } else {
-        fadeHtml(p, 'out', excelCallBack);
-        if (buttonPrefix !== 'excel') {
-            fadeHtml(p, 'in');
-        }
-    }
-    fadeHtml(o, 'in');
-}
-//////////////////////////////////////////////////////////////////////
-// Waypoints handlers
-//////////////////////////////////////////////////////////////////////
-
-
-
-function carouselHandler(direction) {
-    var waypoint = this.id;
-    var panelDisplay = $('#' + waypoint + ' .content-block').css('display');
-
-    if (panelDisplay == 'none' && direction == "down" && carousels[waypoint] === undefined) {
-        initCarousel(waypoint);
-    }
-}
-
-function navBarResizeHandler(direction) {
-    var src;
-    var fixedFlag = 'fixed' === $('#navbar').css('position');
-    if (!fixedFlag)
-        return;
-
-    if (direction === "down") {
-        $('#navbar').addClass('navbar-mini');
-        $('#main-title h2').css('display', 'none');
-        $('#navbar .container').css('border', 'none');
-        sizeIcons('mini');
-    } else {
-        $('#navbar').removeClass('navbar-mini');
-        sizeIcons('full');
-        $('#main-title h2').css('display', 'block');
-        $('#navbar .container').css({
-            'border-top': '1px solid #ddd',
-            'border-bottom': '1px solid #ddd'
-        });
-    }
-}
 
 ///////////////////////////////////////////////////////////////////////////
 // Scroll Tos registering
@@ -209,21 +77,11 @@ var bar_anchors = [
     '#store-bar-anchor', '#contact-bar-anchor'
 ];
 
-var footer_anchors = [
-    '#hero-footer-anchor', '#services-footer-anchor',
-    '#team-footer-anchor', '#method-footer-anchor',
-    '#top-footer-anchor', '#project-footer-anchor',
-    '#contact-hero-anchor'
-];
 
 var main_nav_anchors = [
     '#apropos-nav-anchor', '#product-nav-anchor', '#store-nav-anchor'
 ];
 
-var main_nav_slide_anchors = [
-    '#service-nav-slide-anchor', '#method-nav-slide-anchor',
-    '#team-nav-slide-anchor'
-];
 
 function registerScrollsTo() {
 
@@ -239,46 +97,11 @@ function registerScrollsTo() {
         easing: 'easeInOutCubic'
     });
 
-    /*    $(hero_anchors.join()).scrollTo({
-        speed: 800,
-        offset: 0,
-        easing: 'easeInOutCubic'
-    });
-
-    $(footer_anchors.join()).scrollTo({
-        speed: 800,
-        offset: 0,
-        easing: 'easeInOutCubic'
-    });
-*/
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // Mouser event registering
 /////////////////////////////////////////////////////////////////////////////
-
-function resize() {}
-
-
-function selectButton(sectionId, buttonId) {
-    var c = carousels[sectionId];
-    var b = buttonSelected[sectionId];
-
-    if (c !== undefined) {
-        c.pause();
-    }
-
-    if (b !== undefined) {
-        $(b).removeClass('selected-button');
-    }
-
-    buttonSelected[sectionId] = buttonId;
-    $(buttonId).addClass('selected-button');
-}
-
-function resizeHandlers() {
-    window.addEventListener('resize', resize, false);
-}
 
 
 function transition(wrapper, alter, kind) {
@@ -307,6 +130,17 @@ function thumbnailHandler(that) {
     };
 
     transition($(product).children('.product-photo'), alter);
+}
+
+
+function collapseHandlers() {
+
+    $('#navbar-collapse').on('show.bs.collapse', function() {
+        $('#apropos-nav-anchor').addClass('hide');
+    });
+    $('#navbar-collapse').on('hidden.bs.collapse', function() {
+        $('#apropos-nav-anchor').removeClass('hide');
+    });
 }
 
 
@@ -347,7 +181,7 @@ function registerClickHandlers() {
             }, 100);
             
             $(o).collapse('toggle');
-            
+
             // toggle arrow 
             var arrow = $(ge).find('.arrow-down span');
             if ($(arrow).hasClass('glyphicon-chevron-down')) {
@@ -411,9 +245,6 @@ function registerClickHandlers() {
 //  Initialization
 //////////////////////////////////////////////////////////////////////
 
-
-function initWayPoints() {}
-
 function setPendulumPosition() {
     var contactBarPos = $('#contact-bar').offset();
 
@@ -423,13 +254,7 @@ function setPendulumPosition() {
     $('#zen-wrapper').removeClass('hide');
 }
 
-function setFooterBackGround() {
-    var state = queryMediaState();
 
-    if (state === "MOBILE") {
-        $('#footer').css('background', 'none');
-    }
-}
 
 function setFaceBookPageLink() {
     var site_state = queryMediaState();
@@ -440,18 +265,29 @@ function setFaceBookPageLink() {
     }
 }
 
+function setMaxPageHeight() {
+    var site_state = queryMediaState();
+
+    if (site_state === 'MOBILE') {
+        var viewportHeight = $(window).height();
+        $('#main').css({
+            'height': viewportHeight + 'px'
+        });
+    }
+}
+
 
 function init() {
-    initWayPoints();
     registerScrollsTo();
-    resizeHandlers();
     registerClickHandlers();
+    collapseHandlers();
     $('.collapse').collapse({
         toggle: false
     }); // hack to get collapse working properly
     registerMediaCallbacks();
-    setFooterBackGround();
     setFaceBookPageLink();
+    setMaxPageHeight();
+
     $('body').imagesLoaded(function() {
         //  setPendulumPosition();
         display();

@@ -79,8 +79,11 @@
             <nav id='fixed-bar' class='clearfix'>
 
                 <div class='navbar-header'>
-                    <button type='button' data-toggle="collapse" data-target="#navbar-collapse-1" class='navbar-toggle btn noglow background-none'>
-                        <div id='toggle-glyph' class='glyphicon glyphicon-list'></div>
+                    <button id='navbar-button' type='button' data-toggle="collapse" data-target="#navbar-collapse" class='navbar-toggle btn noglow background-none'>
+                          <span class="sr-only">Toggle navigation</span>
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
                     </button>
                     <div class='navbar-brand text-center'>
                         <h1><a id='home-bar-anchor' href='#header'> NUAYRE </a> 
@@ -90,7 +93,7 @@
                     </div>
                 </div>
 
-                <div id='navbar-collapse-1' class='bar-items collapse navbar-collapse'>
+                <div id='navbar-collapse' class='bar-items collapse navbar-collapse'>
                     <ul>
                         <a id='product-bar-anchor' href="#products">
                             <li>
@@ -228,6 +231,7 @@
                 </a>
             </div>
         </section>
+   
 
         <section id='products'>
             <div class='section-caption'>D&EacuteCOUVREZ LES PRODUITS NUAYRE</div>
@@ -712,7 +716,7 @@
                         </div>
                         <div class='product-panel'>
                             <div class='product-header'>
-                                <h2>R&eacutefrigerateur</h2>
+                                <h2>R&eacutefrig&eacuterateur</h2>
                                 <ul>
                                     <li>dur&eacutee de 3 mois</li>
                                     <li>227g - 8oz</li>
@@ -841,7 +845,7 @@
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/repel_big.jpg" class="thumbnail-md" alt="gros plan produit repel NuAyre"></img>
+                                <img src="img/repelside_big.jpg" class="thumbnail-md" alt="gros plan produit repel NuAyre"></img>
                             </div>
                         </div>
                         <div class='product-panel'>
@@ -907,7 +911,7 @@
                     <div class="col-xs-12 col-sm-4 col-lg-4 grid-element mobile-hide ">
                         <div class='product-visual invisible'>
                             <div class='thumbnail-sm-wrapper'>
-                                <button type="button" class='thumbnail-sm active noglow'>
+                                <button type="button" class='thumbnail-sm  active noglow'>
                                     <img src="img/repelside_xs.jpg" alt="thumbnail produit Repel vue cote"></img>
                                 </button>
                                 <button type="button" class='thumbnail-sm noglow'>
@@ -915,7 +919,7 @@
                                 </button>
                             </div>
                             <div class="product-photo">
-                                <img src="img/repel_big.jpg" class="thumbnail-md" alt="gros plan produit repel NuAyre"></img>
+                                <img src="img/repelside_big.jpg" class="thumbnail-md" alt="gros plan produit repel NuAyre"></img>
                             </div>
                         </div>
                         <div class='product-panel invisible'>
@@ -962,6 +966,8 @@
                 </a>
             </div>
         </section>
+
+
         <section id='store' class='container text-center'>
             <div class="section-caption">Nos produits sont disponibles dans les magasins suivants</div>
             <div id='avril-row' class='row'>
@@ -1007,7 +1013,6 @@
         <div id='footer-bar'>
 
         </div>
-
         <section id='footer' class='container-fluid text-center'>
             <div id="footer-wrapper" class="clearfix">
 
@@ -1033,6 +1038,7 @@
 
                     </ul>
                 </div>
+
 
                 <div id="footer-community" class="col-sm-4 ">
                     <ul class="list-group text-center">
@@ -1061,7 +1067,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div id="footer-nav" class="col-sm-4 ">
                     <ul class="list-group text-center">
                         <li class="list-group-item ">
@@ -1082,7 +1087,6 @@
                         </li>
                     </ul>
                 </div>
-
 
                 <div id='small-prints' class="col-sm-12 clearfix">
                     <div class="col-sm-4">
@@ -1107,7 +1111,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                    </div>
             </div>
         </section>
     </div>
@@ -1122,7 +1126,6 @@
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-2.1.0.min.js"><\/script>')
     </script>
-    <script type="text/javascript" src="js/vendor/waypoints.min.js"></script>
     <script type="text/javascript" src="js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/vendor/scrollTo.min.js"></script>
@@ -1140,7 +1143,6 @@
         //and then load enquire
         "js/vendor/picturefill.min.js",
         "js/vendor/enquire.min.js",
-        "js/plugins.min.js",
         "js/main.min.js"
     ];
     Modernizr.load(load);
