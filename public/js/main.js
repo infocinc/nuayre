@@ -287,7 +287,7 @@ function init() {
     registerMediaCallbacks();
     setFaceBookPageLink();
     setMaxPageHeight();
-
+    document.addEventListener("touchstart", function() {}, false); // allow css active to work in safari
     $('body').imagesLoaded(function() {
         //  setPendulumPosition();
         display();
