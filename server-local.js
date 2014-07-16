@@ -14,7 +14,7 @@ app.get('/', function(req, res){
     res.sendfile('index.html');
 });
 
-var server = app.listen(process.env.PORT, '192.168.1.6', function() { 
+var server = app.listen(3000, function() { 
  console.log(__dirname);
  console.log('Express server started on port %s', process.env.PORT);
 });
