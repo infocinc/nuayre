@@ -84,6 +84,11 @@ var main_nav_anchors = [
 
 
 function registerScrollsTo() {
+    $('#arrow-up-anchor').scrollTo({
+        speed: 800,
+        offset: 0,
+        easing: 'easeInOutCubic'
+    });
 
     $(bar_anchors.join()).scrollTo({
         speed: 800,
@@ -146,104 +151,104 @@ function collapseHandlers() {
 
 function registerClickHandlers() {
 
-    $('.thumbnail-sm').on('mouseover', function() {
-        thumbnailHandler(this)
-    });
-
-
-    $('#product-grid  .row').on('click', function(e) {
-
-        if (!e) e = window.event;
-        var mediaState = queryMediaState();
-
-        if ($(this).hasClass('expand-box')) {
-            return;
-        };
-        var ge = $(e.target).closest('.grid-element');
-        if ($(ge).hasClass('mobile-hide')) {
-            return;
-        }
-
-        var productImg = $(ge).find('.product-photo').html();
-        var thumbnails = $(ge).find('.thumbnail-sm-wrapper').html();
-        var productBody = $(ge).find('.product-body').html();
-        var boxWidth = parseInt($(ge).css('width'), 10);
-        if (mediaState === "MOBILE") {
-
-            var o = $(ge).find('.product-panel .product-body');
-
-            if ($(e.target).parent().hasClass("thumbnail-sm")) {
-                return;
-            };
-            $(ge).addClass('active');
-            setTimeout(function() {
-                $(ge).removeClass('active')
-            }, 100);
-            
-            $(o).collapse('toggle');
-
-            // toggle arrow 
-            var arrow = $(ge).find('.arrow-down span');
-            if ($(arrow).hasClass('glyphicon-chevron-down')) {
-                $(arrow).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-            } else {
-                $(arrow).removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');          
-            }
-
-
-        } else {
-            var expandBox = $(this).next();
-            var offset = -36 + boxWidth / 2 + boxWidth * ($(ge).index());
-            var retracted = 'none' === $(expandBox).css('display') ? true : false;
-
-            $(expandBox).find('.product-photo').html(productImg);
-            $(expandBox).find('.thumbnail-sm-wrapper').html(thumbnails);
-            $(expandBox).find('.product-body').html(productBody);
-            var height = parseInt($(expandBox).css("height"), 10);
-
-            if (retracted) {
-                $('.expand-box').addClass('hide'); // retract all other ones if it applies
-                $(expandBox).removeClass('hide');
-                height = parseInt($(expandBox).css("height"), 10);
-            }
-            $('.arrow-indicator').css('left', offset + 'px');
-            $('html,body').stop().animate({
-                scrollTop: $(expandBox).offset().top - ($(window).height() - height) / 2
-            }, 500, "easeOutCubic");
-
-        }
-
         $('.thumbnail-sm').on('mouseover', function() {
             thumbnailHandler(this)
         });
-    });
-
-    $('.product-panel .product-body').on('shown.bs.collapse', function() {
-        var height = parseInt($(this).css("height"), 10);
-
-        $('html,body').stop().animate({
-            scrollTop: $(this).offset().top - 0.75*$(window).height()
-        }, 500, "easeOutCubic");
-    })
 
 
-    $('#product-grid .close').on('click', function() {
-        var row = $(this).closest('.row');
-        var prev = $(row).prev();
-        $(row).addClass('hide');
+        $('#product-grid  .row').on('click', function(e) {
 
-        var height = parseInt($(prev).css('height'), 10);
+            if (!e) e = window.event;
+            var mediaState = queryMediaState();
 
-        $('html,body').stop().animate({
-            scrollTop: $(row).prev().offset().top - ($(window).height() - height) / 2
-        }, 500, "easeOutCubic");
-    });
+            if ($(this).hasClass('expand-box')) {
+                return;
+            };
+            var ge = $(e.target).closest('.grid-element');
+            if ($(ge).hasClass('mobile-hide')) {
+                return;
+            }
+
+            var productImg = $(ge).find('.product-photo').html();
+            var thumbnails = $(ge).find('.thumbnail-sm-wrapper').html();
+            var productBody = $(ge).find('.product-body').html();
+            var boxWidth = parseInt($(ge).css('width'), 10);
+            if (mediaState === "MOBILE") {
+
+                var o = $(ge).find('.product-panel .product-body');
+
+                if ($(e.target).parent().hasClass("thumbnail-sm")) {
+                    return;
+                };
+                $(ge).addClass('active');
+                setTimeout(function() {
+                    $(ge).removeClass('active')
+                }, 100);
+
+                $(o).collapse('toggle');
+
+                // toggle arrow 
+                var arrow = $(ge).find('.arrow-down span');
+                if ($(arrow).hasClass('glyphicon-chevron-down')) {
+                    $(arrow).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+                } else {
+                    $(arrow).removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+                }
 
 
-}
-/////////////////////////////////////////////////////////////////////
-//  Initialization
-//////////////////////////////////////////////////////////////////////
+            } else {
+                var expandBox = $(this).next();
+                var offset = -36 + boxWidth / 2 + boxWidth * ($(ge).index());
+                var retracted = 'none' === $(expandBox).css('display') ? true : false;
+
+                $(expandBox).find('.product-photo').html(productImg);
+                $(expandBox).find('.thumbnail-sm-wrapper').html(thumbnails);
+                $(expandBox).find('.product-body').html(productBody);
+                var height = parseInt($(expandBox).css("height"), 10);
+
+                if (retracted) {
+                    $('.expand-box').addClass('hide'); // retract all other ones if it applies
+                    $(expandBox).removeClass('hide');
+                    height = parseInt($(expandBox).css("height"), 10);
+                }
+                $('.arrow-indicator').css('left', offset + 'px');
+                $('html,body').stop().animate({
+                    scrollTop: $(expandBox).offset().top - ($(window).height() - height) / 2
+                }, 500, "easeOutCubic");
+
+            }
+
+            $('.thumbnail-sm').on('mouseover', function() {
+                thumbnailHandler(this)
+            });
+        });
+
+        $('.product-panel .product-body').on('shown.bs.collapse', function() {
+            var height = parseInt($(this).css("height"), 10);
+
+            $('html,body').stop().animate({
+                scrollTop: $(this).offset().top - 0.75 * $(window).height()
+            }, 500, "easeOutCubic");
+        })
+
+
+        $('#product-grid .close').on('click', function() {
+            var row = $(this).closest('.row');
+            var prev = $(row).prev();
+            $(row).addClass('hide');
+
+            var height = parseInt($(prev).css('height'), 10);
+
+            $('html,body').stop().animate({
+                scrollTop: $(row).prev().offset().top - ($(window).height() - height) / 2
+            }, 500, "easeOutCubic");
+        });
+
+
+    }
+    /////////////////////////////////////////////////////////////////////
+    //  Initialization
+    //////////////////////////////////////////////////////////////////////
 
 function setPendulumPosition() {
     var contactBarPos = $('#contact-bar').offset();
@@ -276,20 +281,45 @@ function setMaxPageHeight() {
     }
 }
 
+function setCarouselPos() {
+    var apropos_height = parseInt($('#apropos').css('height'), 10);
+    var carousel_height = parseInt($('#carousel-nuayre').css('height'), 10);
+    var padding_top = (apropos_height - carousel_height) / 2;
+    if (padding_top > 0) {
+        $('#apropos').css('padding-top', padding_top + 'px');
+    }
+
+}
+
+function initWayPoints() {
+    $('#carousel-nuayre').waypoint(function(direction) {
+        if (direction === "down") {
+            $('#arrow-up').removeClass('invisible');
+        } else {
+            $('#arrow-up').addClass('invisible');
+        }
+    });
+}
+
 
 function init() {
     registerScrollsTo();
     registerClickHandlers();
     collapseHandlers();
+    initWayPoints();
     $('.collapse').collapse({
         toggle: false
     }); // hack to get collapse working properly
     registerMediaCallbacks();
     setFaceBookPageLink();
     setMaxPageHeight();
+    setCarouselPos();
     document.addEventListener("touchstart", function() {}, false); // allow css active to work in safari
     $('body').imagesLoaded(function() {
         //  setPendulumPosition();
+        $('#carousel-nuayre').carousel({
+            interval: 5000
+        });
         display();
     });
 }

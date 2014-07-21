@@ -16,13 +16,9 @@
 
 @import  "utils.less";
 @import  "bs_overrides.less";
-@import "fonts.less";
+@import  "fonts.less";
 @import  "navbar.less";
-
-/*@import  "modals.less";
-@import  "lists.less";
-@import  "preloader.less";
-*/
+@import  "carousel.less";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Boileplate Stylings 
@@ -167,13 +163,27 @@ img {
 
 body {
     background: url('../img/polka-1-4.png');
+    overflow-x: hidden;
 }
+
+#arrow-up {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  background: #bebebe;
+  opacity: 0.7;
+  z-index: 900;
+}
+
 ///////////////////////////////////////////////////////////////////////
 // Section Stylings
 ///////////////////////////////////////////////////////////////////////
 
 #header, #apropos, #products, #store {
-//  height: 100%;
   position: relative;
   min-height: 100%;
 }
@@ -353,95 +363,147 @@ body {
 
 #apropos {
   
-
-  h2,h2 {
-   font-family: 'Lato', sans-serif;
-
-  }
-
   h2 {
-   margin-top: 30px;
-   margin-bottom: 10px;
-   font-size: 3.8em;
+   padding: 0;
+   margin: 15px;
+   font-family: 'Lato', sans-serif;
+   font-size: 20px;
   }
 
   h3 {
-   margin: 10px 0;
-   margin-bottom: 50px;
-   font-size: 2em;
+   padding: 0;
+   margin: 15px 0px;
+
+   font-size: 17px;
   }
 
   img {
     width: 100%;
   }
 
-
   #carousel-nuayre {
-    position: relative;
+    height: 350px;
     z-index: 30;
     background: @white;
     opacity: 1;
     border: 1px solid @green;
-    height: 400px;
     padding: 0;
     img {
-      width: 90%;
+      width: 100%;
     }
   }
 
+
   .carousel-indicators {
-    bottom: 5px;
-    li {
+    bottom: 0px;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    background:  rgba(39,174,96,0.7);
+    opacity: 0.9;
+
+      li {
       border: 1px solid @black;
-    }
+      background: @white;
+
+        width: 16px;
+        height: 16px;
+        margin: 1px 5px;
+        margin-top: 7px;
+       
+      }
     li.active {
       background: @black;
     }
   }
 
+
   .carousel-control {
-    background: none;
-    width: 5%;
-    text-shadow: none;
-    opacity: 1;
-    span {
-      color: @darkGreen;
-      font-size: 1.2em;
-      opacity: 0.8;
-    }
+    display: none ;
   }
+
 
   a:active span {
     color: @green;
   }
   
-  padding: 120px 0;
-  
-  @media screen and (min-width:@screen-sm-min) {
-    padding: 200px 0;
+//  padding: 120px 0;
+  @media screen and (min-width:@screen-xs-min) {
+    h2 {
+      font-size: 28px;
+    }
+    h3 {
+       font-size: 20px;
+    }
+    
     #carousel-nuayre {
+      height: 400px;
+      img {
+       width: 90%;
+       max-width: 531px;
+      }
+    }
+  }  
+
+  @media screen and (min-width:@screen-sm-min) {
+    .carousel-control {
+      display: block;
+      background: none;
+      width: 5%;
+      text-shadow: none;
+      opacity: 1;
+      span {
+        color: @darkGreen;
+        font-size: 1em;
+        opacity: 0.8;
+      }
+    }
+  
+
+   h2 {
+    font-size: 30px;
+   }
+   h3 {
+      font-size: 20px;
+   }
+
+    #carousel-nuayre {
+      height: 400px;
       padding-left: 15px;
       padding-right: 15px;
-      border-radius: 10px;
-      height: 450px;
-    }
-  }
- @media screen and (min-width:@screen-md-min) {
-    padding: 100px 0;
-    #carousel-nuayre {
-      height: 500px;
-    }
-  }
-  @media screen and (min-width:@screen-lg-min) and (min-height:@screen-height-wide) {
-    padding: 150px 0;
-    #carousel-nuayre {
-      height: 550px;
+      img {
+        max-width: none;
+      }
+      //border-radius: 10px;
     }
   }
 
-  @media screen and (min-width:@screen-wide-min) and (min-height:@screen-height-wide) {
+  @media screen and (min-width:@screen-md-min) {
+   
+   h2 {
+    font-size: 34px;
+   }
+   h3 {
+    font-size: 22px;
+   }
     #carousel-nuayre {
-      height: 550px;
+      height: 480px;
+    }
+  }
+
+
+  @media screen and (min-width:@screen-lg-min)  {
+ 
+    h2 {
+     font-size: 38px;
+    }
+    h3 {
+     font-size: 25px;
+    }
+
+    #carousel-nuayre {
+      height:550px;
     }
   }
 
@@ -489,8 +551,11 @@ body {
 ///////////////////////////////////////////////////////////////////
 
 #products {
-  padding: 70px 0;
+  padding: 30px 0;
   z-index: 15;
+  @media screen and (min-width:@screen-sm-min) {
+    padding: 70px 0;
+  }
 }
 
 #product-grid {
@@ -735,8 +800,11 @@ body {
   font-family: 'Lato', sans-serif;
   text-align: center;
   font-size: 3.5em;
-  padding: 20px;
+  padding: 0px;
   margin: 0;
+  @media screen and (min-width:@screen-sm-min) {
+    padding: 20px;
+  }
 }
 
 .thumbnail-sm-wrapper {
@@ -786,7 +854,9 @@ body {
   .row {
     margin: 30px 0;
   }
-
+  #avril-row {
+    margin-top: 10px;
+  }
   #bmr_banner {
     border: 1px solid @green;
     background: url('../img/tile.png') #fff;
@@ -795,7 +865,7 @@ body {
   ul {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 2em;
-    line-height: 0.4;
+    line-height: 1;
     margin: 0;
     li {
       display: inline-block;
@@ -806,6 +876,10 @@ body {
   }
   @media screen and (min-width:@screen-sm-min) {
     padding: 70px 0;
+    #avril-row {
+      margin-top: 30px;
+    }
+
   }
 }
 
@@ -874,6 +948,7 @@ ul.contact-type > li {
 //      image-rendering:optimizeQuality;
     }
   
+
     #small-prints {
       margin: 0;
       padding: 0;
@@ -894,32 +969,37 @@ ul.contact-type > li {
         }
         a:active {
           #cinc-home-logo span {
-            color: @green;
+            color: @blue;
           }
           #cinc-text h2 {
-            color: @green;
+            color: @blue;
           }
         }
         #cinc-home-logo {
-          background: #464646;
+          background: #285e8e;
           font-size: 15px;
           height:30px;
           width: 30px;
           line-height: 30px;
           float:left;
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
           span {
             color: @white;
           }
         }
         #cinc-text {
-          background: @black;
+          background: #3276b1;
           height:30px;
-          width:80px;
+          width:110px;
           float:left;
           text-align: center;
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
           h2 {
             font-family: 'Lato', sans-serif;
-            font-size: 25px;
+            font-size: 12px;
+            line-height: 30px;
             color: @white;
             margin: 0;
           }
