@@ -939,16 +939,15 @@ ul.contact-type > li {
     .fb-like span {
       vertical-align: top !important;
     }
+
     .contact-type {
      display: block;
     }
   
     .logos {
       padding-top: 15px;
-//      image-rendering:optimizeQuality;
     }
   
-
     #small-prints {
       margin: 0;
       padding: 0;
@@ -956,6 +955,7 @@ ul.contact-type > li {
       font-family: 'Open Sans Condensed', sans-serif;
       letter-spacing: 0.1em;
       font-size: 2.5em;
+
       > div:last-child {
         padding: 20px;
 
@@ -963,10 +963,12 @@ ul.contact-type > li {
           font-size: 13px;
           margin: 0;
         }
-        a{
+
+        a {
           display: inline-block;
           margin-top: 10px;
         }
+
         a:active {
           #cinc-home-logo span {
             color: @blue;
@@ -975,6 +977,7 @@ ul.contact-type > li {
             color: @blue;
           }
         }
+
         #cinc-home-logo {
           background: #285e8e;
           font-size: 15px;
@@ -984,27 +987,39 @@ ul.contact-type > li {
           float:left;
           border-top-left-radius: 2px;
           border-bottom-left-radius: 2px;
+          border-top: 1px solid @darkBlue;
+          border-left: 1px solid @darkBlue;
+          border-bottom: 1px solid @darkBlue;
+          text-align: center;
           span {
             color: @white;
           }
         }
-        #cinc-text {
-          background: #3276b1;
+
+       #cinc-text {
+          background: #428bca;
           height:30px;
-          width:110px;
+          width:187px;
           float:left;
           text-align: center;
           border-top-right-radius: 2px;
           border-bottom-right-radius: 2px;
+          border-top: 1px solid @darkBlue;
+          border-right: 1px solid @darkBlue;
+          border-bottom: 1px solid @darkBlue;
           h2 {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Arial', sans-serif;
             font-size: 12px;
+            font-weight: bold;
             line-height: 30px;
             color: @white;
             margin: 0;
           }
+          @media screen and (max-width: 319px) {
+            width: 120px;
+          }
         }
-
+      
         span {
           color: @white;
         }
@@ -1021,11 +1036,11 @@ ul.contact-type > li {
     .social-logo {
         width: 40px;
     }
+
     .social-button-wrapper {
       position:relative;
       left: 22px;
       display: inline-block;
-
     }
 
     #footer-community li {
@@ -1036,8 +1051,6 @@ ul.contact-type > li {
     }
   }
   
-  @media screen and (min-width:@screen-xs-min) {
-  }
 
   @media screen and (min-width:@screen-sm-min) {
     background: url('../img/3.JPG') no-repeat center center;
