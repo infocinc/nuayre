@@ -30,9 +30,15 @@ var GridRowActive;
 function registerMediaCallbacks() {
     mediaSwitch = false;
 
-    enquire.register("screen and (min-width:992px)", {
-        unmatch: function() {},
-        match: function() {}
+
+    enquire.register("screen and (max-width:767px)", {
+        match: function() {
+            $.getScript('js/vendor/bootstrap-touch-carousel.min.js', function(data, textStatus, jqxhr) {
+                console.log(jqxhr.status);
+                console.log(textStatus);
+            });
+        },
+        unmatch: function() {}
     });
 
     enquire.register("screen and (min-width:768px)", {
@@ -43,8 +49,7 @@ function registerMediaCallbacks() {
         },
 
         match: function() {
-            $('.collapse').collapse('hide');
-            //           $('.collapse').collapse('hide');
+             $('.collapse').collapse('hide');
         }
     });
 }
@@ -84,12 +89,6 @@ var main_nav_anchors = [
 
 
 function registerScrollsTo() {
-    $('#arrow-up-anchor').scrollTo({
-        speed: 800,
-        offset: 0,
-        easing: 'easeInOutCubic'
-    });
-
     $(bar_anchors.join()).scrollTo({
         speed: 800,
         offset: 0,
@@ -151,104 +150,104 @@ function collapseHandlers() {
 
 function registerClickHandlers() {
 
+    $('.thumbnail-sm').on('mouseover', function() {
+        thumbnailHandler(this)
+    });
+
+
+    $('#product-grid  .row').on('click', function(e) {
+
+        if (!e) e = window.event;
+        var mediaState = queryMediaState();
+
+        if ($(this).hasClass('expand-box')) {
+            return;
+        };
+        var ge = $(e.target).closest('.grid-element');
+        if ($(ge).hasClass('mobile-hide')) {
+            return;
+        }
+
+        var productImg = $(ge).find('.product-photo').html();
+        var thumbnails = $(ge).find('.thumbnail-sm-wrapper').html();
+        var productBody = $(ge).find('.product-body').html();
+        var boxWidth = parseInt($(ge).css('width'), 10);
+        if (mediaState === "MOBILE") {
+
+            var o = $(ge).find('.product-panel .product-body');
+
+            if ($(e.target).parent().hasClass("thumbnail-sm")) {
+                return;
+            };
+            $(ge).addClass('active');
+            setTimeout(function() {
+                $(ge).removeClass('active')
+            }, 100);
+
+            $(o).collapse('toggle');
+
+            // toggle arrow 
+            var arrow = $(ge).find('.arrow-down span');
+            if ($(arrow).hasClass('glyphicon-chevron-down')) {
+                $(arrow).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+            } else {
+                $(arrow).removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+            }
+
+
+        } else {
+            var expandBox = $(this).next();
+            var offset = -36 + boxWidth / 2 + boxWidth * ($(ge).index());
+            var retracted = 'none' === $(expandBox).css('display') ? true : false;
+
+            $(expandBox).find('.product-photo').html(productImg);
+            $(expandBox).find('.thumbnail-sm-wrapper').html(thumbnails);
+            $(expandBox).find('.product-body').html(productBody);
+            var height = parseInt($(expandBox).css("height"), 10);
+
+            if (retracted) {
+                $('.expand-box').addClass('hide'); // retract all other ones if it applies
+                $(expandBox).removeClass('hide');
+                height = parseInt($(expandBox).css("height"), 10);
+            }
+            $('.arrow-indicator').css('left', offset + 'px');
+            $('html,body').stop().animate({
+                scrollTop: $(expandBox).offset().top - ($(window).height() - height) / 2
+            }, 500, "easeOutCubic");
+
+        }
+
         $('.thumbnail-sm').on('mouseover', function() {
             thumbnailHandler(this)
         });
+    });
+
+    $('.product-panel .product-body').on('shown.bs.collapse', function() {
+        var height = parseInt($(this).css("height"), 10);
+
+        $('html,body').stop().animate({
+            scrollTop: $(this).offset().top - 0.75 * $(window).height()
+        }, 500, "easeOutCubic");
+    })
 
 
-        $('#product-grid  .row').on('click', function(e) {
+    $('#product-grid .close').on('click', function() {
+        var row = $(this).closest('.row');
+        var prev = $(row).prev();
+        $(row).addClass('hide');
 
-            if (!e) e = window.event;
-            var mediaState = queryMediaState();
+        var height = parseInt($(prev).css('height'), 10);
 
-            if ($(this).hasClass('expand-box')) {
-                return;
-            };
-            var ge = $(e.target).closest('.grid-element');
-            if ($(ge).hasClass('mobile-hide')) {
-                return;
-            }
-
-            var productImg = $(ge).find('.product-photo').html();
-            var thumbnails = $(ge).find('.thumbnail-sm-wrapper').html();
-            var productBody = $(ge).find('.product-body').html();
-            var boxWidth = parseInt($(ge).css('width'), 10);
-            if (mediaState === "MOBILE") {
-
-                var o = $(ge).find('.product-panel .product-body');
-
-                if ($(e.target).parent().hasClass("thumbnail-sm")) {
-                    return;
-                };
-                $(ge).addClass('active');
-                setTimeout(function() {
-                    $(ge).removeClass('active')
-                }, 100);
-
-                $(o).collapse('toggle');
-
-                // toggle arrow 
-                var arrow = $(ge).find('.arrow-down span');
-                if ($(arrow).hasClass('glyphicon-chevron-down')) {
-                    $(arrow).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-                } else {
-                    $(arrow).removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-                }
+        $('html,body').stop().animate({
+            scrollTop: $(row).prev().offset().top - ($(window).height() - height) / 2
+        }, 500, "easeOutCubic");
+    });
 
 
-            } else {
-                var expandBox = $(this).next();
-                var offset = -36 + boxWidth / 2 + boxWidth * ($(ge).index());
-                var retracted = 'none' === $(expandBox).css('display') ? true : false;
-
-                $(expandBox).find('.product-photo').html(productImg);
-                $(expandBox).find('.thumbnail-sm-wrapper').html(thumbnails);
-                $(expandBox).find('.product-body').html(productBody);
-                var height = parseInt($(expandBox).css("height"), 10);
-
-                if (retracted) {
-                    $('.expand-box').addClass('hide'); // retract all other ones if it applies
-                    $(expandBox).removeClass('hide');
-                    height = parseInt($(expandBox).css("height"), 10);
-                }
-                $('.arrow-indicator').css('left', offset + 'px');
-                $('html,body').stop().animate({
-                    scrollTop: $(expandBox).offset().top - ($(window).height() - height) / 2
-                }, 500, "easeOutCubic");
-
-            }
-
-            $('.thumbnail-sm').on('mouseover', function() {
-                thumbnailHandler(this)
-            });
-        });
-
-        $('.product-panel .product-body').on('shown.bs.collapse', function() {
-            var height = parseInt($(this).css("height"), 10);
-
-            $('html,body').stop().animate({
-                scrollTop: $(this).offset().top - 0.75 * $(window).height()
-            }, 500, "easeOutCubic");
-        })
-
-
-        $('#product-grid .close').on('click', function() {
-            var row = $(this).closest('.row');
-            var prev = $(row).prev();
-            $(row).addClass('hide');
-
-            var height = parseInt($(prev).css('height'), 10);
-
-            $('html,body').stop().animate({
-                scrollTop: $(row).prev().offset().top - ($(window).height() - height) / 2
-            }, 500, "easeOutCubic");
-        });
-
-
-    }
-    /////////////////////////////////////////////////////////////////////
-    //  Initialization
-    //////////////////////////////////////////////////////////////////////
+}
+/////////////////////////////////////////////////////////////////////
+//  Initialization
+//////////////////////////////////////////////////////////////////////
 
 function setPendulumPosition() {
     var contactBarPos = $('#contact-bar').offset();
@@ -265,8 +264,7 @@ function setFaceBookPageLink() {
     var site_state = queryMediaState();
 
     if (site_state === 'MOBILE') {
-        $('#footer-fbook-anchor').attr('href', "https://m.facebook.com/pages/NuAyre/893345784014314");
-
+        $('#footer-fbook-anchor').attr('href', "https://m.facebook.com/pages/NuAyre");
     }
 }
 
@@ -291,37 +289,44 @@ function setCarouselPos() {
 
 }
 
+
+
+
+var carousel_paused = true;
+
 function initWayPoints() {
-    $('#carousel-nuayre').waypoint(function(direction) {
+    $('#apropos').waypoint(function(direction) {
+        if ((direction === "down") && (carousel_paused)) {
+                $('#carousel-nuayre').carousel();
+                carousel_paused = false;
+        }
+    });
+    
+    $('#products').waypoint(function(direction){ 
         if (direction === "down") {
-            $('#arrow-up').removeClass('invisible');
-        } else {
-            $('#arrow-up').addClass('invisible');
+            $('#fixed-icons > div').removeClass('invisible');
+        }
+        else {
+            $('#fixed-icons > div').addClass('invisible');
         }
     });
 }
+
 
 
 function init() {
     registerScrollsTo();
     registerClickHandlers();
     collapseHandlers();
-    initWayPoints();
     $('.collapse').collapse({
         toggle: false
     }); // hack to get collapse working properly
     registerMediaCallbacks();
+    initWayPoints();
     setFaceBookPageLink();
     setMaxPageHeight();
     setCarouselPos();
     document.addEventListener("touchstart", function() {}, false); // allow css active to work in safari
-    $('body').imagesLoaded(function() {
-        //  setPendulumPosition();
-        $('#carousel-nuayre').carousel({
-            interval: 5000
-        });
-        display();
-    });
 }
 
 function detectIE(callback) {
@@ -333,25 +338,10 @@ function detectIE(callback) {
     } else if ($('html').is('.lt-ie10')) {
         $('#bells-wrapper').css('opacity', '0');
     }
-    if (oldIE) {
-        callback();
-        // do nothing which will prevent content from being shown 
-    } else {
-        callback();
-    }
-}
-
-function display() {
-    var callback = function() {
-        $('#main').removeClass('invisible')
-    };
-    detectIE(callback);
+    callback();
 }
 
 // on document ready... 
 $(function() {
-    var callback = function() {
-        init();
-    };
-    detectIE(callback);
+    detectIE(init);
 });

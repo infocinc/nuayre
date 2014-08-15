@@ -66,19 +66,26 @@
   position: relative;
   background: url('../img/bg-eco2.jpg') center center;
   background-size: cover;
-  height:230px;
-  line-height: 180px;
+  height:80px;
+  line-height: 30px;
   text-align: right;  
 
   #ecologo {
     display: inline-block;
-    width: 100px;
-    margin-top: 50px;
+    width: 80px;
+    margin-top: 20px;
     margin-right: 15px;
     vertical-align: middle;
   }
 
-
+  @media screen and (min-width: 320px) {
+    height: 230px;
+    line-height: 180px;
+    #ecologo {
+      width: 100px;
+      margin-top: 50px;
+    }
+  }
   @media screen and (min-width:@screen-sm-min)  {
     height: 300px;
     line-height: 300px;
@@ -120,12 +127,18 @@
   z-index: 30;
   position: absolute;
   left: 50%;
-  top: -40px;
-  margin-left: -125px;
+  top: 5px;
+  margin-left: -70px;
   img {
-    width: 250px;
+    width: 150px;
   }
-  
+  @media screen and (min-width:320px) {
+    top: -40px;
+    margin-left: -125px;
+    img {
+      width: 250px;
+    }
+  }
   @media screen and (min-width:@screen-sm-min) {
     margin-left: -150px;
     top: -30px;

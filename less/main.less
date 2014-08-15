@@ -166,7 +166,80 @@ body {
     overflow-x: hidden;
 }
 
+////////////////////////////////////////////////////////////////////////
+// FIXED ICONS
+////////////////////////////////////////////////////////////////////////
+
+#fixed-icons {
+  position: fixed;
+  top: 50%;
+  right: 0px;  
+  z-index: 900;
+}
+
+#phone-logo-wrapper, #mail-logo-wrapper {
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  text-align: center;
+  opacity: 0.7;
+  a {
+    display: inline-block;
+  }
+  a:hover,span:hover {
+    color: @black !important;
+  }
+  span {
+    line-height: 25px;
+  }
+  @media screen and (min-width:320px) {
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    span {
+      line-height: 50px;
+    }
+  }
+}
+
+#mail-logo-wrapper {
+  background: @blue;
+  margin-top: 15px;
+}
+
+#phone-logo-wrapper {
+  background: @green;
+}
+
 #arrow-up {
+  font-size: 17px;
+  text-align: center;
+  background: #bebebe;
+  opacity: 0.7;
+  margin-top: 15px;
+  a {
+    display: inline-block;
+    line-height: 25px;
+  }
+  a:hover {
+    color: @black !important;
+  }
+  .glyphicon {
+    border-top: 4px solid @black;
+  }
+  .glyphicon-arrow-up:before {
+    position: relative;
+    left: -1px;
+  }
+  @media screen and (min-width:320px) {
+    font-size: 30px;
+    a {
+      line-height: 50px;
+    }
+  }
+}
+
+/*#arrow-up {
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -178,7 +251,7 @@ body {
   opacity: 0.7;
   z-index: 900;
 }
-
+*/
 ///////////////////////////////////////////////////////////////////////
 // Section Stylings
 ///////////////////////////////////////////////////////////////////////
@@ -257,15 +330,11 @@ body {
     border: none;
     margin: 0;
     height: 50px;
-    border-left: 1px solid @white;
-  }
-
-  .icon-bar {
-    background-color: @white;
-    width: 25px;
+    border-right: 2px solid @white;
   }
 
   .navbar-brand {
+    float: right;
     border-right: 1px solid @white;
     padding: 5px 5px;
     height: 50px;
@@ -278,7 +347,23 @@ body {
     h2 {
       color: @white;
       font-size: 0.6em;
+      @media screen and (max-width:319px) {
+        font-size: 0.5em;
+      }
     } 
+  }
+
+  .navbar-toggle {
+    float: left;
+    padding: 15px;
+    .icon-bar {
+      background-color: @white;
+      width: 25px;
+      height: 3px;
+    }
+  }
+  .btn:active {
+    background: @darkGreen !important;
   }
 
   .glyphicon {
@@ -301,17 +386,19 @@ body {
     a{
       display: block;
       color: @black !important;
-      border:1px solid #bebebe;
+      border-top: 1px solid #bebebe;
+      border-bottom: 1px solid #bebebe;
       margin-top: -1px;
     }
     li {
       padding: 15px 0px;
-      font-size: 2em;
+      font-size: 15px;
     }
     li:active {
       background: @darkGray;
     }
     a:first-child {
+      border-top: none;
       margin-top: 0px;
     }
   }
@@ -367,14 +454,20 @@ body {
    padding: 0;
    margin: 15px;
    font-family: 'Lato', sans-serif;
-   font-size: 20px;
+   font-size: 15px;
+   @media screen and (min-width:320px) {
+    font-size: 20px;
+   }
   }
 
   h3 {
    padding: 0;
    margin: 15px 0px;
 
-   font-size: 17px;
+   font-size: 13px;
+   @media screen and (min-width:320px) {
+    font-size: 17px;
+   }   
   }
 
   img {
@@ -382,7 +475,7 @@ body {
   }
 
   #carousel-nuayre {
-    height: 350px;
+    height: 280px;
     z-index: 30;
     background: @white;
     opacity: 1;
@@ -390,6 +483,9 @@ body {
     padding: 0;
     img {
       width: 100%;
+    }
+    @media screen and (min-width:320px) {
+      height: 350px;
     }
   }
 
