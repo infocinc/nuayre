@@ -313,6 +313,16 @@ function initWayPoints() {
 }
 
 
+function arrowUpNoHashTag() {
+    $('#arrow-up-anchor').on('click', function(e) {
+        e.preventDefault();
+        var loc = window.location;
+        window.location.href = '#';
+        if (history.pushState) {
+           history.pushState("", document.title, loc.pathname);            
+        }
+    });
+}
 
 function init() {
     registerScrollsTo();
@@ -321,6 +331,7 @@ function init() {
     $('.collapse').collapse({
         toggle: false
     }); // hack to get collapse working properly
+    arrowUpNoHashTag();
     registerMediaCallbacks();
     initWayPoints();
     setFaceBookPageLink();
