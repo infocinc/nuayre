@@ -67,11 +67,15 @@
   position: fixed;
   bottom: 0px;
   left: 0px;
+  width: 100%;
 //  height: @height;
   opacity: 0.9;
   background: @green;
   z-index: 999;
   font-size: 0;
+  @media screen and (min-width:@screen-sm-min) {
+    width: auto;
+  }
   @media screen and (min-width:@screen-lg-min) {
     bottom:20px;
   }
