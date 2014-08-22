@@ -61,6 +61,88 @@
 
 
 
+#social-icons {
+  @height: 40px;
+  @padding-x: 5px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+//  height: @height;
+  opacity: 0.9;
+  background: @green;
+  z-index: 999;
+  font-size: 0;
+  @media screen and (min-width:@screen-lg-min) {
+    bottom:20px;
+  }
+  .msg-wrapper {
+    text-align:center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    padding: 5px;
+    color: @white;
+    display: none;
+    vertical-align: middle;
+    @media screen and (min-width:320px) {
+      display: inline-block;
+    }
+  }
+
+  
+  .icon-wrapper {
+    display: none;
+    @media screen and (min-width: 320px) {
+      display: inline-block;      
+    }
+    a {
+      display: inline-block;
+      height: @height;
+      line-height: @height;
+      padding: 0px @padding-x;
+    }
+    a:hover {
+      .shake;
+    }
+    img {
+     width: 20px;
+    }
+    @media screen and (min-width:@screen-sm-min) {
+      a {
+        padding: 0px 8px;
+      }
+      img {
+        width: 25px;
+      }
+    }
+ }
+  #nav-social-recommends {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+    @media screen and (min-width:320px) {
+      padding: 0;
+      margin-left: @padding-x;
+    }
+    .fb-like {
+      width: 50px !important;
+      height: @height;
+      padding-top: (@height / 4);      
+    }
+    .fb-like, .social-button-wrapper {
+      display: inline-block !important;
+      vertical-align: middle;
+    }
+    .social-button-wrapper {
+      margin-left: 20px;
+      padding-right: (@padding-x * 2);
+      @media screen and (min-width:320px) {
+        padding-right:(@padding-x * 2);
+        margin-left: 20px;
+      }
+
+    }
+  }
+}
 
 #logos {
   position: relative;
