@@ -175,6 +175,9 @@ body {
   top: 50%;
   right: 0px;  
   z-index: 900;
+  @media screen and (min-width:@screen-xs-min) {
+    top: 0%;
+  }
 }
 
 #phone-logo-wrapper, #mail-logo-wrapper {
@@ -259,6 +262,9 @@ body {
 #header, #apropos, #products, #store {
   position: relative;
   min-height: 100%;
+}
+#header {
+  min-height: 568px;
 }
 
 #apropos, #products, #store {
@@ -615,7 +621,7 @@ body {
  @media screen and (min-height:560px) {
     display: block;
     position: absolute;
-    bottom: 10px; 
+    bottom: 40px; 
     left: 50%;
     margin-left: -25px;
     width: 50px;
@@ -1054,6 +1060,7 @@ ul.contact-type > li {
 
       > div:last-child {
         padding: 20px;
+        margin-bottom: 30px;
 
         p {
           font-size: 13px;

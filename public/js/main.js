@@ -285,8 +285,7 @@ function setCarouselPos() {
     var padding_top = (apropos_height - carousel_height) / 2;
     if (padding_top > 0) {
         $('#apropos').css('padding-top', padding_top + 'px');
-    }
-
+    } 
 }
 
 
