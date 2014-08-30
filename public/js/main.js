@@ -336,6 +336,7 @@ function init() {
     setFaceBookPageLink();
     setMaxPageHeight();
     setCarouselPos();
+    $('#main').removeClass('invisible');
     document.addEventListener("touchstart", function() {}, false); // allow css active to work in safari
 }
 
