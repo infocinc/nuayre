@@ -1181,6 +1181,15 @@
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-2.1.0.min.js"><\/script>')
     </script>
+    <script>
+        var apropos_height = parseInt($('#apropos').css('height'), 10);
+        var carousel_height = parseInt($('#carousel-nuayre').css('height'), 10);
+        var padding_top = (apropos_height - carousel_height) / 2;
+        if (padding_top > 0) {
+          $('#apropos').css('padding-top', padding_top + 'px');
+        } 
+        $('#main').removeClass('invisible');
+    </script>
 
     <script type="text/javascript" src="js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
     

@@ -279,16 +279,6 @@ function setMaxPageHeight() {
     }
 }
 
-function setCarouselPos() {
-    var apropos_height = parseInt($('#apropos').css('height'), 10);
-    var carousel_height = parseInt($('#carousel-nuayre').css('height'), 10);
-    var padding_top = (apropos_height - carousel_height) / 2;
-    if (padding_top > 0) {
-        $('#apropos').css('padding-top', padding_top + 'px');
-    } 
-}
-
-
 
 
 var carousel_paused = true;
@@ -335,8 +325,6 @@ function init() {
     initWayPoints();
     setFaceBookPageLink();
     setMaxPageHeight();
-    setCarouselPos();
-    $('#main').removeClass('invisible');
     document.addEventListener("touchstart", function() {}, false); // allow css active to work in safari
 }
 
