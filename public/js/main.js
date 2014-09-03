@@ -49,7 +49,7 @@ function registerMediaCallbacks() {
         },
 
         match: function() {
-             $('.collapse').collapse('hide');
+            $('.collapse').collapse('hide');
         }
     });
 }
@@ -275,16 +275,15 @@ var carousel_paused = true;
 function initWayPoints() {
     $('#apropos').waypoint(function(direction) {
         if ((direction === "down") && (carousel_paused)) {
-                $('#carousel-nuayre').carousel();
-                carousel_paused = false;
+            $('#carousel-nuayre').carousel();
+            carousel_paused = false;
         }
     });
-    
-    $('#products').waypoint(function(direction){ 
+
+    $('#products').waypoint(function(direction) {
         if (direction === "down") {
             $('#fixed-icons > div').removeClass('invisible');
-        }
-        else {
+        } else {
             $('#fixed-icons > div').addClass('invisible');
         }
     });
@@ -297,15 +296,32 @@ function arrowUpNoHashTag() {
         var loc = window.location;
         window.location.href = '#';
         if (history.pushState) {
-           history.pushState("", document.title, loc.pathname);            
+            history.pushState("", document.title, loc.pathname);
         }
     });
 }
+
+function resize() {
+    var screenType = queryMediaState();
+    if (screenType !== "MOBILE") {
+        var minh = $(window).height();
+        $('#apropos').css('height', minh + 'px');
+        var ch = parseInt($('#carousel-nuayre').css('height'),10);
+        var padding = minh - ch;
+        $('#apropos').css('padding-top',Math.round(padding/2) + 'px');
+    }
+}
+
+function resizeHandlers() {
+    window.addEventListener('resize', resize, false);
+}
+
 
 function init() {
     registerScrollsTo();
     registerClickHandlers();
     collapseHandlers();
+    resizeHandlers();
     $('.collapse').collapse({
         toggle: false
     }); // hack to get collapse working properly
