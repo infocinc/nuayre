@@ -342,18 +342,36 @@ body {
     padding: 5px 5px;
     height: 54px;
     line-height: 54px;
+    font-size: 18px;
     h1 {
       padding: 1px 20px;
-      font-size: 1.5em;
-      line-height: 0.9em;
+      font-size: 1.5em ;
+      text-shadow: 1px 1px 10px @darkGreen;
+      @media screen and (max-width:319px) {
+        font-size: 1.3em;
+        padding-top: 5px;
+      }
+
     }
+
     h2 {
       color: @white;
-      font-size: 0.6em;
+      font-size: 0.7em;
+      text-shadow: 2px 3px 5px @darkGreen;
       @media screen and (max-width:319px) {
         font-size: 0.5em;
       }
     } 
+    
+    h1,h2 {
+      position: relative;
+      top: -4px;
+    }
+    @media screen and (min-width:@screen-sm-min) {
+      h1 {
+        font-size: 1.8em;
+      }
+    }
   }
 
   .navbar-toggle {
@@ -418,7 +436,8 @@ body {
     .navbar-brand {
      height: 70px;
      line-height: 70px;
-     padding: 15px 15px;
+     padding: 15px;
+     font-size:1.8em;
     }
 
     .bar-items {
@@ -438,7 +457,10 @@ body {
         border-right: 1px solid @white;
         padding: 0px 20px;
         line-height: 70px;
-        font-size: 1.3em;
+        font-size: 1.5em;
+        letter-spacing: 0.05em;
+        text-shadow: 1px 1px 2px @darkGreen;
+
       }
       li:active {
        background: @darkGreen;
@@ -447,6 +469,11 @@ body {
         border: none;
         float:right;
       }
+    }
+  }
+  @media screen and (min-width:@screen-lg-min) {
+    .navbar-brand {
+      padding: 10px;
     }
   }
 }
@@ -636,7 +663,7 @@ body {
   } 
  @media screen and (min-width:@screen-md-min) and (min-height:600px) {
    z-index: 60;
-   bottom: 30px;
+   bottom: 20px;
  }
 }
 
