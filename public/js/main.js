@@ -268,17 +268,6 @@ function setFaceBookPageLink() {
     }
 }
 
-function setMaxPageHeight() {
-    var site_state = queryMediaState();
-
-    if (site_state === 'MOBILE') {
-        var viewportHeight = $(window).height();
-        $('#main').css({
-            'height': viewportHeight + 'px'
-        });
-    }
-}
-
 
 
 var carousel_paused = true;
@@ -324,7 +313,6 @@ function init() {
     registerMediaCallbacks();
     initWayPoints();
     setFaceBookPageLink();
-    setMaxPageHeight();
     document.addEventListener("touchstart", function() {}, false); // allow css active to work in safari
 }
 
