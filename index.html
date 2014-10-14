@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700' rel='stylesheet' type='text/css'>
     <link href="https://plus.google.com/+infocinc" rel="publisher" />
-
+    <script src="js/vendor/picturefill.mins.js" async></script>
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
@@ -237,7 +237,10 @@
                             <h3>Les désodorisants de NuAyre sont les seuls dans leur catégorie à posséder la certification EcoLogo UL 2796</h3>
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
-                            <img sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/pots_sm.jpg 520px, img/pots_lg.jpg 1354px" alt="les produits eliminateurs d'odeurs NuAyre">
+<!--                         <img sizes="(min-width: 40em) 80vw, 100vw"
+                                srcset="examples/images/medium.jpg 375w, examples/images/medium.jpg 480w, examples/images/large.jpg 768w" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+ -->
+                            <img src="img/pots_lg.jpg" sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/pots_sm.jpg 520px, img/pots_lg.jpg 1354px" alt="les produits eliminateurs d'odeurs NuAyre">
                             </img>
                         </div>
                     </div>
@@ -248,7 +251,7 @@
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
                             <a target="_blank" href="http://ecologo.org">
-                                <img sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/ecobanner_sm.jpg 520px, img/ecobanner_lg.jpg 1354px" alt="une banniere ecologo"></img>
+                                <img src="img/ecobanner_lg.jpg" sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/ecobanner_sm.jpg 520px, img/ecobanner_lg.jpg 1354px" alt="une banniere ecologo"></img>
                             </a>
                         </div>
                     </div>
@@ -259,7 +262,7 @@
                             <h3>Encouragez la marque NuAyre qui ne teste pas leur produits sur les animaux et neutralisez vos odeurs naturellement</h3>
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 ">
-                            <img sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/nontestebanner_sm.jpg 520px, img/nontestebanner_lg.jpg 1354px" alt="une banniere non teste sur animaux">
+                            <img src="img/nontestebanner_lg.jpg" sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/nontestebanner_sm.jpg 520px, img/nontestebanner_lg.jpg 1354px" alt="une banniere non teste sur animaux">
                             </img>
                         </div>
                     </div>
@@ -270,7 +273,7 @@
                             <h3>Nos produits réfrigérateurs et congélateurs prolongent la conservation de la nourriture et préservent la flore des aliments</h3>
                         </div>
                         <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1  ">
-                            <img sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/freezer_sm.jpg 520px, img/freezer_lg.jpg 1354px" alt="les produits refrigerateur et congelateur NuAyre">
+                            <img src="img/freezer_lg.jpg" sizes="(min-width:1200px) 826px, (min-width:992px) 677px, 90vw" srcset="img/freezer_sm.jpg 520px, img/freezer_lg.jpg 1354px" alt="les produits refrigerateur et congelateur NuAyre">
                             </img>
                         </div>
                     </div>
@@ -1215,7 +1218,6 @@
             nope: "js/vendor/media.match.min.js"
         },
         //and then load enquire
-        "js/vendor/picturefill.min.js",
         "js/vendor/enquire.min.js",
         "js/main.min.js"
     ];
